@@ -51,5 +51,12 @@ module.exports = {
     }, {
         test: /\.(txt|xml)$/i,
         use: 'raw-loader',
-    }]
+    },{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+            fix: true
+        },
+      }]
 }

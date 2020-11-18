@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-    <title>nu4PET 陪心商城<%= htmlWebpackPlugin.options.title %></title>
-    <%= htmlWebpackPlugin.options.metaData %>
 <head>
+    <title><%= htmlWebpackPlugin.options.meta.title %><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="application-name" content="<%= htmlWebpackPlugin.options.meta.title %>">
+    <meta name="msapplication-tooltip" content="<%= htmlWebpackPlugin.options.meta.description %>">
+    <meta name="msapplication-starturl" content="<%= htmlWebpackPlugin.options.meta.url %>">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.options.meta.logo310 %>">
+    <meta name="msapplication-square70x70logo" content="<%= htmlWebpackPlugin.options.meta.logo70 %>">
+    <meta name="msapplication-square150x150logo" content="<%= htmlWebpackPlugin.options.meta.logo150 %>">
+    <meta name="msapplication-square310x310logo" content="<%= htmlWebpackPlugin.options.meta.logo310 %>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta property="fb:app_id" content="">
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.meta.title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.meta.url %>">
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.meta.image %>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.meta.title %>">
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+    <meta itemprop="name" content="<%= htmlWebpackPlugin.options.meta.title %>">
+    <meta itemprop="description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+    <meta itemprop="image" content="<%= htmlWebpackPlugin.options.meta.image %>">
+    <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.meta.title %>">
+    <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.meta.title %>">
+    <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+    <meta name="twitter:creator" content="<%= htmlWebpackPlugin.options.meta.author %>">
+    <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.meta.image %>">
+    <meta name="googlebot" content="<%= htmlWebpackPlugin.options.meta.robots %>">
+    <meta name="google-site-verification" content="McP8Us9nO4W7t3Cyocews7MsVsTsGo4lAOYRpi3QYjI">
+    <link rel="canonical" href="<%= htmlWebpackPlugin.options.meta.url %>">
+    <link rel="shortlink" href="<%= htmlWebpackPlugin.options.meta.url %>">
+    <%= htmlWebpackPlugin.options.headData %>
 </head>
 <body>
     <noscript></noscript>
+    <%= htmlWebpackPlugin.options.header %>
     <%= htmlWebpackPlugin.options.main %>
+    <%= htmlWebpackPlugin.options.footer %>
 </body>
 </html>

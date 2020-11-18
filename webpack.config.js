@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackModules = require('webpack-modules')
 const WebpackModuleSettings = require('./webpack.module.js')
 const WebpackHtmlSettings = require('./webpack.html.js')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -24,6 +25,7 @@ module.exports = {
         }),
         new WebpackModules(),
         new CleanWebpackPlugin(),
+        new ESLintPlugin(),
     ],
     resolve: {
         extensions: ['.js', '.json', '.css'],
