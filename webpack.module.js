@@ -9,6 +9,7 @@ module.exports = {
                 loader: MiniCssExtractPlugin.loader,
                 options: {
                     esModule: false,
+                    publicPath: '../'
                 },
             },
             {
@@ -34,7 +35,7 @@ module.exports = {
             options: {
                 limit: 1000, //bytes
                 name: '[hash:16].[ext]',
-                outputPath: 'assets',
+                outputPath: '',
             }
         }
     }, {
@@ -44,7 +45,7 @@ module.exports = {
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
-                    outputPath: 'assets',
+                    outputPath: 'css',
                 },
             },
         ],

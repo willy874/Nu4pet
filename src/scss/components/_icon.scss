@@ -1,0 +1,39 @@
+.size-88 > svg{
+    width: 88px;
+    height: 88px;
+}
+.size-36 > svg{
+    width: 36px;
+    height: 36px;
+}
+.size-41x51 > svg{
+    width: 41px;
+    height: 51px;
+}
+.size-85x55 > svg{
+    width: 85px;
+    height: 55px;
+}
+.size-45 > svg{
+    width: 45px;
+    height: 45px;
+}
+.size-54 > svg{
+    width: 54px;
+    height: 54px;
+}
+.size-109 > svg{
+    width: 109px;
+    height: 109px;
+}
+svg{
+    display: block;
+    color: currentColor;
+}
+.icon-link{
+    color: $dark;
+    cursor: pointer;
+    &:hover{
+        color: $primary;
+    }
+}

@@ -1,7 +1,7 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackModules = require('webpack-modules')
 const WebpackModuleSettings = require('./webpack.module.js')
 const WebpackHtmlSettings = require('./webpack.html.js')
@@ -20,12 +20,12 @@ module.exports = {
     plugins: [
         ...WebpackHtmlSettings,
         new VueLoaderPlugin(),
+        new ESLintPlugin(),
         new MiniCssExtractPlugin({
             filename: './css/[name].bundle.css'
         }),
         new WebpackModules(),
-        new CleanWebpackPlugin(),
-        new ESLintPlugin(),
+        // new CleanWebpackPlugin(),
     ],
     resolve: {
         extensions: ['.js', '.json', '.css'],
@@ -39,3 +39,8 @@ module.exports = {
     },
     module: WebpackModuleSettings
 }
+
+/**
+ * webpack-cli 當升到 4 以上版本 webpack-dev-server 將無法使用
+ * 
+ */

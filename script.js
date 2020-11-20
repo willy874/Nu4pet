@@ -75,7 +75,8 @@ class Script{
                 }
             })()
             if(branch){
-                exec(`push -u origin ${branch}`)
+                exec(`git pull origin ${branch}`)
+                exec(`git push -u origin ${branch}`)
                 console.log('git'.yellow,`push ${branch}`);
             }
 

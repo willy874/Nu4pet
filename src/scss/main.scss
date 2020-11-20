@@ -26,17 +26,22 @@
 @import "bootstrap/print";
 
 // Plugin
+@import 'font';
 @import 'sweetalert2/index';
 
 // WebSite Setting
 @import 'reset';
 @import 'mixin';
 @import 'utilities';
-@import 'layout';
 
 // Components
+@import 'components/icon';
 
 // WebSite Page
+@import 'page/layout';
+@import 'page/header';
+@import 'page/footer';
+@import 'page/home';
 
 // Browser
 @import 'browser'

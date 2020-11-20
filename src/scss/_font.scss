@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Helvetica;
+    src: url('font/HelveticaLighter.eot?#iefix') format('embedded-opentype'),
+         url('font/HelveticaLighter.woff2') format('woff2'),
+         url('font/HelveticaLighter.woff') format('woff'),
+         url('font/HelveticaLighter.ttf') format('truetype');
+    font-style:	normal;
+    font-stretch: normal;
+    font-weight: lighter;
+}
+@font-face {
+    font-family: Helvetica;
+    src: url('font/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('font/Helvetica.woff2') format('woff2'),
+        url('font/Helvetica.woff') format('woff'),
+        url('font/Helvetica.ttf') format('truetype');
+    font-style:	normal;
+    font-stretch: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: Helvetica;
+    src: url('font/HelveticaBold.eot?#iefix') format('embedded-opentype'),
+        url('font/HelveticaBold.woff2') format('woff2'),
+        url('font/HelveticaBold.woff') format('woff'),
+        url('font/HelveticaBold.ttf') format('truetype');
+    font-style:	normal;
+    font-stretch: normal;
+    font-weight: bold;
+}
+
+.font-helvetica-lighter{
+    font-family: Helvetica, "Noto Sans";
+    font-weight: lighter;
+    font-style:	normal;
+    font-stretch: normal;
+}
+.font-helvetica-normal{
+    font-family: Helvetica, "Noto Sans";
+    font-weight: normal;
+    font-style:	normal;
+    font-stretch: normal;
+}
+.font-helvetica-bold{
+    font-family: Helvetica, "Noto Sans";
+    font-weight: bold;
+    font-style:	normal;
+    font-stretch: normal;
+}
