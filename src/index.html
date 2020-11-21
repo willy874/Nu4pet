@@ -37,67 +37,508 @@
 </head>
 <body>
     <noscript></noscript>
-    <%= htmlWebpackPlugin.options.header %>
     <header>
-        <div class="bg-primary text-center pt-3 pb-2">
+        <div class="container-fuild bg-primary text-center pt-3 pb-2">
             <span class="text-white h4 font-helvetica-lighter">
                 購物袋滿$<span>930</span>免運！Show Now / +LINE 生活圈線領 $<span>200</span>
             </span>
         </div>
-        <div class="container d-flex justify-content-between align-items-end pt-4">
-            <h1 class="logo mb-0">
-                <div class="icon-logo1" style="width: 220px;height: 81px;"></div>
-            </h1>
-            <nav>
-                <ul class="nav-bar list-unstyled d-flex mb-0">
-                    <li class="nav-list px-4">
-                        <a href="" class="h4 text-dark">Home</a>
+        <div class="desktop">
+            <div class="container d-flex justify-content-between align-items-end pt-4 pb-5">
+                <h1 class="logo mb-0">
+                    <a href="#">
+                        <div class="icon-logo1" style="width: 220px;height: 81px;"></div>
+                    </a>
+                </h1>
+                <nav class="d-flex justify-content-around flex-grow-1">
+                    <ul class="nav-bar list-unstyled d-flex mb-0">
+                        <li class="nav-list px-4 list-home">
+                            <a href="javascript:;" class="h4 text-dark nav-link">HOME</a>
+                            <div class="nav-bottomline"></div>
+                        </li>
+                        <li class="nav-list px-4 list-shop">
+                            <a href="javascript:;" class="h4 text-dark nav-link" data-target="#list-shop">陪心商城</a>
+                            <div class="nav-bottomline"></div>
+                            <div class="list-panel" id="list-shop" data-switch="false">
+                                <ul class="list-unstyled d-flex">
+                                    <li class="list-item px-4 my-3">
+                                        <div class="font-weight-bold text-dark list-item-title">最新優惠</div>
+                                        <ul class="list-unstyled py-3">
+                                            <li class="sub-list">
+                                                <a href="javascript:;" class="h6 font-weight-bold">購物滿額贈</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <div class="font-weight-bold text-dark list-item-title">餵 • 愛犬</div>
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">人氣組合</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">客製化寵糧</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">SUPER主食罐</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">HERO零食</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">能量補給玩具</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">紓壓玩具</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <div class="font-weight-bold text-dark list-item-title">餵 • 愛犬</div>
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">人氣組合</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">客製化寵糧</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">SUPER主食罐</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">HERO零食</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">能量補給玩具</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">紓壓玩具</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <div class="font-weight-bold text-dark list-item-title">P幣兌換</div>
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">兌換食品</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">兌換禮品</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-list px-4 list-about">
+                            <a href="javascript:;" class="h4 text-dark nav-link" data-target="#list-about">關於陪心</a>
+                            <div class="nav-bottomline"></div>
+                            <div class="list-panel" id="list-about" data-switch="false">
+                                <ul class="list-unstyled">
+                                    <li class="sub-list py-2">
+                                        <a href="javascript:;" class="h6 font-weight-bold">陪心品牌</a>
+                                    </li>
+                                    <li class="sub-list py-2">
+                                        <a href="javascript:;" class="h6 font-weight-bold">關於客製化</a>
+                                    </li>
+                                    <li class="sub-list py-2">
+                                        <a href="javascript:;" class="h6 font-weight-bold">獲國家級認證寵糧</a>
+                                    </li>
+                                    <li class="sub-list py-2">
+                                        <a href="javascript:;" class="h6 font-weight-bold">經銷據點</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-list px-4 list-life">
+                            <a href="javascript:;" class="h4 text-dark nav-link" data-target="#list-life">陪心生活家</a>
+                            <div class="nav-bottomline"></div>
+                            <div class="list-panel" id="list-life" data-switch="false">
+                                <ul class="list-unstyled d-flex">
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">最新消息</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">好評推薦</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">餵寵學堂</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">經銷據點</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">公益捐</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">軍犬</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">一日捐活動</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-list px-4 list-qa">
+                            <a href="javascript:;" class="h4 text-dark nav-link" data-target="#list-qa">Q&A</a>
+                            <div class="nav-bottomline"></div>
+                            <div class="list-panel" id="list-qa" data-switch="false">
+                                <ul class="list-unstyled d-flex">
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">客製化流程</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">保鮮相關</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">退換貨退款</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">餵食相關</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">試吃流程</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">購買相關</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">健檢相關</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">聯絡客服</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div>
+                    <ul class="d-flex list-unstyled nav-sub mb-0">
+                        <li class="sub-list px-3" id="search-bar">
+                            <a href="javascript:;" class="nav-link size-36 icon-search focus-fill"></a>
+                            <form class="search-bar" id="search-form" method="get">
+                                <input type="search" placeholder="請輸入欲搜尋商品或是關鍵字">
+                                <input type="submit" aria-hidden="true">
+                            </form>
+                        </li>
+                        <li class="sub-list px-3">
+                            <a href="javascript:;" class="size-36 icon-heart icon-link focus-fill"></a>
+                        </li>
+                        <li class="sub-list px-3">
+                            <a href="javascript:;" class="size-36 icon-shop icon-link focus-fill"></a>
+                        </li>
+                        <li class="sub-list px-3" id="member-bar" data-target="#panel-member">
+                            <a href="javascript:;" class="size-36 icon-member icon-link focus-fill"></a>
+                            <div class="nav-bottomline"></div>
+                            <div class="list-panel" id="panel-member" data-switch="false">
+                                <ul class="list-unstyled d-flex">
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">會員專區</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">毛孩專區</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">我的評價</a>
+                                            </li>
+                                        </ul>
+                                        <div class="separate-line"></div>
+                                    </li>
+                                    <li class="list-item px-4 my-3">
+                                        <ul class="list-unstyled py-2">
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">訂單查詢</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">邀請我的好友</a>
+                                            </li>
+                                            <li class="sub-list py-2">
+                                                <a href="javascript:;" class="h6 font-weight-bold">登出</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mobile">
+            <div class="container container-sm-clear d-flex justify-content-between align-items-end pt-4 pb-5">
+                <div class="pad logo mb-0">
+                    <a href="">
+                        <div class="icon-logo1" style="width: 220px;height: 81px;"></div>
+                    </a>
+                </div>
+                <div class="phone logo mb-0">
+                    <a href="">
+                        <div class="icon-logo2" style="width: 84px;height: 78px;"></div>
+                    </a>
+                </div>
+
+                <ul class="d-flex list-unstyled nav-sub mb-0">
+                    <li class="sub-list px-3">
+                        <a href="javascript:;" class="size-36 icon-heart icon-link focus-fill"></a>
                     </li>
-                    <li class="nav-list px-4">
-                        <a href="" class="h4 text-dark">陪心商城</a>
-                        <ul class="list-panel list-unstyled">
-                            <li class="list-item"></li>
+                    <li class="sub-list px-3">
+                        <a href="javascript:;" class="size-36 icon-shop icon-link focus-fill"></a>
+                    </li>
+                    <li class="sub-list px-3">
+                        <button type="button" class="nav-btn" id="nav-btn" data-target="#nav-panel">
+                            <div class="btn-line top-line"></div>
+                            <div class="btn-line center-line"></div>
+                            <div class="btn-line bottom-line"></div>
+                        </button>
+                        <ul class="nav-panel list-unstyled" id="nav-panel" data-switch="false">
+                            <li class="nav-list">
+                                <button type="button" class="nav-sub-btn font-weight-bold h3 h-auto py-3 m-0" data-target="#sublist-shop">陪心商城</button>
+                                <ul class="nav-sub-list list-unstyled" id="sublist-shop" data-switch="false">
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">最新優惠</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">餵 • 愛犬</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">餵 • 愛貓</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">P幣兌換</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-list">
+                                <button type="button" class="nav-sub-btn font-weight-bold h3 h-auto py-3 m-0" data-target="#sublist-about">關於陪心</button>
+                                <ul class="nav-sub-list list-unstyled" id="sublist-about" data-switch="false">
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">陪心品牌</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">關於客製化</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">獲國家級認證寵糧</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">經銷據點</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-list">
+                                <button type="button" class="nav-sub-btn font-weight-bold h3 h-auto py-3 m-0" data-target="#sublist-life">陪心生活家</button>
+                                <ul class="nav-sub-list list-unstyled" id="sublist-life" data-switch="false">
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">最新消息</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">餵寵學堂</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">好評推薦</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">公益捐</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">軍犬</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">一日捐活動</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-list">
+                                <button type="button" class="nav-sub-btn font-weight-bold h3 h-auto py-3 m-0" data-target="#sublist-qa">Q&A</button>
+                                <ul class="nav-sub-list list-unstyled" id="sublist-qa" data-switch="false">
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">客製化流程</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">試吃相關</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">健檢相關</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">保鮮相關</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">餵食相關</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">購買相關</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-list">
+                                <button type="button" class="nav-sub-btn font-weight-bold h3 h-auto py-3 m-0" data-target="#sublist-like">我的收藏</button>
+                                <ul class="nav-sub-list list-unstyled" id="sublist-like" data-switch="false">
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">收藏項目</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-list">
+                                <button type="button" class="nav-sub-btn font-weight-bold h3 h-auto py-3 m-0" data-target="#sublist-member">會員專區</button>
+                                <ul class="nav-sub-list list-unstyled" id="sublist-member" data-switch="false">
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">會員專區</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">毛孩專區</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">我的評價</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">訂單查詢</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">邀請我的好友</a>
+                                    </li>
+                                    <li class="nav-sub-item py-2 px-4">
+                                        <a href="" class="nav-sub-link font-weight-bold h4">登出</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="nav-list px-4">
-                        <a href="" class="h4 text-dark">關於陪心</a>
-                        <ul class="list-panel list-unstyled">
-                            <li class="list-item"></li>
-                        </ul>
-                    </li>
-                    <li class="nav-list px-4">
-                        <a href="" class="h4 text-dark">關於生活家</a>
-                        <ul class="list-panel list-unstyled">
-                            <li class="list-item"></li>
-                        </ul>
-                    </li>
-                    <li class="nav-list px-4">
-                        <a href="" class="h4 text-dark">Q&A</a>
-                        <ul class="list-panel list-unstyled">
-                            <li class="list-item"></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div>
-                <ul class="d-flex list-unstyled mb-0">
-                    <li class="px-3">
-                        <a class="size-36 icon-search icon-link"></a>
-                    </li>
-                    <li class="px-3">
-                        <a class="size-36 icon-heart icon-link"></a>
-                    </li>
-                    <li class="px-3">
-                        <a class="size-36 icon-shop icon-link"></a>
-                    </li>
-                    <li class="px-3">
-                        <a class="size-36 icon-member icon-link"></a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-    <%= htmlWebpackPlugin.options.main %>
-    <%= htmlWebpackPlugin.options.footer %>
+    <div class="container-fuild">
+        <div class="row no-gutters flex-nowrap">
+            <aside class="mobile col-auto">
+                <ul class="aside-list list-unstyled">
+                    <li class="aside-item my-3">
+                        <button type="button" class="aside-btn font-weight-bold h4" data-target="#list-discount">
+                            <span class="arrow-right"></span>
+                            <span class="writing-mode-vertical">最新優惠</span>
+                        </button>
+                        <div class="sub-panel" id="list-discount" data-switch="false">
+                            <ul class="sub-list list-unstyled">
+                                <li class="sub-item">
+                                    <a href="javascript:;" class="h6">購物滿額贈</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="aside-item my-3">
+                        <button type="button" class="aside-btn font-weight-bold h4" data-target="#list-dog">
+                            <span class="arrow-right"></span>
+                            <span class="writing-mode-vertical">餵 • 愛犬</span>
+                        </button>
+                        <div class="sub-panel" id="list-dog" data-switch="false">
+                            <ul class="sub-list list-unstyled">
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">人氣組合</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">客製化寵糧</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">SUPER主食罐</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">HERO零食</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">能量補給玩具</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">紓壓玩具</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="aside-item my-3">
+                        <button type="button" class="aside-btn font-weight-bold h4" data-target="#list-cat">
+                            <span class="arrow-right"></span>
+                            <span class="writing-mode-vertical">餵 • 愛貓</span>
+                        </button>
+                        <div class="sub-panel" id="list-cat" data-switch="false">
+                            <ul class="sub-list list-unstyled">
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">人氣組合</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">客製化寵糧</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">SUPER主食罐</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">HERO零食</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">能量補給玩具</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">紓壓玩具</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="aside-item my-3">
+                        <button type="button" class="aside-btn font-weight-bold h4" data-target="#list-exchange">
+                            <span class="arrow-right"></span>
+                            <span class="writing-mode-horizontal d-block text-center">P</span>
+                            <span class="writing-mode-vertical">幣兌換</span>
+                        </button>
+                        <div class="sub-panel" id="list-exchange" data-switch="false">
+                            <ul class="sub-list list-unstyled">
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">兌換食品</a>
+                                </li>
+                                <li class="sub-item py-2">
+                                    <a href="javascript:;" class="h6">兌換禮品</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+            <main class="col">
+                <!-- <div class="overflow-hidden position-relative py-2">
+                    <div class="container container-sm-clear bg-light" style="height: 350px;"></div>
+                    
+                </div> -->
+            </main>
+        </div>
+    </div>
 </body>
 </html>

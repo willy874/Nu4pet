@@ -1,30 +1,37 @@
 .size-88 > svg{
     width: 88px;
     height: 88px;
+    pointer-events: none;
 }
 .size-36 > svg{
     width: 36px;
     height: 36px;
+    pointer-events: none;
 }
 .size-41x51 > svg{
     width: 41px;
     height: 51px;
+    pointer-events: none;
 }
 .size-85x55 > svg{
     width: 85px;
     height: 55px;
+    pointer-events: none;
 }
 .size-45 > svg{
     width: 45px;
     height: 45px;
+    pointer-events: none;
 }
 .size-54 > svg{
     width: 54px;
     height: 54px;
+    pointer-events: none;
 }
 .size-109 > svg{
     width: 109px;
     height: 109px;
+    pointer-events: none;
 }
 svg{
     display: block;
@@ -34,6 +41,15 @@ svg{
     color: $dark;
     cursor: pointer;
     &:hover{
+        color: $primary;
+    }
+}
+.focus-fill{
+    color: transparent;
+    &:hover{
+        color: transparent;
+    }
+    &:focus{
         color: $primary;
     }
 }

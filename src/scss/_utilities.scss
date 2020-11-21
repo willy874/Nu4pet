@@ -20,3 +20,57 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.writing-mode-vertical{
+    writing-mode: vertical-rl;
+}
+.writing-mode-horizontal{
+    writing-mode: horizontal-tb;
+}
+
+
+@include media-max (1200px){
+    .container-xl-clear{
+        max-width: none !important;
+    }
+}
+@include media-max (992px){
+    .container-lg-clear{
+        max-width: none !important;
+    }
+}
+@include media-max (768px){
+    .container-md-clear{
+        max-width: none !important;
+    }
+}
+@include media-max (576px){
+    .container-sm-clear{
+        max-width: none !important;
+    }
+}
+@include media-max (422px){
+    .container-xs-clear{
+        max-width: none !important;
+    }
+}
+
+.desktop{
+    @include media-max (1200px){
+        display: none !important;
+    }
+}
+.mobile{
+    @include media-min (1199.5px){
+        display: none !important;
+    }
+    .pad{
+        @include media-max (576px){
+            display: none !important;
+        }
+    }
+    .phone{
+        @include media-min (575.5px){
+            display: none !important;
+        }
+    }
+}

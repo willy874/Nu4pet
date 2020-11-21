@@ -5,6 +5,7 @@ const headerHtml = fs.readFileSync('./src/html/header.html').toString('utf8')
 const footerHtml = fs.readFileSync('./src/html/footer.html').toString('utf8')
 
 module.exports =  [
+    // {name: 'layout',title: '共用版'},
     {name: 'home',title: '首頁'}
 ].map((chunk)=>{
     return new HtmlWebpackPlugin({

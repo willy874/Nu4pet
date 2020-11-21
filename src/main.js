@@ -1,5 +1,6 @@
 import './scss/main.css'
-// import '@/models/init'
 import '@/components/init'
+import '@/events/init'
+// import '@/library/init'
+// import '@/models/init'
 // import '@/plugins/init'
-// import '@/events/init'

@@ -1,14 +1,308 @@
-nav{
-    .nav-bar{
-        
+
+.nav-bar{
+    padding: 0 2rem;
+    .nav-link{
+        text-decoration: none;
+        &:hover{
+            font-weight: bold;
+        }
     }
     .nav-list{
-        
+        position: relative;
+        .nav-bottomline{
+            height: 4px;
+            background-color: $primary;
+            transition: all 0.2s linear;
+            width: 0%;
+        }
+        .nav-link{
+            @include stretched-link;
+        }
+        &:hover{
+            .nav-bottomline{
+                width: 100%;
+            }
+        }
+    }
+    .separate-line{
+        height: 100%;
+        width: 1px;
+        background-color: $primary;
+        position: absolute;
+        right: 0;
+        top: 0;
     }
     .list-panel{
-
+        position: absolute;
+        border: 4px solid $primary;
+        background-color: rgba($white,0.85);
+        border-radius: 1rem;
+        display: none;
+        z-index: 1;
+        &.show{
+            display: block;
+        }
+        left: 0;
+        top: 100%;
     }
     .list-item{
-        
+        position: relative;
+        .list-item-title{
+            font-size: 1.75rem;
+        }
+    }
+    .sub-list{
+        a{
+            color: $dark;
+            &:hover{
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+    // 特殊追加
+    .list-home {
+        width: 105px;
+    }
+    .list-shop {
+        width: 122px;
+        .list-panel{
+            left: -140px;
+            width: 660px;
+            padding: 0 0.5rem;
+        }
+    }
+    .list-about {
+        width: 122px;
+        .list-panel{
+            width: 220px;
+            padding: 1.5rem 2rem;
+        }
+    }
+    .list-life {
+        width: 140px;
+        .list-panel{
+            width: 300px;
+            padding: 0 0.5rem;
+        }
+    }
+    .list-qa {
+        width: 92px;
+        .list-panel{
+            left: auto;
+            right: 0;
+            width: 550px;
+            padding: 0 0.5rem;
+        }
+    }
+}  
+
+.nav-sub{
+    position: relative;
+    .sub-list{
+        .nav-link{
+            position: relative;
+            @include stretched-link;
+        }
+        .icon-search.focus{
+            color: $primary;
+        }
+        .search-bar{
+            position: absolute;
+            top: 120%;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            display: none;
+            input[type=search]{
+                width: 100%;
+                border: 3px solid $primary;
+                padding: 0.5rem 1.5rem;
+                border-radius: 99rem;
+                &:focus{
+                    outline: 0;
+                }
+                &::placeholder{
+                    color: $primary;
+                }
+            }
+            input[type=submit]{
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+    }
+
+    .nav-btn{
+        border: 0;
+        background: transparent;
+        position: relative;
+        width: 30px;
+        height: 36px;
+        padding: 0;
+        color: $dark;
+        .top-line{
+            top: 6px;
+        }
+        .center-line{
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .bottom-line{
+            bottom: 6px;
+        }
+        .btn-line{
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 99rem;
+            background-color: currentColor;
+            transition: all 0.2s;
+            pointer-events: none;
+        } 
+        &:hover{
+            color: $primary;
+        }
+    }
+    .nav-panel{
+        position: absolute;
+        z-index: 1;
+        width: 250px;
+        left: auto;
+        right: 0;
+        top: 120%;
+        display: none;
+    }
+    .nav-list{
+
+    }
+    .nav-sub-btn{
+        width: 100%;
+        border-width: 0 0 2px 0;
+        border-color: $gray-light;
+        border-style: solid; 
+        background-color: $primary;
+        color: $white;
+    }
+    .nav-sub-list{
+        background-color: $gray-light;
+        display: none;
+    }
+    .nav-sub-item{
+
+    }
+    .nav-sub-link{
+        color: $dark;
+        font-weight: bold;
+        &:hover{
+            color: $primary;
+            text-decoration: none;
+        }
+    }
+}
+#member-bar .list-panel{
+    position: absolute;
+    border: 4px solid $primary;
+    background-color: rgba($white,0.85);
+    border-radius: 1rem;
+    display: none;
+    z-index: 1;
+    width: 300px;
+    &.show{
+        display: block;
+    }
+    left: auto;
+    right: 0;
+    top: 120%;
+    .separate-line{
+        height: 100%;
+        width: 1px;
+        background-color: $primary;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .list-item{
+        position: relative;
+        .list-item-title{
+            font-size: 1.75rem;
+        }
+    }
+    .sub-list{
+        a{
+            color: $dark;
+            &:hover{
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+}
+aside{
+
+    .aside-list{
+
+    }
+    .aside-item{
+        position: relative;
+    }
+    .aside-btn{
+        position: relative;
+        z-index: 2;
+        background-color: $primary;
+        border: 0;
+        border-radius: 0 1rem 1rem 0;
+        padding: 1rem;
+        margin: 0;
+        color: $white;
+        &:hover{
+            text-decoration: none;
+        }
+        > span{
+            pointer-events: none;
+        }
+    }
+    .arrow-right{
+        display: block;
+        border-width: 2px 2px 0 0;
+        border-style: solid;
+        border-color: $white;
+        transform: rotate(45deg);
+        width: 10px;
+        height: 10px;
+        margin: 0 0 8px 4px;
+    }
+    .sub-panel{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $gray-200;
+        border-radius: 0 1rem 1rem 0;
+        width: 0;
+        overflow: hidden;
+    }
+    .sub-list{
+        width: 320px;
+        height: 100%;
+        padding: 0 0 0 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .sub-item{
+        width: 50%;
+        height: 33.33333%;
+        padding: 1.25rem 0.5rem;
+        a{
+            font-size: 1rem;
+            color: $gray-dark;
+            &:hover{
+                color: $primary;
+                text-decoration: none;
+            }
+        }
     }
 }
