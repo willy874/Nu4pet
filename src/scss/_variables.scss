@@ -56,6 +56,7 @@ $colors: map-merge(
 );
 
 $primary:       #49c5b1;
+// $sub-primary:   #45bead;
 $secondary:     #707372;
 $success:       $green;
 $info:          $cyan;
@@ -71,6 +72,7 @@ $theme-colors: ();
 $theme-colors: map-merge(
   (
     "primary":     $primary,
+    // "$sub-primary":$sub-primary,
     "secondary":   $secondary,
     "success":     $success,
     "info":        $info,
@@ -216,7 +218,7 @@ $line-height-base:            1.5;
 $h1-font-size:                3.125rem;
 $h2-font-size:                2rem;
 $h3-font-size:                1.75rem;
-$h4-font-size:                1.14375rem;
+$h4-font-size:                1.4375rem;
 $h5-font-size:                1.25rem;
 $h6-font-size:                1.125rem;
 

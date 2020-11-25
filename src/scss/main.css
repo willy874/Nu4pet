@@ -374,7 +374,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.14375rem;
+  font-size: 1.4375rem;
 }
 
 h5, .h5 {
@@ -12820,6 +12820,7 @@ svg {
 }
 
 .nav-bar .nav-link {
+  display: block;
   text-decoration: none;
 }
 
@@ -12867,13 +12868,14 @@ svg {
 
 .nav-bar .list-panel {
   position: absolute;
-  border: 4px solid #49c5b1;
+  border: 3px solid #49c5b1;
   background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 1rem;
+  border-radius: 40px;
   display: none;
   z-index: 1;
   left: 0;
   top: 100%;
+  padding: 22px 0;
 }
 
 .nav-bar .list-panel.show {
@@ -12885,16 +12887,29 @@ svg {
 }
 
 .nav-bar .list-item .list-item-title {
-  font-size: 1.75rem;
+  padding: 0 35px;
+  margin-bottom: 10px;
+}
+
+.nav-bar .sub-list {
+  padding: 10px 0;
 }
 
 .nav-bar .sub-list a {
+  display: block;
+  line-height: 1;
   color: #5a5b5b;
+  padding: 0 35px;
+  margin-bottom: 0;
 }
 
 .nav-bar .sub-list a:hover {
   color: #49c5b1;
   text-decoration: none;
+}
+
+.nav-bar .sub-list a.border-left {
+  border-left: #49c5b1 1px solid !important;
 }
 
 .nav-bar .list-home {
@@ -12907,8 +12922,7 @@ svg {
 
 .nav-bar .list-shop .list-panel {
   left: -140px;
-  width: 660px;
-  padding: 0 0.5rem;
+  width: 694px;
 }
 
 .nav-bar .list-about {
@@ -12916,8 +12930,8 @@ svg {
 }
 
 .nav-bar .list-about .list-panel {
-  width: 220px;
-  padding: 1.5rem 2rem;
+  left: -38px;
+  width: 224px;
 }
 
 .nav-bar .list-life {
@@ -12925,8 +12939,8 @@ svg {
 }
 
 .nav-bar .list-life .list-panel {
-  width: 300px;
-  padding: 0 0.5rem;
+  left: -38px;
+  width: 328px;
 }
 
 .nav-bar .list-qa {
@@ -12935,20 +12949,19 @@ svg {
 
 .nav-bar .list-qa .list-panel {
   left: auto;
-  right: 0;
-  width: 550px;
-  padding: 0 0.5rem;
+  right: -38px;
+  width: 632px;
 }
 
-.nav-sub {
+.sub-nav-desktop {
   position: relative;
 }
 
-.nav-sub .sub-list .nav-link {
+.sub-nav-desktop .nav-link {
   position: relative;
 }
 
-.nav-sub .sub-list .nav-link::after {
+.sub-nav-desktop .nav-link::after {
   content: "";
   position: absolute;
   top: 0;
@@ -12961,11 +12974,11 @@ svg {
   background-color: transparent;
 }
 
-.nav-sub .sub-list .icon-search.focus {
+.sub-nav-desktop .icon-search.focus {
   color: #49c5b1;
 }
 
-.nav-sub .sub-list .search-bar {
+.sub-nav-desktop .search-bar {
   position: absolute;
   top: 120%;
   left: 0;
@@ -12974,39 +12987,96 @@ svg {
   display: none;
 }
 
-.nav-sub .sub-list .search-bar input[type=search] {
+.sub-nav-desktop .search-bar input[type=search] {
   width: 100%;
   border: 3px solid #49c5b1;
   padding: 0.5rem 1.5rem;
   border-radius: 99rem;
 }
 
-.nav-sub .sub-list .search-bar input[type=search]:focus {
+.sub-nav-desktop .search-bar input[type=search]:focus {
   outline: 0;
 }
 
-.nav-sub .sub-list .search-bar input[type=search]::-webkit-input-placeholder {
+.sub-nav-desktop .search-bar input[type=search]::-webkit-input-placeholder {
   color: #49c5b1;
 }
 
-.nav-sub .sub-list .search-bar input[type=search]:-ms-input-placeholder {
+.sub-nav-desktop .search-bar input[type=search]:-ms-input-placeholder {
   color: #49c5b1;
 }
 
-.nav-sub .sub-list .search-bar input[type=search]::-ms-input-placeholder {
+.sub-nav-desktop .search-bar input[type=search]::-ms-input-placeholder {
   color: #49c5b1;
 }
 
-.nav-sub .sub-list .search-bar input[type=search]::placeholder {
+.sub-nav-desktop .search-bar input[type=search]::placeholder {
   color: #49c5b1;
 }
 
-.nav-sub .sub-list .search-bar input[type=submit] {
+.sub-nav-desktop .search-bar input[type=submit] {
   pointer-events: none;
   opacity: 0;
 }
 
-.nav-sub .nav-btn {
+.sub-nav-desktop .list-panel {
+  position: absolute;
+  border: 3px solid #49c5b1;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 40px;
+  display: none;
+  z-index: 1;
+  padding: 22px 0;
+  width: 328px;
+  left: auto;
+  right: 0;
+  top: 120%;
+}
+
+.sub-nav-desktop .list-panel.show {
+  display: block;
+}
+
+.sub-nav-desktop .separate-line {
+  height: 100%;
+  width: 1px;
+  background-color: #49c5b1;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sub-nav-desktop .list-item {
+  position: relative;
+}
+
+.sub-nav-desktop .list-item .list-item-title {
+  padding: 0 35px;
+  margin-bottom: 10px;
+}
+
+.sub-nav-desktop .sub-list {
+  padding: 10px 0;
+}
+
+.sub-nav-desktop .sub-list a {
+  display: block;
+  line-height: 1;
+  color: #5a5b5b;
+  padding: 0 35px;
+  margin-bottom: 0;
+}
+
+.sub-nav-desktop .sub-list a:hover {
+  color: #49c5b1;
+  text-decoration: none;
+}
+
+.sub-nav-mobile {
+  position: relative;
+}
+
+.sub-nav-mobile .nav-btn {
   border: 0;
   background: transparent;
   position: relative;
@@ -13016,111 +13086,60 @@ svg {
   color: #5a5b5b;
 }
 
-.nav-sub .nav-btn .top-line {
-  top: 6px;
-}
-
-.nav-sub .nav-btn .center-line {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.nav-sub .nav-btn .bottom-line {
-  bottom: 6px;
-}
-
-.nav-sub .nav-btn .btn-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  border-radius: 99rem;
-  background-color: currentColor;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+.sub-nav-mobile .nav-btn > svg {
   pointer-events: none;
 }
 
-.nav-sub .nav-btn:hover {
+.sub-nav-mobile .nav-btn:hover {
   color: #49c5b1;
 }
 
-.nav-sub .nav-panel {
+.sub-nav-mobile .nav-panel {
   position: absolute;
   z-index: 1;
   width: 250px;
   left: auto;
   right: 0;
-  top: 120%;
+  top: 0;
   display: none;
 }
 
-.nav-sub .nav-sub-btn {
+.sub-nav-mobile .nav-sub-btn {
   width: 100%;
-  border-width: 0 0 2px 0;
+  border-width: 1px 0 1px 0;
   border-color: #dcdcdc;
   border-style: solid;
+  font-size: 1.875rem;
+  padding: 13px 0;
   background-color: #49c5b1;
   color: #fff;
+  letter-spacing: 2px;
 }
 
-.nav-sub .nav-sub-list {
+.sub-nav-mobile .nav-sub-list {
   background-color: #dcdcdc;
+  padding: 20px 0;
   display: none;
 }
 
-.nav-sub .nav-sub-link {
+.sub-nav-mobile .nav-sub-item {
+  padding: 14px 35px;
+}
+
+.sub-nav-mobile .nav-sub-link {
   color: #5a5b5b;
   font-weight: bold;
 }
 
-.nav-sub .nav-sub-link:hover {
+.sub-nav-mobile .nav-sub-link:hover {
   color: #49c5b1;
   text-decoration: none;
 }
 
-#member-bar .list-panel {
-  position: absolute;
-  border: 4px solid #49c5b1;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 1rem;
-  display: none;
-  z-index: 1;
-  width: 300px;
-  left: auto;
-  right: 0;
-  top: 120%;
-}
-
-#member-bar .list-panel.show {
-  display: block;
-}
-
-#member-bar .list-panel .separate-line {
-  height: 100%;
-  width: 1px;
-  background-color: #49c5b1;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-#member-bar .list-panel .list-item {
-  position: relative;
-}
-
-#member-bar .list-panel .list-item .list-item-title {
-  font-size: 1.75rem;
-}
-
-#member-bar .list-panel .sub-list a {
-  color: #5a5b5b;
-}
-
-#member-bar .list-panel .sub-list a:hover {
-  color: #49c5b1;
-  text-decoration: none;
+@media (min-width: 1200px) {
+  aside.sub-nav-mobile {
+    display: none;
+  }
 }
 
 aside .aside-item {
@@ -13131,6 +13150,9 @@ aside .aside-btn {
   position: relative;
   z-index: 2;
   background-color: #49c5b1;
+  width: 62px;
+  height: 168px;
+  line-height: 1.5;
   border: 0;
   border-radius: 0 1rem 1rem 0;
   padding: 1rem;
@@ -13155,7 +13177,7 @@ aside .arrow-right {
           transform: rotate(45deg);
   width: 10px;
   height: 10px;
-  margin: 0 0 8px 4px;
+  margin: 0 0 8px 8px;
 }
 
 aside .sub-panel {
@@ -13164,16 +13186,18 @@ aside .sub-panel {
   top: 0;
   bottom: 0;
   left: 0;
-  background-color: #e9ecef;
-  border-radius: 0 1rem 1rem 0;
+  background-color: #e5e5e5;
+  border-radius: 0 25px 25px 0;
   width: 0;
+  display: none;
   overflow: hidden;
 }
 
 aside .sub-list {
-  width: 320px;
+  width: 420px;
   height: 100%;
-  padding: 0 0 0 4rem;
+  padding: 13.5px 35px 13.5px 97px;
+  margin: auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13188,12 +13212,12 @@ aside .sub-list {
 aside .sub-item {
   width: 50%;
   height: 33.33333%;
-  padding: 1.25rem 0.5rem;
+  padding: 13.5px 0.5rem;
 }
 
 aside .sub-item a {
-  font-size: 1rem;
-  color: #6c757d;
+  line-height: 1;
+  color: #959595;
 }
 
 aside .sub-item a:hover {
