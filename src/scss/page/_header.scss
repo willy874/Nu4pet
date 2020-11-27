@@ -1,4 +1,24 @@
-
+.header-title{
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+    @include media-max(992px){
+        font-size: 0.75rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
+.desktop{
+    .container{
+        padding: 1.5rem 0 3rem 0;
+    }
+}
+.mobile{
+    .container{
+        padding: 1.5rem 1rem 1rem 1rem;
+        @include media-max(576px){
+            padding: 0.75rem 1rem 0.5rem 2rem;
+        }
+    }
+}
 .nav-bar{
     padding: 0 2rem;
     .nav-link{
@@ -154,7 +174,7 @@
         width: 328px;
         left: auto;
         right: 0;
-        top: 120%;
+        top: 100%;
         &.show{
             display: block;
         }
@@ -190,8 +210,24 @@
     }
 }
 .sub-nav-mobile{
-    position: relative;
-    // .sub-nav-item{}
+    &.nav-back{
+        position: absolute;
+        top: 0;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        transition: all 0.3s;
+        background-color: rgba($white , 0.8);
+        &.active{
+            bottom: 0;
+        }
+    }
+    .sub-nav-item{
+        padding: 0 1rem;
+        @include media-max(576px){
+            padding: 0 0.75rem;
+        }
+    }
     .nav-btn{
         border: 0;
         background: transparent;
@@ -203,26 +239,6 @@
         > svg{
             pointer-events: none;
         }
-        // .top-line{
-        //     top: 6px;
-        // }
-        // .center-line{
-        //     top: 50%;
-        //     transform: translateY(-50%);
-        // }
-        // .bottom-line{
-        //     bottom: 6px;
-        // }
-        // .btn-line{
-        //     position: absolute;
-        //     left: 0;
-        //     right: 0;
-        //     height: 4px;
-        //     border-radius: 99rem;
-        //     background-color: currentColor;
-        //     transition: all 0.2s;
-        //     pointer-events: none;
-        // } 
         &:hover{
             color: $primary;
         }
@@ -230,7 +246,7 @@
     .nav-panel{
         position: absolute;
         z-index: 1;
-        width: 250px;
+        width: 150px;
         left: auto;
         right: 0;
         top: 0;
@@ -244,19 +260,19 @@
         border-width: 1px 0 1px 0;
         border-color: $gray-light;
         border-style: solid; 
-        font-size: 1.875rem;
-        padding: 13px 0;
+        font-size: 1rem;
+        padding: 0.5rem 0;
         background-color: $primary;
         color: $white;
         letter-spacing: 2px;
     }
     .nav-sub-list{
         background-color: $gray-light;
-        padding: 20px 0;
+        padding: 0.5rem 0;
         display: none;
     }
     .nav-sub-item{
-        padding: 14px 35px;
+        padding: 0.5rem 1rem;
     }
     .nav-sub-link{
         color: $dark;
@@ -267,6 +283,8 @@
         }
     }
 }
+
+
 aside{
     @include media-min(1200px){
         &.sub-nav-mobile{
@@ -276,35 +294,37 @@ aside{
     // .aside-list{}
     .aside-item{
         position: relative;
+        &.active{
+            .aside-btn{
+                border-radius: 0;
+                background-color: $primary;
+                color: $white;
+            }
+        }
     }
     .aside-btn{
         position: relative;
         z-index: 2;
-        background-color: $primary;
-        width: 62px;
-        height: 168px;
-        line-height: 1.5;
+        width: 2.5rem;
+        height: 110px;
+        line-height: 1.2;
         border: 0;
-        border-radius: 0 1rem 1rem 0;
-        padding: 1rem;
+        border-radius: 0 0.75rem 0.75rem 0;
         margin: 0;
-        color: $white;
-        &:hover{
-            text-decoration: none;
+        color: $dark;
+        background-color: #e5e5e5;
+        transition: all 0.3s;
+        .icon-arrow-right{
+            display: block;
+            svg{
+                margin: 6px auto;
+                width: 8px;
+                height: 8px;
+            }
         }
         > span{
             pointer-events: none;
         }
-    }
-    .arrow-right{
-        display: block;
-        border-width: 2px 2px 0 0;
-        border-style: solid;
-        border-color: $white;
-        transform: rotate(45deg);
-        width: 10px;
-        height: 10px;
-        margin: 0 0 8px 8px;
     }
     .sub-panel{
         position: absolute;
@@ -319,9 +339,9 @@ aside{
         overflow: hidden;
     }
     .sub-list{
-        width: 420px;
+        width: 260px;
         height: 100%;
-        padding: 13.5px 35px 13.5px 97px;
+        padding: 1rem 0.75rem 1rem 3rem;
         margin: auto 0;
         display: flex;
         flex-wrap: wrap;
@@ -330,9 +350,11 @@ aside{
     .sub-item{
         width: 50%;
         height: 33.33333%;
-        padding: 13.5px 0.5rem;
+        padding: 0.25rem 0.25rem;
         a{
             line-height: 1;
+            font-size: 0.75rem;
+            font-weight: bold;
             color: #959595;
             &:hover{
                 color: $primary;

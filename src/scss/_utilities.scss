@@ -72,5 +72,23 @@
         @include media-min (575.5px){
             display: none !important;
         }
+        &.media-lg{
+            @include media-max (422px){
+                display: none !important;
+            }
+        }
+        &.media-md{
+            @include media-min (421.5px){
+                display: none !important;
+            }
+            @include media-max (380px){
+                display: none !important;
+            }
+        }
+        &.media-sm{
+            @include media-min (379.5px){
+                display: none !important;
+            }
+        }
     }
 }

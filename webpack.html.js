@@ -1,8 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fs = require('fs')
 const headData = fs.readFileSync('./src/html/head.html').toString('utf8')
-const headerHtml = fs.readFileSync('./src/html/header.html').toString('utf8')
-const footerHtml = fs.readFileSync('./src/html/footer.html').toString('utf8')
+// const headerHtml = fs.readFileSync('./src/html/header.html').toString('utf8')
+// const footerHtml = fs.readFileSync('./src/html/footer.html').toString('utf8')
 
 module.exports =  [
     // {name: 'layout',title: '共用版'},
@@ -34,8 +34,8 @@ module.exports =  [
         title: chunk.title ? ' - '+chunk.title : '',
         favicon: './src/assets/favicon.ico',
         main: fs.readFileSync(`./src/html/${chunk.name}.html`).toString('utf8'),
-        header: headerHtml,
-        footer: footerHtml,
+        // header: headerHtml,
+        // footer: footerHtml,
     })
 })
 /**

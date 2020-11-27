@@ -12742,6 +12742,30 @@ body.swal2-toast-column .swal2-toast .swal2-validation-message {
   }
 }
 
+@media (max-width: 422px) {
+  .mobile .phone.media-lg {
+    display: none !important;
+  }
+}
+
+@media (min-width: 421.5px) {
+  .mobile .phone.media-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile .phone.media-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 379.5px) {
+  .mobile .phone.media-sm {
+    display: none !important;
+  }
+}
+
 .size-88 > svg {
   width: 88px;
   height: 88px;
@@ -12810,9 +12834,137 @@ svg {
   color: #49c5b1;
 }
 
-.container,
-.container-fuild {
-  min-width: 320px;
+footer .social-media {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+footer .social-media i {
+  width: 27px;
+  height: 27px;
+}
+
+footer .social-media a {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+footer .social-media a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  pointer-events: auto;
+  opacity: 0;
+  background-color: transparent;
+}
+
+footer .social-media a:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+  footer .social-media {
+    padding: 0.5rem 4rem;
+  }
+}
+
+@media (min-width: 576px) {
+  footer .social-media i {
+    width: 54px;
+    height: 54px;
+  }
+  footer .social-media a {
+    font-size: 2rem;
+  }
+}
+
+footer .connection {
+  margin: auto;
+  max-width: 360px;
+}
+
+footer .connection i {
+  width: 24px;
+  height: 24px;
+  margin-right: 1rem;
+}
+
+footer .connection span {
+  font-size: 0.875rem;
+}
+
+footer .connection .icon-logo2 {
+  width: 83px;
+  height: 83px;
+}
+
+@media (min-width: 1200px) {
+  footer .connection {
+    max-width: 1200px;
+    line-height: 2;
+  }
+}
+
+@media (min-width: 576px) {
+  footer .connection i {
+    width: 36px;
+    height: 36px;
+  }
+  footer .connection span {
+    font-size: 1.125rem;
+  }
+  footer .connection .icon-logo2 {
+    width: 109px;
+    height: 109px;
+  }
+}
+
+footer .copyright span {
+  letter-spacing: 1px;
+}
+
+@media (min-width: 576px) {
+  footer .copyright span {
+    font-size: 12px;
+  }
+}
+
+footer .copyright i {
+  display: block;
+  width: 85px;
+  height: 55px;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .header-title {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+}
+
+.desktop .container {
+  padding: 1.5rem 0 3rem 0;
+}
+
+.mobile .container {
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+@media (max-width: 576px) {
+  .mobile .container {
+    padding: 0.75rem 1rem 0.5rem 2rem;
+  }
 }
 
 .nav-bar {
@@ -13030,7 +13182,7 @@ svg {
   width: 328px;
   left: auto;
   right: 0;
-  top: 120%;
+  top: 100%;
 }
 
 .sub-nav-desktop .list-panel.show {
@@ -13072,8 +13224,29 @@ svg {
   text-decoration: none;
 }
 
-.sub-nav-mobile {
-  position: relative;
+.sub-nav-mobile.nav-back {
+  position: absolute;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sub-nav-mobile.nav-back.active {
+  bottom: 0;
+}
+
+.sub-nav-mobile .sub-nav-item {
+  padding: 0 1rem;
+}
+
+@media (max-width: 576px) {
+  .sub-nav-mobile .sub-nav-item {
+    padding: 0 0.75rem;
+  }
 }
 
 .sub-nav-mobile .nav-btn {
@@ -13097,7 +13270,7 @@ svg {
 .sub-nav-mobile .nav-panel {
   position: absolute;
   z-index: 1;
-  width: 250px;
+  width: 150px;
   left: auto;
   right: 0;
   top: 0;
@@ -13109,8 +13282,8 @@ svg {
   border-width: 1px 0 1px 0;
   border-color: #dcdcdc;
   border-style: solid;
-  font-size: 1.875rem;
-  padding: 13px 0;
+  font-size: 1rem;
+  padding: 0.5rem 0;
   background-color: #49c5b1;
   color: #fff;
   letter-spacing: 2px;
@@ -13118,12 +13291,12 @@ svg {
 
 .sub-nav-mobile .nav-sub-list {
   background-color: #dcdcdc;
-  padding: 20px 0;
+  padding: 0.5rem 0;
   display: none;
 }
 
 .sub-nav-mobile .nav-sub-item {
-  padding: 14px 35px;
+  padding: 0.5rem 1rem;
 }
 
 .sub-nav-mobile .nav-sub-link {
@@ -13146,38 +13319,39 @@ aside .aside-item {
   position: relative;
 }
 
-aside .aside-btn {
-  position: relative;
-  z-index: 2;
+aside .aside-item.active .aside-btn {
+  border-radius: 0;
   background-color: #49c5b1;
-  width: 62px;
-  height: 168px;
-  line-height: 1.5;
-  border: 0;
-  border-radius: 0 1rem 1rem 0;
-  padding: 1rem;
-  margin: 0;
   color: #fff;
 }
 
-aside .aside-btn:hover {
-  text-decoration: none;
+aside .aside-btn {
+  position: relative;
+  z-index: 2;
+  width: 2.5rem;
+  height: 110px;
+  line-height: 1.2;
+  border: 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  margin: 0;
+  color: #5a5b5b;
+  background-color: #e5e5e5;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+aside .aside-btn .icon-arrow-right {
+  display: block;
+}
+
+aside .aside-btn .icon-arrow-right svg {
+  margin: 6px auto;
+  width: 8px;
+  height: 8px;
 }
 
 aside .aside-btn > span {
   pointer-events: none;
-}
-
-aside .arrow-right {
-  display: block;
-  border-width: 2px 2px 0 0;
-  border-style: solid;
-  border-color: #fff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  width: 10px;
-  height: 10px;
-  margin: 0 0 8px 8px;
 }
 
 aside .sub-panel {
@@ -13194,9 +13368,9 @@ aside .sub-panel {
 }
 
 aside .sub-list {
-  width: 420px;
+  width: 260px;
   height: 100%;
-  padding: 13.5px 35px 13.5px 97px;
+  padding: 1rem 0.75rem 1rem 3rem;
   margin: auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13212,11 +13386,13 @@ aside .sub-list {
 aside .sub-item {
   width: 50%;
   height: 33.33333%;
-  padding: 13.5px 0.5rem;
+  padding: 0.25rem 0.25rem;
 }
 
 aside .sub-item a {
   line-height: 1;
+  font-size: 0.75rem;
+  font-weight: bold;
   color: #959595;
 }
 

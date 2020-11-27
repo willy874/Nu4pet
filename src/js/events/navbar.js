@@ -15,10 +15,11 @@ const mobile = {
     btn: 'nav-btn',
     panel: 'nav-panel',
     subBtn: 'nav-sub-btn',
+    navBack: 'nav-back',
     asideBtn: 'aside-btn',
     asideItem: 'aside-item',
     asidePanel: 'sub-panel',
-    asideWidth: '420px'
+    asideWidth: '260px'
 }
 // console.dir(document.activeElement);
 /**
@@ -41,8 +42,8 @@ $('body').on('click',(e)=>{
         $(`.${mobile.asideItem}`).children(`.${mobile.asidePanel}`).each((index,el)=>{
             const $el = $(el)
             if ( $el.attr('data-switch') === 'true'){
-                console.log($el);
                 $el.attr('data-switch','false')
+                $el.parents(`.${mobile.asideItem}`).removeClass('active')
                 $el.animate({width: '0'},400,()=>{
                     $el.hide()
                 })
@@ -71,7 +72,6 @@ $('a,button,input').on('focus',(e)=>{
         $(`.${desktop.panel}`).each((index,el)=>{
             const $el = $(el)
             if ($el.attr('data-switch') === 'true') {
-                console.log($el);
                 $el.attr('data-switch','false')
                 $el.stop(false,false).fadeOut(250)
             }
@@ -94,6 +94,7 @@ $('a,button,input').on('focus',(e)=>{
 $(`.${desktop.item}`)
 .on('mouseleave',()=>{
     $(`.${desktop.panel}`).attr('data-switch','false').stop(false,false).fadeOut(250)
+    console.log('mouseleave');
 })
 .children(`.${desktop.link}`).on('mouseenter',(e)=>{
     const $this = $(e.target)
@@ -103,11 +104,13 @@ $(`.${desktop.item}`)
         $target.stop(false,false).fadeIn(250)
         
     }
+    console.log('mouseenter');
 })
 
 $(`.${desktop.subItem}`)
 .on('mouseleave',()=>{
     $(`.${desktop.subPanel}`).attr('data-switch','false').stop(false,false).fadeOut(250)
+    console.log('mouseleave');
 })
 .children(`.${desktop.subLink}`).on('mouseenter',(e)=>{
     const $this = $(e.target)
@@ -116,6 +119,7 @@ $(`.${desktop.subItem}`)
         $target.attr('data-switch','true')
         $target.stop(false,false).fadeIn(250)
     }
+    console.log('mouseenter');
 })
 
 /**
@@ -158,17 +162,19 @@ $(`.${mobile.btn}`).on('click',(e)=>{
     const $target = $($this.attr('data-target'))
     if ( $target.attr('data-switch') === 'false') {
         $target.attr('data-switch','true')
+        $(`.${mobile.navBack}`).addClass('active')
         $target.slideDown()
     }else{
         $target.attr('data-switch','false')
+        $(`.${mobile.navBack}`).removeClass('active')
         $target.slideUp()
-    }
+    } 
     if (lib.isMobileDevice() ) {
         $(`.${mobile.asideItem}`).children(`.${mobile.asidePanel}`).each((index,el)=>{
             const $el = $(el)
             if ( $el.attr('data-switch') === 'true'){
-                console.log($el);
                 $el.attr('data-switch','false')
+                $el.parents(`.${mobile.asideItem}`).removeClass('active')
                 $el.animate({width: '0'},400,()=>{
                     $el.hide()
                 })
@@ -176,6 +182,8 @@ $(`.${mobile.btn}`).on('click',(e)=>{
         })
     }
 })
+
+
 // Mobile Aside Navbar
 $(`.${mobile.asideBtn}`).on('click',(e)=>{
     const $this = $(e.target)
@@ -183,6 +191,7 @@ $(`.${mobile.asideBtn}`).on('click',(e)=>{
     $(`.${mobile.asideItem}`).children(`.${mobile.asidePanel}`).each((index,el)=>{
         const $el = $(el)
         if ( $el.attr('data-switch') === 'true' && $target[0] !== $el[0]){
+            $el.parents(`.${mobile.asideItem}`).removeClass('active')
             $el.attr('data-switch','false')
             $el.animate({width: '0'},400,()=>{
                 $el.hide()
@@ -191,17 +200,19 @@ $(`.${mobile.asideBtn}`).on('click',(e)=>{
     })
     if ( $target.attr('data-switch') === 'false') {
         $target.attr('data-switch','true')
-        console.log($target);
+        $this.parents(`.${mobile.asideItem}`).addClass('active')
         $target.show()
         $target.animate({width: mobile.asideWidth},400)
     }else{
         $target.attr('data-switch','false')
+        $this.parents(`.${mobile.asideItem}`).removeClass('active')
         $target.animate({width: '0'},400,()=>{
             $target.hide()
         })
     }
     if (lib.isMobileDevice() && $(`.${mobile.panel}`).attr('data-switch') === 'true' ) {
         $(`.${mobile.panel}`).attr('data-switch','false').slideUp()
+        $(`.${mobile.navBack}`).removeClass('active')
     }
 })
 // Navbar Touch sub-panel Event
@@ -209,6 +220,7 @@ $(`.${mobile.asidePanel}`).each((index,el)=>{
     el.addEventListenerTouch('left',()=>{
         const $this = $(el)
         $this.attr('data-switch','false')
+        $this.parents(`.${mobile.asideItem}`).removeClass('active')
         $this.animate({width: '0'},400,()=>{
             $this.hide()
         })

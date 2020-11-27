@@ -1,4 +1,78 @@
-.container,
-.container-fuild{
-    min-width: 320px;
+footer{
+    .social-media{
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        i {
+            width: 27px;
+            height: 27px;
+        }
+        a {
+            font-size: 1rem;
+            margin-left: 1rem;
+            @include stretched-link;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        @include media-min(1200px){
+            padding: 0.5rem 4rem;
+            
+        }
+        @include media-min(576px){
+            i {
+                width: 54px;
+                height: 54px;
+            }
+            a {
+                font-size: 2rem;
+            }
+        }
+        
+    }
+    .connection{
+        margin: auto;
+        max-width: 360px;
+        i {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+        }
+        span {
+            font-size: 0.875rem;
+        }
+        .icon-logo2 {
+            width: 83px;
+            height: 83px;
+        }
+        @include media-min(1200px){
+            max-width: 1200px;
+            line-height: 2;
+        }
+        @include media-min(576px){
+            i {
+                width: 36px;
+                height: 36px;
+            }
+            span {
+                font-size: 1.125rem;
+            }
+            .icon-logo2 {
+                width: 109px;
+                height: 109px;
+            }
+        }
+    }
+    .copyright{
+        span{
+            letter-spacing: 1px;
+            @include media-min(576px){
+                font-size: 12px;
+            }
+        }
+        i{
+            display: block;
+            width: 85px;
+            height: 55px;
+        }
+    }
 }

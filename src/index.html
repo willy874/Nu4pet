@@ -39,8 +39,8 @@
 <body>
     <noscript></noscript>
     <header>
-        <div class="bg-primary text-center pt-3 pb-2 px-4">
-            <span class="text-white h5 font-helvetica-lighter">
+        <div class="header-title bg-primary text-center">
+            <span class="text-white font-helvetica-lighter">
                 購物袋滿$<span>930</span>免運！Shop now / +LINE 生活圈線領 $<span>200</span>
             </span>
         </div>
@@ -258,7 +258,7 @@
                             <a href="javascript:;" class="size-36 icon-shop icon-link focus-fill"></a>
                         </li>
                         <li class="sub-item px-3">
-                            <a href="javascript:;" class="size-36 icon-member icon-link focus-fill" data-target="#panel-member"></a>
+                            <a href="javascript:;" class="size-36 icon-member icon-link focus-fill nav-link" data-target="#panel-member"></a>
                             <div class="nav-bottomline"></div>
                             <div class="list-panel" id="panel-member" data-switch="false">
                                 <ul class="list-unstyled d-flex">
@@ -298,39 +298,48 @@
         </div>
         <!-- TODO: mobile  -->
         <div class="mobile">
-            <div class="container container-sm-clear d-flex justify-content-between align-items-center align-items-sm-end pt-4 pb-3 pb-xl-5">
+            <div class="container container-sm-clear d-flex justify-content-between align-items-center align-items-sm-end">
                 <div class="pad logo mb-0">
                     <a href="">
                         <div class="icon-logo1" style="width: 223px;height: 82px;"></div>
                     </a>
                 </div>
-                <div class="phone logo mb-0">
+                <div class="phone media-lg logo mb-0">
+                    <a href="">
+                        <div class="icon-logo1" style="width: 160px;height: 60px;"></div>
+                    </a>
+                </div>
+                <div class="phone media-md logo mb-0">
+                    <a href="">
+                        <div class="icon-logo1" style="width: 131px;height: 52px;"></div>
+                    </a>
+                </div>
+                <div class="phone media-sm logo mb-0">
                     <a href="">
                         <div class="icon-logo2" style="width: 56px;height: 52px;"></div>
                     </a>
                 </div>
-
                 <ul class="sub-nav-mobile d-flex list-unstyled mb-0">
-                    <li class="sub-nav-item px-3">
-                        <a href="javascript:;" class="size-36 icon-heart icon-link focus-fill"></a>
-                    </li>
-                    <li class="sub-nav-item px-3">
+                    <li class="sub-nav-item">
                         <a href="javascript:;" class="size-36 icon-shop icon-link focus-fill"></a>
                     </li>
-                    <li class="sub-nav-item px-3">
+                    <li class="sub-nav-item">
+                        <a href="javascript:;" class="size-36 icon-member icon-link focus-fill"></a>
+                    </li>
+                    <li class="sub-nav-item">
                         <button type="button" class="nav-btn" data-target="#nav-panel"></button>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-    <div class="container-fuild">
+    <div class="container-fuild position-relative">
         <div class="row no-gutters flex-nowrap">
             <aside class="mobile col-auto">
                 <ul class="aside-list list-unstyled">
                     <li class="aside-item my-3">
-                        <button type="button" class="aside-btn font-weight-bold h6" data-target="#list-discount">
-                            <span class="arrow-right"></span>
+                        <button type="button" class="aside-btn font-weight-bold" data-target="#list-discount">
+                            <span class="icon-arrow-right"></span>
                             <span class="d-block">最</span>
                             <span class="d-block">新</span>
                             <span class="d-block">優</span>
@@ -339,14 +348,14 @@
                         <div class="sub-panel" id="list-discount" data-switch="false">
                             <ul class="sub-list list-unstyled">
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">購物滿額贈</a>
+                                    <a href="javascript:;" class="">購物滿額贈</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="aside-item my-3">
-                        <button type="button" class="aside-btn font-weight-bold h6" data-target="#list-dog">
-                            <span class="arrow-right"></span>
+                        <button type="button" class="aside-btn font-weight-bold" data-target="#list-dog">
+                            <span class="icon-arrow-right"></span>
                             <span class="d-block">餵</span>
                             <span class="d-block">•</span>
                             <span class="d-block">愛</span>
@@ -355,29 +364,29 @@
                         <div class="sub-panel" id="list-dog" data-switch="false">
                             <ul class="sub-list list-unstyled">
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">人氣組合</a>
+                                    <a href="javascript:;" class="">人氣組合</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">客製化寵糧</a>
+                                    <a href="javascript:;" class="">客製化寵糧</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">SUPER主食罐</a>
+                                    <a href="javascript:;" class="">SUPER主食罐</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">HERO零食</a>
+                                    <a href="javascript:;" class="">HERO零食</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">能量補給玩具</a>
+                                    <a href="javascript:;" class="">能量補給玩具</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">紓壓玩具</a>
+                                    <a href="javascript:;" class="">紓壓玩具</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="aside-item my-3">
-                        <button type="button" class="aside-btn font-weight-bold h6" data-target="#list-cat">
-                            <span class="arrow-right"></span>
+                        <button type="button" class="aside-btn font-weight-bold" data-target="#list-cat">
+                            <span class="icon-arrow-right"></span>
                             <span class="d-block">餵</span>
                             <span class="d-block">•</span>
                             <span class="d-block">愛</span>
@@ -386,29 +395,29 @@
                         <div class="sub-panel" id="list-cat" data-switch="false">
                             <ul class="sub-list list-unstyled">
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">人氣組合</a>
+                                    <a href="javascript:;" class="">人氣組合</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">客製化寵糧</a>
+                                    <a href="javascript:;" class="">客製化寵糧</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">SUPER主食罐</a>
+                                    <a href="javascript:;" class="">SUPER主食罐</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">HERO零食</a>
+                                    <a href="javascript:;" class="">HERO零食</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">能量補給玩具</a>
+                                    <a href="javascript:;" class="">能量補給玩具</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">紓壓玩具</a>
+                                    <a href="javascript:;" class="">紓壓玩具</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="aside-item my-3">
-                        <button type="button" class="aside-btn font-weight-bold h6" data-target="#list-exchange">
-                            <span class="arrow-right"></span>
+                        <button type="button" class="aside-btn font-weight-bold" data-target="#list-exchange">
+                            <span class="icon-arrow-right"></span>
                             <span class="d-block">P</span>
                             <span class="d-block">幣</span>
                             <span class="d-block">兌</span>
@@ -417,10 +426,10 @@
                         <div class="sub-panel" id="list-exchange" data-switch="false">
                             <ul class="sub-list list-unstyled">
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">兌換食品</a>
+                                    <a href="javascript:;" class="">兌換食品</a>
                                 </li>
                                 <li class="sub-item">
-                                    <a href="javascript:;" class="h5">兌換禮品</a>
+                                    <a href="javascript:;" class="">兌換禮品</a>
                                 </li>
                             </ul>
                         </div>
@@ -434,22 +443,22 @@
                     </div>
                 </div>
             </main>
-            <aside class="sub-nav-mobile">
+            <aside class="sub-nav-mobile nav-back">
                 <ul class="nav-panel list-unstyled text-center" id="nav-panel" data-switch="false">
                     <li class="nav-list">
                         <button type="button" class="nav-sub-btn font-weight-bold h-auto m-0" data-target="#sublist-shop">陪心商城</button>
                         <ul class="nav-sub-list list-unstyled" id="sublist-shop" data-switch="false">
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">最新優惠</a>
+                                <a href="" class="nav-sub-link font-weight-bold">最新優惠</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">餵 • 愛犬</a>
+                                <a href="" class="nav-sub-link font-weight-bold">餵 • 愛犬</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">餵 • 愛貓</a>
+                                <a href="" class="nav-sub-link font-weight-bold">餵 • 愛貓</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">P幣兌換</a>
+                                <a href="" class="nav-sub-link font-weight-bold">P幣兌換</a>
                             </li>
                         </ul>
                     </li>
@@ -457,16 +466,16 @@
                         <button type="button" class="nav-sub-btn font-weight-bold h-auto m-0" data-target="#sublist-about">關於陪心</button>
                         <ul class="nav-sub-list list-unstyled" id="sublist-about" data-switch="false">
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">陪心品牌</a>
+                                <a href="" class="nav-sub-link font-weight-bold">陪心品牌</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">關於客製化</a>
+                                <a href="" class="nav-sub-link font-weight-bold">關於客製化</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">獲國家級認證寵糧</a>
+                                <a href="" class="nav-sub-link font-weight-bold">獲國家級認證寵糧</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">經銷據點</a>
+                                <a href="" class="nav-sub-link font-weight-bold">經銷據點</a>
                             </li>
                         </ul>
                     </li>
@@ -474,22 +483,22 @@
                         <button type="button" class="nav-sub-btn font-weight-bold h-auto m-0" data-target="#sublist-life">陪心生活家</button>
                         <ul class="nav-sub-list list-unstyled" id="sublist-life" data-switch="false">
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">最新消息</a>
+                                <a href="" class="nav-sub-link font-weight-bold">最新消息</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">餵寵學堂</a>
+                                <a href="" class="nav-sub-link font-weight-bold">餵寵學堂</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">好評推薦</a>
+                                <a href="" class="nav-sub-link font-weight-bold">好評推薦</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">公益捐</a>
+                                <a href="" class="nav-sub-link font-weight-bold">公益捐</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">軍犬</a>
+                                <a href="" class="nav-sub-link font-weight-bold">軍犬</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">一日捐活動</a>
+                                <a href="" class="nav-sub-link font-weight-bold">一日捐活動</a>
                             </li>
                         </ul>
                     </li>
@@ -497,22 +506,22 @@
                         <button type="button" class="nav-sub-btn font-weight-bold h-auto m-0" data-target="#sublist-qa">Q&A</button>
                         <ul class="nav-sub-list list-unstyled" id="sublist-qa" data-switch="false">
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">客製化流程</a>
+                                <a href="" class="nav-sub-link font-weight-bold">客製化流程</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">試吃相關</a>
+                                <a href="" class="nav-sub-link font-weight-bold">試吃相關</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">健檢相關</a>
+                                <a href="" class="nav-sub-link font-weight-bold">健檢相關</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">保鮮相關</a>
+                                <a href="" class="nav-sub-link font-weight-bold">保鮮相關</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">餵食相關</a>
+                                <a href="" class="nav-sub-link font-weight-bold">餵食相關</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">購買相關</a>
+                                <a href="" class="nav-sub-link font-weight-bold">購買相關</a>
                             </li>
                         </ul>
                     </li>
@@ -520,7 +529,7 @@
                         <button type="button" class="nav-sub-btn font-weight-bold h-auto m-0" data-target="#sublist-like">我的收藏</button>
                         <ul class="nav-sub-list list-unstyled" id="sublist-like" data-switch="false">
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">收藏項目</a>
+                                <a href="" class="nav-sub-link font-weight-bold">收藏項目</a>
                             </li>
                         </ul>
                     </li>
@@ -528,22 +537,22 @@
                         <button type="button" class="nav-sub-btn font-weight-bold h-auto m-0" data-target="#sublist-member">會員專區</button>
                         <ul class="nav-sub-list list-unstyled" id="sublist-member" data-switch="false">
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">會員專區</a>
+                                <a href="" class="nav-sub-link font-weight-bold">會員專區</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">毛孩專區</a>
+                                <a href="" class="nav-sub-link font-weight-bold">毛孩專區</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">我的評價</a>
+                                <a href="" class="nav-sub-link font-weight-bold">我的評價</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">訂單查詢</a>
+                                <a href="" class="nav-sub-link font-weight-bold">訂單查詢</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">邀請我的好友</a>
+                                <a href="" class="nav-sub-link font-weight-bold">邀請我的好友</a>
                             </li>
                             <li class="nav-sub-item">
-                                <a href="" class="nav-sub-link font-weight-bold h5">登出</a>
+                                <a href="" class="nav-sub-link font-weight-bold">登出</a>
                             </li>
                         </ul>
                     </li>
@@ -551,5 +560,61 @@
             </aside>
         </div>
     </div>
+    <footer>
+        <div class="container-fluid bg-light">
+            <div class="row">
+                <div class="col-6 border d-flex justify-content-xl-end justify-content-center">
+                    <div class="social-media text-primary d-flex align-items-center position-relative">
+                        <i class="icon-fb"></i>
+                        <a href="javascript:;"class="">Facebook</a>
+                    </div>
+                </div>
+                <div class="col-6 border d-flex justify-content-xl-start justify-content-center">
+                    <div class="social-media text-primary d-flex align-items-center position-relative">
+                        <i class="icon-line text-primary"></i>
+                        <a href="javascript:;"class="">Line</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="connection row flex-column flex-xl-row align-items-start align-items-xl-center justify-content-between py-4 py-xl-5">
+                <div class="col-auto-xl d-flex justify-content-center align-items-center align-self-center py-2 py-xl-3">
+                    <i class="icon-logo2"></i>
+                </div>
+                <div class="col-auto-xl d-flex justify-content-center align-items-center py-2 py-xl-3">
+                    <i class="icon-phone text-primary"></i>
+                    <div class="d-flex flex-column text-dark font-weight-bold">
+                        <span>0080-029-920</span>
+                    </div>
+                </div>
+                <div class="col-auto-xl d-flex justify-content-center align-items-center py-2 py-xl-3">
+                    <i class="icon-email text-primary"></i>
+                    <div class="d-flex flex-column text-dark font-weight-bold">
+                        <span>客服信箱 service@nu4pet.com</span>
+                        <span>異業合作 pr@nu4pet.com</span>
+                    </div>
+                </div>
+                <div class="col-auto-xl d-flex justify-content-center align-items-center py-2 py-xl-3">
+                    <i class="icon-timer text-primary"></i>
+                    <div class="d-flex flex-column text-dark font-weight-bold">
+                        <span>平日 • 週一至週五 09:00-18:30</span>
+                        <span>週六日 • 國定假日 公休</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top">
+            <div class="container pt-4 pb-5">
+                <div class="copyright d-flex flex-column flex-xl-row  justify-content-between align-items-center">
+                    <span class="text-center font-weight-bold">服務條款及隱私保護政策 Copyright © 2020 nu4PET; 唯寵股份有限公司 版權所有</span>
+                    <div class="d-flex pt-4 pt-xl-0">
+                        <i class="icon-atm text-primary"></i>
+                        <i class="icon-master-card ml-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
