@@ -1,3 +1,71 @@
+aside{
+    .fixed-bar{
+        position: fixed;
+        bottom: 3rem;
+        @include media-max(576px){
+            right: 0.25rem;
+            bottom: 0.5rem;
+        }
+        z-index: 1;
+        .click-me{
+            display: block;
+            margin: 1.5rem auto;
+            img{
+                width: 150px;
+                @include media-max(576px){
+                    width: 100px;
+                }
+                @include media-max(400px){
+                    width: 75px;
+                }
+                pointer-events: none;
+            }
+        }
+        .icon-messenger{
+            display: block;
+            width: 109px;
+            height: 109px;
+            @include media-max(576px){
+                width: 72px;
+                height: 72px;
+            }
+            @include media-max(400px){
+                width: 55px;
+                height: 55px;
+            }
+            margin: 1.5rem auto;
+            svg{
+                pointer-events: none;
+            }
+        }
+        .icon-top{
+            display: block;
+            width: 109px;
+            height: 109px;
+            @include media-max(576px){
+                width: 72px;
+                height: 72px;
+            }
+            @include media-max(400px){
+                width: 55px;
+                height: 55px;
+            }
+            margin: 1.5rem auto;
+            svg{
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+section{
+    &.container{
+        @include media-min(1600px){
+            max-width: 1140px;
+        }
+    }
+}
+
 footer{
     .social-media{
         justify-content: center;

@@ -1,6 +1,7 @@
 import './scss/main.css'
+import '@assets/init.js'
 import '@/library/init'
+import '@/plugins/init'
 // import '@/models/init'
-// import '@/plugins/init'
 import '@/components/init'
 import '@/events/init'

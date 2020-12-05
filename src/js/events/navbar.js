@@ -1,8 +1,10 @@
 import $ from 'jquery';
 import * as lib from '@/library'
  
+
 // variables
 const desktop = {
+    type: 'type-desktop',
     item: 'nav-list',
     panel: 'list-panel',
     link: 'nav-link',
@@ -12,6 +14,7 @@ const desktop = {
     searchBar: 'search-bar',
 }
 const mobile = {
+    type: 'type-mobile',
     btn: 'nav-btn',
     panel: 'nav-panel',
     subBtn: 'nav-sub-btn',
@@ -21,10 +24,69 @@ const mobile = {
     asidePanel: 'sub-panel',
     asideWidth: '260px'
 }
-// console.dir(document.activeElement);
+// window event
+$(window).on('load',()=>{
+    const showAside = document.getElementById('shop-aside')
+    if (showAside) {
+        if (lib.isMobileDevice()) {
+            $(showAside).addClass(mobile.type)
+        }else{
+            $(showAside).addClass(desktop.type)
+        }
+    }
+})
+$(window).on('resize',()=>{
+
+    // aside 
+    const showAside = document.getElementById('shop-aside')
+    if (showAside) {
+        const $asideItem = $(`.${mobile.asideItem}`)
+        $asideItem.removeClass('active')
+        const $asidePanel = $asideItem.children(`.${mobile.asidePanel}`)
+        $asidePanel.attr('data-switch','false')
+        if (lib.isMobileDevice()) {
+            if ($(showAside).hasClass(desktop.type)) {
+                $asidePanel.css('width','0')
+                $asidePanel.hide()
+                $(showAside).removeClass(desktop.type)
+                $(showAside).addClass(mobile.type)
+            }
+        }else{
+            if ($(showAside).hasClass(mobile.type)) {
+                $asidePanel.css('width','auto')
+                $asidePanel.hide()
+                $(showAside).removeClass(mobile.type)
+                $(showAside).addClass(desktop.type)
+            }
+        }
+    }
+})
+// function
+function asideSlideShow($target){
+    $target.attr('data-switch','true')
+    console.log($target);
+    if (lib.isMobileDevice()) {
+        $target.show()
+        $target.animate({width: mobile.asideWidth},400)
+    }else{
+        $target.slideDown()
+    }
+}
+function asideSlideHide($el){
+    console.log($el);
+    $el.attr('data-switch','false')
+    if (lib.isMobileDevice()) {
+        $el.animate({width: '0'},400,()=>{
+            $el.hide()
+        })
+    }else{
+        $el.slideUp()
+    }
+}
 /**
  * Global Event
  */
+// console.dir(document.activeElement);
 $('body').on('click',(e)=>{ 
     // 在手機上不會觸發該事件
 
@@ -42,11 +104,8 @@ $('body').on('click',(e)=>{
         $(`.${mobile.asideItem}`).children(`.${mobile.asidePanel}`).each((index,el)=>{
             const $el = $(el)
             if ( $el.attr('data-switch') === 'true'){
-                $el.attr('data-switch','false')
                 $el.parents(`.${mobile.asideItem}`).removeClass('active')
-                $el.animate({width: '0'},400,()=>{
-                    $el.hide()
-                })
+                asideSlideHide($el)
             }
         })
     }
@@ -94,7 +153,6 @@ $('a,button,input').on('focus',(e)=>{
 $(`.${desktop.item}`)
 .on('mouseleave',()=>{
     $(`.${desktop.panel}`).attr('data-switch','false').stop(false,false).fadeOut(250)
-    console.log('mouseleave');
 })
 .children(`.${desktop.link}`).on('mouseenter',(e)=>{
     const $this = $(e.target)
@@ -102,15 +160,12 @@ $(`.${desktop.item}`)
     if ($target.attr('data-switch') === 'false') {
         $target.attr('data-switch','true')
         $target.stop(false,false).fadeIn(250)
-        
     }
-    console.log('mouseenter');
 })
 
 $(`.${desktop.subItem}`)
 .on('mouseleave',()=>{
     $(`.${desktop.subPanel}`).attr('data-switch','false').stop(false,false).fadeOut(250)
-    console.log('mouseleave');
 })
 .children(`.${desktop.subLink}`).on('mouseenter',(e)=>{
     const $this = $(e.target)
@@ -119,7 +174,6 @@ $(`.${desktop.subItem}`)
         $target.attr('data-switch','true')
         $target.stop(false,false).fadeIn(250)
     }
-    console.log('mouseenter');
 })
 
 /**
@@ -173,11 +227,8 @@ $(`.${mobile.btn}`).on('click',(e)=>{
         $(`.${mobile.asideItem}`).children(`.${mobile.asidePanel}`).each((index,el)=>{
             const $el = $(el)
             if ( $el.attr('data-switch') === 'true'){
-                $el.attr('data-switch','false')
                 $el.parents(`.${mobile.asideItem}`).removeClass('active')
-                $el.animate({width: '0'},400,()=>{
-                    $el.hide()
-                })
+                asideSlideHide($el)
             }
         })
     }
@@ -192,23 +243,15 @@ $(`.${mobile.asideBtn}`).on('click',(e)=>{
         const $el = $(el)
         if ( $el.attr('data-switch') === 'true' && $target[0] !== $el[0]){
             $el.parents(`.${mobile.asideItem}`).removeClass('active')
-            $el.attr('data-switch','false')
-            $el.animate({width: '0'},400,()=>{
-                $el.hide()
-            })
+            asideSlideHide($el)
         }
     })
     if ( $target.attr('data-switch') === 'false') {
-        $target.attr('data-switch','true')
         $this.parents(`.${mobile.asideItem}`).addClass('active')
-        $target.show()
-        $target.animate({width: mobile.asideWidth},400)
+        asideSlideShow($target)
     }else{
-        $target.attr('data-switch','false')
         $this.parents(`.${mobile.asideItem}`).removeClass('active')
-        $target.animate({width: '0'},400,()=>{
-            $target.hide()
-        })
+        asideSlideHide($target)
     }
     if (lib.isMobileDevice() && $(`.${mobile.panel}`).attr('data-switch') === 'true' ) {
         $(`.${mobile.panel}`).attr('data-switch','false').slideUp()
@@ -218,11 +261,8 @@ $(`.${mobile.asideBtn}`).on('click',(e)=>{
 // Navbar Touch sub-panel Event
 $(`.${mobile.asidePanel}`).each((index,el)=>{
     el.addEventListenerTouch('left',()=>{
-        const $this = $(el)
-        $this.attr('data-switch','false')
-        $this.parents(`.${mobile.asideItem}`).removeClass('active')
-        $this.animate({width: '0'},400,()=>{
-            $this.hide()
-        })
+        const $el = $(el)
+        $el.parents(`.${mobile.asideItem}`).removeClass('active')
+        asideSlideHide($el)
     })
 })

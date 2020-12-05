@@ -19,7 +19,23 @@ module.exports = {
                 }
             }
         ]
-    }, {
+    },{
+        test: /\.pug$/,
+        use: [
+            {
+            loader: 'html-loader',
+                options: {
+                    minimize: false
+                }
+            },
+            {
+            loader: 'pug-html-loader',
+                options: {
+                    pretty: true
+                }
+            },
+        ]
+      }, {
         test: /\.js$/,
         exclude: /\/node_modules\//,
         use: {
@@ -34,8 +50,8 @@ module.exports = {
             loader: 'url-loader',
             options: {
                 limit: 1000, //bytes
-                name: '[hash:16].[ext]',
-                outputPath: '',
+                name: '[name].[ext]',
+                outputPath: 'assets/image',
             }
         }
     }, {

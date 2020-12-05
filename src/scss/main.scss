@@ -28,6 +28,7 @@
 // Plugin
 @import 'font';
 @import 'sweetalert2/index';
+@import 'slick/index';
 
 // WebSite Setting
 @import 'reset';
@@ -36,12 +37,15 @@
 
 // Components
 @import 'components/icon';
+@import 'components/pagination';
 
 // WebSite Page
 @import 'page/layout';
 @import 'page/header';
 @import 'page/footer';
 @import 'page/home';
+@import 'page/shop';
+@import 'page/shop-detail';
 
 // Browser
 @import 'browser'

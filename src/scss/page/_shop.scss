@@ -1,0 +1,243 @@
+#shop-aside{
+    &.type-desktop{
+        width: 160px;
+        // position: absolute;
+        // left: 0;
+        // top: 0;
+        // z-index: 10;
+        .aside-list {
+            margin-top: 1rem;
+            margin-right: 1rem;
+        }
+        .aside-btn{
+            width: 100%;
+            border-width: 1px 0 1px 0;
+            border-color: $gray-light;
+            border-style: solid; 
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            background-color: $primary;
+            color: $white;
+            letter-spacing: 4px;
+            display: flex;
+            justify-content: center;
+            .icon-arrow-right{
+                display: none;
+            }
+            span{
+                pointer-events: none;
+            }
+        }
+        .aside-item{ }
+
+        .sub-panel{
+            display: none;
+        }
+
+        .sub-list{
+            background-color: $gray-light;
+            padding: 0.5rem 0;
+        }
+        .sub-item{
+            padding: 0.5rem 1.5rem;
+            a{
+                color: $dark;
+                font-weight: bold;
+                &:hover{
+                    color: $primary;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &.type-mobile{
+        width: 40px;
+        // .aside-list{
+        //     position: fixed;
+        //     left: 0;
+        //     top: 9rem;
+        //     z-index: 100;
+        // }
+        .aside-item{
+            position: relative;
+            margin: 1rem 0;
+            &.active{
+                .aside-btn{
+                    border-radius: 0;
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
+        }
+        .aside-btn{
+            position: relative;
+            z-index: 2;
+            width: 2.5rem;
+            height: 110px;
+            line-height: 1.2;
+            border: 0;
+            border-radius: 0 0.75rem 0.75rem 0;
+            margin: 0;
+            color: $dark;
+            background-color: #e5e5e5;
+            transition: all 0.3s;
+            .icon-arrow-right{
+                display: block;
+                svg{
+                    margin: 6px auto;
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+            > span{
+                pointer-events: none;
+            }
+        }
+        .sub-panel{
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #e5e5e5;
+            border-radius: 0 25px 25px 0;
+            width: 0;
+            overflow: hidden;
+            display: none;
+        }
+        .sub-list{
+            width: 260px;
+            height: 100%;
+            padding: 1rem 0.75rem 1rem 3rem;
+            margin: auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .sub-item{
+            width: 50%;
+            height: 33.33333%;
+            padding: 0.25rem 0.25rem;
+            a{
+                line-height: 1;
+                font-size: 0.75rem;
+                font-weight: bold;
+                color: #959595;
+                &:hover{
+                    color: $primary;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.shop{
+    article{
+        figure{
+            .card-body{
+                padding: 0.5rem;
+            }
+            h3{
+                font-size: 1.5rem;
+            }
+            .heading-sub{
+                font-size: 1.125rem;
+            }
+            .text-price{
+                font-size: 1.125rem;
+                h4{
+                    font-size: 1.75rem;
+                }
+            }
+            .text-del-price{
+                margin-top: -0.75rem;
+            }
+            .icon-block{
+                width: 41px;
+                height: 41px;
+                margin-left: 0.5rem;
+            }
+            @include media-max(768px){
+                .card-body{
+                    padding: 0.25rem;
+                }
+                h3{
+                    font-size: 1.25rem;
+                }
+                .heading-sub{
+                    font-size: 1rem;
+                }
+                .text-price{
+                    font-size: 1rem;
+                    h4{
+                        font-size: 1.25rem;
+                    }
+                }
+                .text-del-price{
+                    font-size: 1rem;
+                    margin-top: -0.5rem;
+                }
+                .icon-block{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            @include media-max(576px){
+                h3{
+                    font-size: 1rem;
+                }
+                .heading-sub{
+                    font-size: 0.75rem;
+                }
+                .text-price{
+                    font-size: 0.75rem;
+                    h4{
+                        font-size: 1rem;
+                    }
+                }
+                .text-del-price{
+                    font-size: 0.75rem;
+                }
+                .icon-block{
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 0.25rem;
+                }
+            }
+            @include media-max(374px){
+                h3{
+                    font-size: 0.75rem;
+                }
+                .text-price{
+                    position: relative;
+                    left: -0.25rem;
+                    span{
+                        transform: scale(0.75);
+                    }
+                    h4{
+                        transform: scale(0.75);
+                        position: relative;
+                        left: -0.25rem;
+                    }
+                }
+                .text-del-price{
+                    position: relative;
+                    left: -0.375rem;
+                    span{
+                        transform: scale(0.75);
+                    }
+                    del{
+                        transform: scale(0.75);
+                        position: relative;
+                        left: -0.5rem;
+                    }
+                }
+                .icon-block{
+                    width: 15px;
+                    height: 15px;
+                    margin: 0.125rem;
+                }
+            }
+        }
+    }
+}

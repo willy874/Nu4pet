@@ -18,6 +18,23 @@
             padding: 0.75rem 1rem 0.5rem 2rem;
         }
     }
+    .logo{
+        .icon-logo1{
+            width: 223px;
+            height: 82px;
+            @include media-max(748px){
+                width: 160px;
+                height: 60px;
+            }
+            @include media-max(576px){
+                width: 131px;
+                height: 52px;
+            }
+            @include media-max(374px){
+                width: 90px;
+            }
+        }
+    }
 }
 .nav-bar{
     padding: 0 2rem;
@@ -209,19 +226,7 @@
         }
     }
 }
-.sub-nav-mobile{
-    &.nav-back{
-        position: absolute;
-        top: 0;
-        bottom: 100%;
-        left: 0;
-        right: 0;
-        transition: all 0.3s;
-        background-color: rgba($white , 0.8);
-        &.active{
-            bottom: 0;
-        }
-    }
+header{
     .sub-nav-item{
         padding: 0 1rem;
         @include media-max(576px){
@@ -243,119 +248,59 @@
             color: $primary;
         }
     }
-    .nav-panel{
-        position: absolute;
-        z-index: 1;
-        width: 150px;
-        left: auto;
-        right: 0;
-        top: 0;
-        display: none;
-    }
-    .nav-list{
-
-    }
-    .nav-sub-btn{
-        width: 100%;
-        border-width: 1px 0 1px 0;
-        border-color: $gray-light;
-        border-style: solid; 
-        font-size: 1rem;
-        padding: 0.5rem 0;
-        background-color: $primary;
-        color: $white;
-        letter-spacing: 2px;
-    }
-    .nav-sub-list{
-        background-color: $gray-light;
-        padding: 0.5rem 0;
-        display: none;
-    }
-    .nav-sub-item{
-        padding: 0.5rem 1rem;
-    }
-    .nav-sub-link{
-        color: $dark;
-        font-weight: bold;
-        &:hover{
-            color: $primary;
-            text-decoration: none;
-        }
-    }
 }
-
-
 aside{
-    @include media-min(1200px){
-        &.sub-nav-mobile{
+    &.sub-nav-mobile{
+        z-index: 150;
+        @include media-min(1200px){
             display: none;
         }
-    }
-    // .aside-list{}
-    .aside-item{
-        position: relative;
-        &.active{
-            .aside-btn{
-                border-radius: 0;
-                background-color: $primary;
-                color: $white;
+        &.nav-back{
+            position: absolute;
+            top: 0;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            transition: all 0.3s;
+            background-color: rgba($white , 0.8);
+            &.active{
+                bottom: 0;
             }
         }
-    }
-    .aside-btn{
-        position: relative;
-        z-index: 2;
-        width: 2.5rem;
-        height: 110px;
-        line-height: 1.2;
-        border: 0;
-        border-radius: 0 0.75rem 0.75rem 0;
-        margin: 0;
-        color: $dark;
-        background-color: #e5e5e5;
-        transition: all 0.3s;
-        .icon-arrow-right{
-            display: block;
-            svg{
-                margin: 6px auto;
-                width: 8px;
-                height: 8px;
-            }
+        .nav-panel{
+            position: absolute;
+            z-index: 1;
+            width: 150px;
+            left: auto;
+            right: 0;
+            top: 0;
+            display: none;
         }
-        > span{
-            pointer-events: none;
+        .nav-list{
+    
         }
-    }
-    .sub-panel{
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        background-color: #e5e5e5;
-        border-radius: 0 25px 25px 0;
-        width: 0;
-        display: none;
-        overflow: hidden;
-    }
-    .sub-list{
-        width: 260px;
-        height: 100%;
-        padding: 1rem 0.75rem 1rem 3rem;
-        margin: auto 0;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    .sub-item{
-        width: 50%;
-        height: 33.33333%;
-        padding: 0.25rem 0.25rem;
-        a{
-            line-height: 1;
-            font-size: 0.75rem;
+        .nav-sub-btn{
+            width: 100%;
+            border-width: 1px 0 1px 0;
+            border-color: $gray-light;
+            border-style: solid; 
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            background-color: $primary;
+            color: $white;
+            letter-spacing: 2px;
+        }
+        .nav-sub-list{
+            background-color: $gray-light;
+            padding: 0.5rem 0;
+            display: none;
+        }
+        .nav-sub-item{
+            padding: 0.5rem 1rem;
+        }
+        .nav-sub-link{
+            color: $dark;
             font-weight: bold;
-            color: #959595;
             &:hover{
                 color: $primary;
                 text-decoration: none;
