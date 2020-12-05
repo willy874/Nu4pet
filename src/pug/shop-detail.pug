@@ -1,0 +1,89 @@
+extends ./layout/index.pug
+
+block content
+  main.col.shop-detail
+    section.container
+      .row
+        .col-lg-6.py-3
+          .d-flex
+            .flex-shrink-0.d-flex.flex-column
+              .position-relative.flex-grow-1(style='width: 75px;')
+                .scroll-panel
+                  ul.list-unstyled.m-0.pr-1
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+                    li.mb-1
+                      button.border-0.w-100.p-0(type='button')
+                        .bg-gray-light(style='padding-top: 100%;')
+            .flex-grow-1.pl-3
+              a(href='javascript:;')
+                .w-100.bg-gray-light(style='padding-top: 100%;')
+        .col-lg-6.d-flex.flex-column.py-3
+          h2.text-dark
+            | 多貓家庭搭伙合菜
+            br
+            |                     『美味雞魚配方』
+          .d-flex.align-items-end.py-3.pl-4
+            .text-price.d-flex.align-items-end.pr-3
+              span.font-weight-bold.text-primary NT$
+              h4.font-weight-bold.text-primary.mb-0 1488
+              span.font-weight-bold.text-primary 起
+            .text-del-price.d-flex
+              span.text-dark.d-block 原價：
+              del.text-dark.d-block 1900
+          p.text-dark.border-left.py-3.pl-4.flex-grow-1.mb-0
+            | 0%穀物，由黑豆及地瓜提供優質植物性營養成分
+            br
+            |                     使用新鮮羊肉及新鮮魚肉兩種動物性蛋白質，提供貓咪所需的胺基酸
+            br
+            |                     添加蔓越莓萃取物，幫助毛髮順利排出，減少貓貓嘔吐及乾咳狀況
+            br
+            |                     特別添加腸道保健益生菌，幫助消化、維護腸道健康
+            br
+    section.container
+      .social-media.row.align-items-center.py-3
+        .col-auto.text-dark.h6.font-weight-bold 分享到
+        a.icon-copy-round.size-36.mx-1(href='javascript:;')
+        a.icon-fb-round.size-36.mx-1(href='javascript:;')
+        a.icon-line-round.size-36.mx-1(href='javascript:;')
+        a.icon-link-round.size-36.mx-1(href='javascript:;')
+      .select-case.d-flex.justify-content-center.border-bottom.py-3
+        button.btn.btn-primary.text-white.d-flex.align-items-center(type='button')
+          .icon-shop-solid.mr-2
+          span 選擇方案
+      nav.row.justify-content-around.py-2
+        .col-sm-4.text-center.py-2
+          a.font-weight-bold(href='javascript:;') 商品內容
+        .col-sm-4.text-center.py-2
+          a.font-weight-bold(href='javascript:;') 營養成分
+        .col-sm-4.text-center.py-2
+          a.font-weight-bold(href='javascript:;') 好評推薦
+    section
+      .modal(tabindex='-1')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              h5.modal-title Modal title
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') ×
+            .modal-body
+              p Modal body text goes here.
+            .modal-footer
+              button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+              button.btn.btn-primary(type='button') Save changes

@@ -1,0 +1,12 @@
+doctype html
+html
+    include meta.pug
+    body
+        include header.pug
+        include fixed-aside.pug
+        .position-relative
+            .row.no-gutters.flex-nowrap
+                include mobile-panel
+                block aside
+                block content
+        include footer.pug

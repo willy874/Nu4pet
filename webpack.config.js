@@ -39,7 +39,7 @@ module.exports = (evn,option)=>{
                 'node_modules'
             ]
         },
-        module: WebpackModuleSettings
+        module: WebpackModuleSettings(option)
     }
     
 }

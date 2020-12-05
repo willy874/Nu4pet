@@ -1,6 +1,4 @@
-const Controller = require('../Controller')
-
-
+const Controller = require('../controller')
 
 module.exports =  class Route{
     constructor(app){
