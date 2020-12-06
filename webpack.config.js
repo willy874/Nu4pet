@@ -12,7 +12,8 @@ module.exports = (evn,option)=>{
         mode: option.mode,
         entry: {
             main: './src/main.js',
-            home: './src/js/page/home.js'
+            // home: './src/js/page/home.js'
+            nutrition: './src/js/page/nutrition.js'
         },
         devtool: 'source-map',
         output: {

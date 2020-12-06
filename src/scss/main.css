@@ -14572,4 +14572,9 @@ aside.sub-nav-mobile .nav-sub-link:hover {
 .shop-detail section .modal {
   background-color: rgba(255, 255, 255, 0.8);
 }
+
+#nutrition-char {
+  height: 100%;
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */

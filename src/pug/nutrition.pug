@@ -1,0 +1,13 @@
+extends ./layout/index.pug
+
+block content
+    main.nutrition.col
+      section.container
+        .border.border-primary
+          .border.border-primary.px-sm-5.px-0
+            h2.py-4 營養評估
+            .px-sm-5.px-3
+              .position-relative(style='padding-top: 100%;')
+                .position-fill
+                  canvas#nutrition-char(width='1000' height='1000')
+        
