@@ -1,0 +1,76 @@
+@import 'slick-theme';
+@import 'slick';
+
+.slick-slider{
+    .slick-dots{
+        bottom: 0;
+        button{
+            &::before{
+                color: $dark;
+            }
+        }
+        .slick-active{
+            button{
+                &::before{
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .slick-arrow {
+        width: 2rem;
+        height: 2rem;
+        &::before{
+            display: none;
+        }
+        &::after{
+            display: none;
+        }
+        &.slick-prev{
+            background-image: url('./image/arrow-left-round.svg');
+        }
+        &.slick-next{
+            background-image: url('./image/arrow-right-round.svg');
+
+        }
+    }
+}
+
+#slick-home-benner{
+    .slick-dots{
+        bottom: -24px;
+    }
+    .slick-arrow {
+        z-index: 1;
+        &.slick-prev{
+            left: 1.5rem;
+        }
+        &.slick-next{
+            right: 1.5rem;
+        }
+    }
+}
+#slick-home-shop{
+
+}
+#slick-home-evaluation{
+    .slick-arrow {
+        z-index: 1;
+        &.slick-prev{
+            left: 50%;
+        }
+        &.slick-next{
+            right: 1rem;
+        }
+    }
+    @media(max-width: 992px){
+        .slick-arrow {
+            &.slick-prev{
+                left: 1rem;
+            }
+            &.slick-next{
+                right: 1rem;
+            }
+        }
+    }
+}

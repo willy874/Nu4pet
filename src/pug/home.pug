@@ -2,7 +2,7 @@ extends ./layout/index.pug
 
 block content
     main.home.col.overflow-hidden
-      section.sec1.px-sm-5.pt-3.pt-sm-4.pb-4.pb-lg-0
+      section.sec1.px-sm-5.pt-3.pt-sm-4.pb-4.pb-lg-3
         .bg-light.d-flex.flex-wrap
           .col-lg-6
             .img-kv
@@ -26,21 +26,16 @@ block content
               a(href='javascript:;')
                 .icon-cook2
       section.sec3.container
-        .row
-          ul#slick-home-benner.col-12.h-100.list-unstyled.px-0
-            // FIXME Benner
-            li.container
-              .position-relative.py-3
-                img.img-fluid(src='./assets/image/benner-01.min.jpg' alt='')
-            li.container
-              .position-relative.py-3
-                img.img-fluid(src='./assets/image/benner-02.min.jpg' alt='')
-            li.container
-              .position-relative.py-3
-                img.img-fluid(src='./assets/image/benner-03.min.jpg' alt='')
-            li.container
-              .position-relative.py-3
-                img.img-fluid(src='./assets/image/benner-04.min.jpg' alt='')
+        .row.pt-3.pb-5
+          ul#slick-home-benner.col-12.h-100.list-unstyled
+            li
+              img.img-fluid(src='./assets/image/benner-01.min.jpg' alt='')
+            li
+              img.img-fluid(src='./assets/image/benner-02.min.jpg' alt='')
+            li
+              img.img-fluid(src='./assets/image/benner-03.min.jpg' alt='')
+            li
+              img.img-fluid(src='./assets/image/benner-04.min.jpg' alt='')
       section.sec4.container
         .row.no-gutters.py-3
           .col-6.bg-light.d-flex.flex-center
@@ -49,140 +44,99 @@ block content
               p.text-center.text-dark.font-weight-bold
                 | 我們優先進行的便是
                 br
-                |                         "能量的客製化"
+                | "能量的客製化"
                 br
-                |                         藉由每日定量定餐
+                | 藉由每日定量定餐
                 br
-                |                         希望把每個寶貝
+                | 希望把每個寶貝
                 br
-                |                         都維持在最健康的體態
+                |  都維持在最健康的體態
                 br
           .col-6
             img.w-100(src='./assets/image/brand-core.min.jpg' alt='')
       section.sec5.container
         .row.no-gutters.py-3.position-relative
-          .col-6.d-none.d-xl-block
+          .col-6
             img.w-100(src='./assets/image/commodity.min.jpg' alt='')
-          .left-block.col-xl-6.bg-light.d-flex.flex-column
-            h2.text-center.text-dark.font-weight-bold.d-xl-none.d-block
+          .right-block.col-6.bg-light.d-flex.flex-column.flex-center
+            h2.text-center
+              span.text-white.d-inline-block.mx-auto(style='background-color: #eccd8c;') #DIET&HEALTH
+            h3.text-center.text-dark.h2.font-weight-bold
               | Choose 
               br
-              |                     Yours Healthy
-            ul#slick-home-shop.list-unstyled.flex-grow-1
-              // FIXME lg ~ xl *2
-              li
-                figure
-                  .position-relative.mb-3(style='padding-top: 100%;background-color: #ccc;')
-                    img.position-fill.img-cover(src='' alt='')
-                  figcaption.h5.font-weight-bold.text-dark
-                    | 多貓家庭 
-                    br
-                    |                                 搭伙合菜『美味雞魚配方』
-                  .border-bottom
-                  .d-flex.justify-content-between.py-2
-                    .pt-1
-                      div
-                        span.font-weight-bold.h6.text-dark NT$
-                        span.font-weight-bold.h3.text-dark 1488
-                      div
-                        span.text-dark 原價：
-                        del.text-dark 1900
-                    div
-                      a.d-inline-block(href='javascript:;')
-                        .size-41.icon-heart-round.text-primary
-                      a.d-inline-block(href='javascript:;')
-                        .size-41.icon-share.text-primary.ml-2
-              li
-                figure
-                  .position-relative.mb-3(style='padding-top: 100%;background-color: #ccc;')
-                    img.position-fill.img-cover(src='' alt='')
-                  figcaption.h5.font-weight-bold.text-dark
-                    | 多貓家庭 
-                    br
-                    |                                 搭伙合菜『美味雞魚配方』
-                  .border-bottom
-                  .d-flex.justify-content-between.py-2
-                    .pt-1
-                      div
-                        span.font-weight-bold.h6.text-dark NT$
-                        span.font-weight-bold.h3.text-dark 1488
-                      div
-                        span.text-dark 原價：
-                        del.text-dark 1900
-                    div
-                      a.d-inline-block(href='javascript:;')
-                        .size-41.icon-heart-round.text-primary
-                      a.d-inline-block(href='javascript:;')
-                        .size-41.icon-share.text-primary.ml-2
-              li
-                figure
-                  .position-relative.mb-3(style='padding-top: 100%;background-color: #ccc;')
-                    img.position-fill.img-cover(src='' alt='')
-                  figcaption.h5.font-weight-bold.text-dark
-                    | 多貓家庭 
-                    br
-                    |                                 搭伙合菜『美味雞魚配方』
-                  .border-bottom
-                  .d-flex.justify-content-between.py-2
-                    .pt-1
-                      div
-                        span.font-weight-bold.h6.text-dark NT$
-                        span.font-weight-bold.h3.text-dark 1488
-                      div
-                        span.text-dark 原價：
-                        del.text-dark 1900
-                    div
-                      a.d-inline-block(href='javascript:;')
-                        .size-41.icon-heart-round.text-primary
-                      a.d-inline-block(href='javascript:;')
-                        .size-41.icon-share.text-primary.ml-2
-          .absolute-center.d-none.d-xl-block
+              |  Yours Healthy
             .text-center
-              span.text-white.h6.d-inline-block.mx-auto.py-2.px-3.letter-spacing-8(style='background-color: #eccd8c;') #DIET&HEALTH
-            h2.text-center.text-dark.h2.font-weight-bold.py-4
-              | Choose 
-              br
-              |                     Yours Healthy
-            .text-center.py-4
-              a.text-dark.font-weight-bold(href='javascript:;') SHOP NOW
+              a.d-block.text-dark.font-weight-bold(href='javascript:;') SHOP NOW
       section.sec6.container
-        .row
-          .left-block.col-lg-7.order-1
-            figure.d-flex.flex-column
-              h2.font-weight-bold.text-dark 優等生的陪心寵糧 保證吃了頭好壯壯
-              .text-sub.d-flex.flex-between
-                .text-date.font-weight-bold.text-dark.py-1.mb-0
-                  span 日期
-                  span 2020.07.07
-                .text-evaluation.d-flex.align-items-center
-                  span.font-weight-bold.text-dark.mb-0 給予評價心
-                  .evaluation(data-level='4.5' data-max='5')
-                    .icon-heart-fill
-              p.font-weight-bold.text-dark.flex-grow-1
-                | 每天定量餵食可以控制麥麥們的體重,讓他們維持健美體態~
-                br
-                |                         一天一包容易保存,可以維持飼料新鮮,讓麥麥們吃得很健康
-                br
-                |                         陪心寵糧的飼料不油膩,但嗜口性強
-                br
-                |                         麥麥們通常都在5分鐘內秒殺!!
-                br
-                |                         飼料爽脆口感讓Milo&Mycrof愛不釋口!
-                br
-                |                         Milo的腸胃很敏感,但陪寵的客服非常熱心親切
-                br
-                |                         替她一次又一次更換配方,並耐心確認她的食用狀況
-                br
-                |                         現在Milo快兩歲了便便的形狀都是完整且好清理的!
-                br
-              .list-icon.d-flex.flex-between
-                .icon-dog-run.col
-                .icon-dog-ball.col
-                .icon-dog-food.col
-                .icon-dog-house.col
-          .right-block.col-lg-5.order-0.order-lg-2
-            img.w-100(src='./assets/image/dog-photo.png' alt='')
-      section.sec7.position-relative
+        article.pb-3.pt-4.bg-light
+          h2.text-center.text-dark.font-weight-bold
+            | Choose 
+            br
+            | Yours Healthy
+          #slick-home-shop.list-unstyled
+            each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+              figure
+                .position-relative.mb-3(style='padding-top: 100%;background-color: #ccc;')
+                  img.position-fill.img-cover(src='' alt='')
+                figcaption.font-weight-bold.text-dark
+                  | 多貓家庭 
+                  br
+                  | 搭伙合菜『美味雞魚配方』
+                .border-bottom
+                .d-flex.justify-content-between.py-2
+                  .pt-1
+                    div
+                      span.font-weight-bold.h6.text-dark NT$
+                      span.font-weight-bold.h3.text-dark 1488
+                    div
+                      span.text-dark 原價：
+                      del.text-dark 1900
+                  div
+                    a.d-inline-block(href='javascript:;')
+                      .size-41.icon-heart-round.text-primary
+                    a.d-inline-block(href='javascript:;')
+                      .size-41.icon-share.text-primary.ml-2
+      section.sec7.container
+        #slick-home-evaluation
+          each val in [1, 2, 3]
+            .container
+              .row
+                .left-block.col-lg-7.order-1
+                  figure.d-flex.flex-column
+                    h2.font-weight-bold.text-dark 優等生的陪心寵糧 保證吃了頭好壯壯
+                    .text-sub.d-flex.flex-between
+                      .text-date.font-weight-bold.text-dark.py-1.mb-0
+                        span 日期
+                        span 2020.07.07
+                      .text-evaluation.d-flex.align-items-center
+                        span.font-weight-bold.text-dark.mb-0 給予評價心
+                        .evaluation(data-level='4.5' data-max='5')
+                          .icon-heart-fill
+                    p.font-weight-bold.text-dark.flex-grow-1
+                      | 每天定量餵食可以控制麥麥們的體重,讓他們維持健美體態~
+                      br
+                      | 一天一包容易保存,可以維持飼料新鮮,讓麥麥們吃得很健康
+                      br
+                      | 陪心寵糧的飼料不油膩,但嗜口性強
+                      br
+                      | 麥麥們通常都在5分鐘內秒殺!!
+                      br
+                      | 飼料爽脆口感讓Milo&Mycrof愛不釋口!
+                      br
+                      | Milo的腸胃很敏感,但陪寵的客服非常熱心親切
+                      br
+                      | 替她一次又一次更換配方,並耐心確認她的食用狀況
+                      br
+                      | 現在Milo快兩歲了便便的形狀都是完整且好清理的!
+                      br
+                    .list-icon.d-flex.flex-between
+                      .icon-dog-run.col
+                      .icon-dog-ball.col
+                      .icon-dog-food.col
+                      .icon-dog-house.col
+                .right-block.col-lg-5.order-0.order-lg-2.pb-4.pb-lg-0
+                  img.w-100(src='./assets/image/dog-photo.png' alt='')
+      section.sec8.position-relative
         .absolute-center.text-center
           .mb-2 Find us on Facebook
           .mb-4.h5.font-weight-bold 陪心寵糧：您毛孩的專屬私廚

@@ -3,11 +3,22 @@ const route = require('./route')
 module.exports = (app)=>{
     const Route = new route(app)
     Route.get('/', (req,res)=>{
-        return res.send('這是首頁')
+        res.send('Hello World!')
     })
 
-    // API
-    Route.get('/shop', 'ShopController@getName')
+    /**
+     * API
+     */
+    
+    // ShopController
+    Route.api('get','/shop', 'ShopController@getShopListData')
+    Route.api('get','/shop/all', 'ShopController@getShopAllData')
+    Route.api('get','/shop/:id?', 'ShopController@getShopDataById')
+
+    // PetController
+    Route.api('get','/pet', 'PetController@getPetListData')
+    Route.api('get','/pet/all', 'PetController@getPetAllData')
+    Route.api('get','/pet/:id?', 'PetController@getPetDataById')
 
     return Route
 }

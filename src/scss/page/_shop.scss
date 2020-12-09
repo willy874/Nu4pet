@@ -1,10 +1,13 @@
 #shop-aside{
     &.type-desktop{
         width: 160px;
-        // position: absolute;
-        // left: 0;
-        // top: 0;
-        // z-index: 10;
+        .aside-panel{
+            width: 160px;
+            position: fixed;
+            left: 0;
+            top: 153px;
+            z-index: 10;
+        }
         .aside-list {
             margin-top: 1rem;
             margin-right: 1rem;
@@ -52,12 +55,13 @@
     }
     &.type-mobile{
         width: 40px;
-        // .aside-list{
-        //     position: fixed;
-        //     left: 0;
-        //     top: 9rem;
-        //     z-index: 100;
-        // }
+        .aside-panel{
+            width: 40px;
+            position: fixed;
+            left: 0;
+            top: 103px;
+            z-index: 10;
+        }
         .aside-item{
             position: relative;
             margin: 1rem 0;

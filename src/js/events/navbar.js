@@ -110,7 +110,23 @@ $('body').on('click',(e)=>{
         })
     }
 })
-
+$('a').on('click',(e)=>{
+    const $target = $(e.target)
+    const href = $target.attr('href')
+    if (/^#/.test(href)) {
+        e.preventDefault()
+        $('html,body').animate({
+            scrollTop: $(href).offset().top
+        }, 1000);
+    }
+    if (/^javascript:/.test(href)) {
+        e.preventDefault()
+    }
+    if (/^http/.test(href) && !(new RegExp(origin).test(href))) {
+        e.preventDefault()
+        window.open(href)
+    }
+})
 $('a,button,input').on('focus',(e)=>{
     const $this = $(e.target)
     const $prevFocus = document.prevFocus ? $(document.prevFocus) : $('body')

@@ -1,0 +1,8 @@
+a,button{
+    svg,div,span,img{
+        pointer-events: none;
+    }
+    &:hover{
+        text-decoration: none;
+    }
+}

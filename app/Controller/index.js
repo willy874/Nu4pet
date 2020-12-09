@@ -1,3 +1,4 @@
 module.exports = {
-    ShopController: require('./shop')
+    ShopController: require('./shop'),
+    PetController: require('./pet')
 }

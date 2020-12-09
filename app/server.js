@@ -1,4 +1,5 @@
 const express = require('express')
+require('colors')
 const SocketServer = require('ws').Server
 const createRoute = require('./router')
 const app = express()
@@ -9,7 +10,8 @@ const Route = createRoute(app)
 
 const wss = new SocketServer({
     server: app.listen(port, () => {
-        console.log(`Server app listening at http://localhost:${port}/dist/home.html`)
+        console.log('Server app listening at',`http://localhost:${port}/dist/home.html`.blue)
+        console.log('Server API test',`http://localhost:${port}/api/pet`.blue)
     })
 })
 wss.on('connection', ws => {

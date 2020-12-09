@@ -1,0 +1,10 @@
+ [{
+     "id": 1,
+     "name": "Ginger",
+     "type": "dog",
+     "sex": "M",
+     "age": 0,
+     "variety": "拉不拉多",
+     "weight": 2,
+     "image": ""
+ }]
