@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import App from './pet/App.vue'
-// import config from '@/config'
 import store from './pet/store'
 import router from './pet/router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-// import Swal from 'sweetalert2'
 
 Vue.use(VueAxios, axios)
 

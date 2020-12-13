@@ -10,14 +10,33 @@ module.exports = class Model {
     constructor(ops){
         this.table = ops.table
         this.fillable = ops.fillable
+        this.middleware =  ops.middleware && {
+            getDB: ops.middleware.getDB || undefined,
+            getTable: ops.middleware.getTable || undefined,
+            addTable: ops.middleware.addTable || undefined,
+        } || {}
+
         this.primaryKey = ops.primaryKey || 'id'
         this.insertRules = ops.insertRules || function(){console.log(`Insert is not rules.`)}
+        const value = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
         Object.defineProperty(this,'DB',{
-            enumerable: false,
-            value: JSON.parse(
-                fs.readFileSync(`./app/db/${this.table}.json`).toString()
-            )
+            get: function(){
+                const getTable = (param) =>{
+                    if (this.middleware.getTable) {
+                        return param.map(v=>this.middleware.getTable(v))
+                    }
+                    return param
+                }
+                const getDB = (param) =>{
+                    if (this.middleware.getDB) {
+                        return this.middleware.getDB(param)
+                    }
+                    return param
+                }
+                return getDB(getTable(value))
+            }
         })
+        this.whereRules = []
     }
     where(key,param1,param2){
         const param = {}
@@ -28,27 +47,29 @@ module.exports = class Model {
             param.rule = '='
             param.data = param1
         }
-        this.whereRules = (DB)=>{
-            return DB.filter(t=>{
-                if (param.rule === '=' || param.rule === '==') {
-                    return t[key] == param.data
-                }else if (param.rule === '==='){
-                    return t[key] === param.data
-                }else if (param.rule === '<'){
-                    return t[key] < param.data
-                }else if (param.rule === '>'){
-                    return t[key] > param.data
-                }else if (param.rule === '<='){
-                    return t[key] <= param.data
-                }else if (param.rule === '>='){
-                    return t[key] >= param.data
-                }else if (param.rule === 'like'){
-                    return new RegExp(param.data).test(t[key])
-                }else{
-                    return t[key] == param.data
-                }
-            })
-        }
+        this.whereRules.push(
+            (DB)=>{
+                return DB.filter(t=>{
+                    if (param.rule === '=' || param.rule === '==') {
+                        return t[key] == param.data
+                    }else if (param.rule === '==='){
+                        return t[key] === param.data
+                    }else if (param.rule === '<'){
+                        return t[key] < param.data
+                    }else if (param.rule === '>'){
+                        return t[key] > param.data
+                    }else if (param.rule === '<='){
+                        return t[key] <= param.data
+                    }else if (param.rule === '>='){
+                        return t[key] >= param.data
+                    }else if (param.rule === 'like'){
+                        return new RegExp(param.data).test(t[key])
+                    }else{
+                        return t[key] == param.data
+                    }
+                })
+            }
+        )
         return this
     }
     all(callback){
@@ -67,8 +88,10 @@ module.exports = class Model {
         return this.DB
     }
     get(){
-        if (this.whereRules) {
-            return this.whereRules(this.DB)
+        if (this.whereRules.length) {
+            return this.whereRules.reduce((where,val)=>{
+                return where(val)
+            },this.DB)
         }
         return this.DB
     }
@@ -99,6 +122,7 @@ module.exports = class Model {
             primaryKey,
             table,
             fillable,
+            middleware,
             DB
         } = this
         const newData = {}
@@ -119,7 +143,11 @@ module.exports = class Model {
         }
         fillable.forEach(key=>{
             if (data[key] !== undefined) {
-                newData[key] = data[key]
+                if (middleware.addTable) {
+                    newData[key] = middleware.addTable(data,key)
+                }else{
+                    newData[key] = data[key]
+                }
             }
         })
         DB.push(newData)

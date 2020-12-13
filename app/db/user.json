@@ -1,0 +1,23 @@
+[{
+    "id": 1,
+    "account": "admin",
+    "password": "password",
+    "name": "測試管理者",
+    "email": "admin@nu4pet.com",
+    "phone": "0900101101",
+    "created_at": "2020/12/01",
+    "updated_at": "2020/12/01",
+    "deleted_at": null,
+    "pet": "1,2,3,4"
+},{
+    "id": 2,
+    "account": "user",
+    "password": "password",
+    "name": "測試使用者",
+    "email": "user@nu4pet.com",
+    "phone": "0900101101",
+    "created_at": "2020/12/01",
+    "updated_at": "2020/12/01",
+    "deleted_at": null,
+    "pet": "1,2,3,4"
+}]

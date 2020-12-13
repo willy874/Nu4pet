@@ -21,11 +21,13 @@ module.exports =  class Route{
                 return handle(data)
             }
         }
+        this.apiData = []
     }
     get(url,callback){
         this.app.get(url,this.handleCallback(callback))
     }
     api(method,url,callback){
+        this.apiData.push({method,url})
         this.app[method]('/api'+url,this.handleCallback(callback))
     }
     post(url,callback){

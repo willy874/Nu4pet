@@ -1,5 +1,6 @@
 import Dog from './dog'
 import Char from './char'
+import * as easings from './easings'
 
 /**
  * @param {HTMLElement} ops.el *建立 Canvas 的目標
@@ -17,7 +18,10 @@ export default class NutritionChar {
             throw new Error('沒有傳入 Canvas 建立目標')
         }
         this.ctx = entity.el.getContext('2d')
-        this.animate = entity.animate || { durationCount: 180 }
+        this.animate = entity.animate || { 
+            durationCount: 180,
+            easings: 'easeInSine'
+         }
         this.delay =  entity.delay || 0
         this.count = 0
         this.bw = entity.boxWidth || 1000
@@ -46,17 +50,25 @@ export default class NutritionChar {
     }
     dataMathUpdate(arrKey){
         arrKey.forEach(key=>{
-            const x = this.targetData[key] * (this.count / this.animate.durationCount)
-            const floatSet = 2
-            const floatCount = 6
-            const str = String(Math.ceil(x*10**floatCount))
-            const arr = str.split('').reverse()
-            if (arr.length < floatCount+1) {
-                arr.push.apply(arr,Array(floatCount+1-arr.length).fill('0'))
+            const dataMath = (data)=>{
+                const x = this.targetData[key] * data
+                const floatSet = 2
+                const floatCount = 6
+                const str = String(Math.ceil(x*10**floatCount))
+                const arr = str.split('').reverse()
+                if (arr.length < floatCount+1) {
+                    arr.push.apply(arr,Array(floatCount+1-arr.length).fill('0'))
+                }
+                arr.splice(floatCount,0,'.')
+                const re = arr.splice(floatCount-floatSet).reverse().join('')
+                return re
             }
-            arr.splice(floatCount,0,'.')
-            const re = arr.splice(floatCount-floatSet).reverse().join('')
-            this.Char.data[key] = Number(re)
+            this.Char.data[key] = Number(
+                dataMath(this.count / this.animate.durationCount)
+            )
+            this.Char.data[key+'Rotate'] = Number(
+                dataMath(easings[this.animate.easings](this.count / this.animate.durationCount))
+            )
         })
     }
     oncreate() {

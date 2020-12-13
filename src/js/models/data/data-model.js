@@ -6,13 +6,24 @@ import '../validate'
 export default class DataModel {
     constructor(args) {
         const entity = args ? args : {}
-        this.errors = {}
-        this.loaded = !entity // 非同步資料是否取得
-        this.baseData = [] // 暫存資料
-        this.addData = entity.addData || false
-        this.edited = entity.edited || false
-        this.deleted = entity.deleted || false
-        this.detailView = entity.detailView || false
+        this.definePropertySet({
+            loaded: !entity,
+            baseData: [],
+            errors: {},
+            addData: entity.addData || false,
+            edited: entity.edited || false,
+            deleted: entity.deleted || false,
+        },{
+            enumerable: false,
+            writable: true,
+        })
+    }
+    definePropertySet(obj,set){
+        Object.keys(obj).forEach(key=>{
+            const setting = set || {}
+            setting.value = obj[key]
+            Object.defineProperty(this,key,setting)
+        })
     }
     /**
      * 取得當前錯誤訊息

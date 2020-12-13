@@ -1,0 +1,1 @@
+export default ['DrinkWater','Young','SkinHealth','OldHealth','Excretion','BreastFeeding','Vision','Digestion','Fat','Stomachache','BadBreath','Strong','Malnutrition','Pregnancy','JointDysfunction','DungSmell']

@@ -198,6 +198,9 @@ export default class Char extends Canvas {
             protein: 0,
             fat: 0,
             metabolism: 0,
+            proteinRotate: 0,
+            fatRotate: 0,
+            metabolismRotate: 0,
         }
         this.setData(this.data)
     }
@@ -205,9 +208,9 @@ export default class Char extends Canvas {
         this.pathData.find(p=>p.name=='protein').text.str = data.protein + '%'
         this.pathData.find(p=>p.name==='fat').text.str = data.fat + '%'
         this.pathData.find(p=>p.name==='metabolism').text.str = data.metabolism
-        this.pathData.find(p=>p.name==='proteinRotate').transform.rotate.deg = this.rotateMath(data.protein,32,true)
-        this.pathData.find(p=>p.name==='fatRotate').transform.rotate.deg = this.rotateMath(data.fat,17,false)
-        this.pathData.find(p=>p.name==='metabolismRotate').transform.rotate.deg = this.rotateMath(data.metabolism,1000,true)
+        this.pathData.find(p=>p.name==='proteinRotate').transform.rotate.deg = this.rotateMath(data.proteinRotate,32,true)
+        this.pathData.find(p=>p.name==='fatRotate').transform.rotate.deg = this.rotateMath(data.fatRotate,17,false)
+        this.pathData.find(p=>p.name==='metabolismRotate').transform.rotate.deg = this.rotateMath(data.metabolismRotate,1000,true)
     }
     rotateMath(data,max,negative) { // 0~215
         const negativeValue = negative ? -1 : 1
