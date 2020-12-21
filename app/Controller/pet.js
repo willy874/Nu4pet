@@ -1,5 +1,9 @@
 const Controller = require('./core')
 const Model = require('../model')
+const formidable = require('formidable')
+const form = new formidable.IncomingForm()
+const getRecommend = require('./data/get-recommend')
+
 
 module.exports = class PetController extends Controller {
     constructor(app){
@@ -7,16 +11,56 @@ module.exports = class PetController extends Controller {
     }
     getPetAllData(req, res){
         const PetModel = new Model.Pet
-        res.send( PetModel.get() )
+        const response = PetModel.get()
+        response.forEach(p=>{
+            p.recommend = getRecommend()
+        })
+        res.send( response )
     }
     getPetListData(req, res){
         const PetModel = new Model.Pet
-        res.send( PetModel.pagination(req.query) )
+        const response = PetModel.pagination(req.query)
+        response.data.forEach(p=>{
+            p.recommend = getRecommend()
+        })
+        res.send( response )
+    }
+    getPetListDataByAccount(req, res){
+        const UserModel = new Model.User
+        const user = UserModel.where('account',req.params.account).get()
+        const userId = (user.length) ? user[0].id : 0
+        const PetModel = new Model.Pet
+        const response = PetModel.where('user_id',userId).pagination(req.query)
+        response.data.forEach(p=>{
+            p.recommend = getRecommend()
+        })
+        res.send( response )
     }
     getPetDataById(req, res){
         const PetModel = new Model.Pet
         const { id } = req.params
         const data = PetModel.get().find(p=>Number(p.id)===Number(id))
-        res.send(data || {})
+        if (data) {
+            data.recommend = getRecommend()
+        }
+        const response = data || {}
+        res.send(response)
+    }
+    addPetDataById(req, res){
+        const PetModel = new Model.Pet
+        PetModel.add(req.body)
+        res.send('success')
+    }
+    updatePetDataById(req, res){
+        const { id } = req.params
+        // param-3 files
+        form.parse(req, function(err,fields) {
+            if (err) {
+                return 
+            }
+            const PetModel = new Model.Pet
+            PetModel.update(fields,id)
+            res.send('success')
+        })
     }
 }

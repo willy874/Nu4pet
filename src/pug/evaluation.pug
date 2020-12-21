@@ -1,0 +1,65 @@
+extends ./layout/index.pug
+block content
+  main#evaluation-page.col
+    section
+      ul.list-unstyled
+        li
+          img.w-100(src='./assets/image/evaluation-benner.png' alt='')
+    section.container.py-4
+      .row.justify-content-between.align-items-center
+        .col-auto.d-flex.align-items-center(style='min-height: 60px;')
+          .text-gray-dark.h5.mb-0 訂單編號
+          .text-dark.ml-3.h5.mb-0 12345
+        .col-auto.d-flex.align-items-center(style='min-height: 60px;')
+          .text-gray-dark.h5.mb-0 日期
+          .text-dark.ml-3.h5.mb-0 2020.07.07
+        .col-auto.d-flex.align-items-center(style='min-height: 60px;')
+          .text-gray-dark.h5.mb-0 分享到
+          .d-flex.ml-3(style='min-height: 60px;')
+            a(href='javascript:;')
+              img.mx-1(src='./assets/image/fb.png' alt='')
+            a(href='javascript:;')
+              img.mx-1(src='./assets/image/line.png' alt='')
+            a(href='javascript:;')
+              img.mx-1(src='./assets/image/ig.png' alt='')
+        .col-12
+        .col-auto.d-flex.align-items-center(style='min-height: 60px;')
+          .text-gray-dark.h5.mb-0 給予評價心
+          .ml-3.evaluation.d-flex(data-level="5" data-max="5")
+            .icon-heart-fill(style='width:30px;')
+    section.container.py-4
+      article.h6
+        h2.text-primary.mb-4 陪心貼心照顧家中的兩位主子
+        p 我其實滿喜歡陪心的，有用心，尤其是針對細節的部分，像是麻糬的年紀，因為只有6週大，陪心的團隊還特意將寵糧分成1~2週跟3~4週。孩子大小階段不同，營養也不同，這讓我覺得很貼心。
+        p 還有心瞳（另外一隻貓貓）的部分，陪心也因為心瞳的胰臟炎，調配了適合心瞳吃的寵糧，這樣心瞳就吃愛吃的寵糧又可以兼顧健康！
+        p 我很放心把兩個孩子交給陪心，有專業團隊看顧我孩子的營養。
+        p 每天一包，保存簡單，寵糧也新鮮，孩子們吃了也很開心！
+        p 謝謝妳們這麼細心跟專業！以後我們兩隻貓寶要拜託妳們了。
+    section.container.border.mb-5
+      .row
+        .col-12.text-center.border-bottom.h3.py-3 此次購買商品
+        each val in [1, 2, 3]
+          .col-sm-6.col-xl-4.pt-3.pb-4.prod-card
+            figure.border.border-dark
+              .card-img.mb-3
+                img.w-100(src='./assets/image/prod-01.min.jpg' alt='')
+                .card-hover.py-2.bg-primary.text-center
+                  a.text-white.stretched-link(href='javascript:;') 加入購物袋
+              figcaption.font-weight-bold.text-dark.mb-2.overflow-line-20.px-3
+                | 多貓家庭 
+                br
+                | 搭伙合菜『美味雞魚配方』
+              .border-bottom
+              .d-flex.justify-content-between.py-2.px-3
+                .pt-1
+                  div
+                    span.font-weight-bold.h6.text-dark NT$
+                    span.font-weight-bold.h3.text-dark 1488
+                  div
+                    span.text-dark 原價：
+                    del.text-dark 1900
+                div
+                  a.d-inline-block(href='javascript:;')
+                    .size-41.icon-heart-round.text-primary
+                  a.d-inline-block(href='javascript:;')
+                    .size-41.icon-share.text-primary.ml-2

@@ -3,7 +3,10 @@ import ArrowRight from './pattern/arrow-right'
 import ArrowDoubleRight from './pattern/arrow-double-right'
 import Boy from './pattern/boy'
 import CatType from './pattern/cat-type'
+import Close from './pattern/close'
+import Copy from './pattern/copy'
 import CopyRound from './pattern/copy-round'
+import Coupon from './pattern/coupon'
 import FBRound from './pattern/fb-round'
 import LineRound from './pattern/line-round'
 import LinkRound from './pattern/link-round'
@@ -26,14 +29,17 @@ import MasterCard from './pattern/master-card'
 import Member from './pattern/member'
 import Messenger from './pattern/messenger'
 import Navbtn from './pattern/nav-btn'
+import OrderNote from './pattern/order-note'
 import Phone from './pattern/phone'
 import Record from './pattern/record'
 import Search from './pattern/search'
+import SearchOne from './pattern/search-one'
 import Share from './pattern/share'
 import Shop from './pattern/shop'
 import ShopSolid from './pattern/shop-solid'
 import Timer from './pattern/timer'
 import Top from './pattern/top'
+import User from './pattern/user'
 
 import PassionForPets from './pattern/passion-for-pets'
 import FiveHeartedEnjoyment from './pattern/five-hearted-enjoyment'
@@ -46,7 +52,10 @@ export {
     ArrowDoubleRight,
     Boy,
     CatType,
+    Close,
+    Copy,
     CopyRound,
+    Coupon,
     FBRound,
     LineRound,
     LinkRound,
@@ -69,14 +78,17 @@ export {
     Member,
     Messenger,
     Navbtn,
+    OrderNote,
     Phone,
     Record,
     Search,
+    SearchOne,
     Share,
     Shop,
     ShopSolid,
     Timer,
     Top,
+    User,
 
     PassionForPets,
     FiveHeartedEnjoyment,

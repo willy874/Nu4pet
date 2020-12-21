@@ -5,12 +5,24 @@ import '../validate'
 // RequestPayloadModel
 export default class DataModel {
     constructor(args) {
-        const entity = args ? args : {}
+        const entity = (() => {
+            if (args) {
+                if (typeof args === 'string') {
+                    return JSON.parse(args)
+                }else{
+                    return args
+                }
+            }
+            return {}
+        })()
+        this.created_at = entity.created_at || null
+        this.updated_at = entity.updated_at || null
+        this.deleted_at = entity.deleted_at || null
+        this.errors = entity.errors || {}
         this.definePropertySet({
             loaded: !entity,
             baseData: [],
-            errors: {},
-            addData: entity.addData || false,
+            mode: entity.mode || 'static',
             edited: entity.edited || false,
             deleted: entity.deleted || false,
         },{
@@ -53,7 +65,7 @@ export default class DataModel {
         const data = this
         const rules = this.rules() || {}
 
-        this.errors = Validate(data, rules)
+        this.errors = Validate(data, rules) || {}
         return this.errors || false
     }
     /**

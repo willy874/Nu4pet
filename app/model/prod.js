@@ -1,9 +1,9 @@
 const Model = require('./core')
 
-module.exports = class ShopModel extends Model {
+module.exports = class ProdModel extends Model {
     constructor(){
         super({
-            table: 'shop',
+            table: 'prod',
             fillable: []
         })
     }

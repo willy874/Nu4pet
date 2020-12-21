@@ -75,10 +75,12 @@ block content
             | Yours Healthy
           #slick-home-shop.list-unstyled
             each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
-              figure
-                .position-relative.mb-3(style='padding-top: 100%;background-color: #ccc;')
-                  img.position-fill.img-cover(src='' alt='')
-                figcaption.font-weight-bold.text-dark
+              figure.col.pt-3.pb-4.prod-card
+                .card-img.mb-3
+                  img.w-100(src='./assets/image/prod-01.min.jpg' alt='')
+                  .card-hover.py-2.bg-primary.text-center
+                    a.text-white.stretched-link(href='javascript:;') 加入購物袋
+                figcaption.font-weight-bold.text-dark.mb-2.overflow-line-20
                   | 多貓家庭 
                   br
                   | 搭伙合菜『美味雞魚配方』

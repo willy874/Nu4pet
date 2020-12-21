@@ -1,0 +1,19 @@
+.prod-card{
+    .card-img{
+        position: relative;
+        .card-hover{
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: opacity 0.2s;
+            font-size: 1.5rem;
+        }
+        &:hover{
+            .card-hover{
+                opacity: 1;
+            }
+        }
+    }
+}

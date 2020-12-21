@@ -1,0 +1,50 @@
+$input-label-color-normal: $dark;
+$input-label-color-active: $primary;
+$input-placeholder-color: $secondary;
+$input-background-color: transparent;
+
+.text-input{
+    display: flex;
+    position: relative;
+    
+    .text-input-container{
+        position: relative;
+        display: flex;
+        flex-grow: 1;
+    }
+    .text-input-wrapper{
+        flex-grow: 1;
+        position: relative;
+    }
+
+    &.native{
+        .text-input-flylabel{
+            display: none;
+        }
+        .text-input-prefix,.text-input-suffix{
+            position: absolute;
+            top: 0.5rem;
+            z-index: 1;
+        }
+        .text-input-prefix{
+            left: 0.5rem;
+        }
+        .text-input-suffix{
+            right: 0.5rem;
+        }
+    }
+    .form-control.is-invalid{
+        background-image: none;
+        color: $danger;
+    }
+    .suffix-password.is-invalid{
+        color: $danger;
+    }
+
+    .suffix-password{
+        display: block;
+        cursor: pointer;
+        color: $dark;
+        width: 1.5rem;
+    }
+}

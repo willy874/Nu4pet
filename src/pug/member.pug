@@ -1,0 +1,100 @@
+extends ./layout/index.pug
+//- base gold platinum diamond
+block content
+    main#member-page.col
+        section.container.py-4
+            .bg-gray-light.p-3
+                .position-relative.mx-auto(style='max-width:600px;')
+                    img.w-100(src="./assets/image/member-card.png")
+                    .position-absolute.position-block
+                        .d-flex.pb-2
+                            .bg-white.rounded-circle.d-flex.flex-center(style='width:50px;height:50px;') 
+                                span.text-primary 初始
+                            .pl-3.text-white
+                                h5.mb-0 張小明
+                                h6.mb-0 Card Member
+                        button.d-flex.btn.btn-primary.p-0.rounded-pill.overflow-hidden(type='button')
+                            span.d-flex.bg-white.text-dark.px-2.py-1
+                                span ABCDEFG
+                                span.icon-copy.ml-1(style='width: 16px')
+                            span.d-block.text-white.px-2.py-1 立即分享
+                .d-flex.justify-content-between.flex-sm-row.flex-column.px-3.pt-1.pt-sm-3.mx-auto(style='max-width:600px;')
+                    .d-flex.justify-content-between.align-items-center
+                        span.rwd-h5.scale-0 我的P幣
+                        span.rwd-h2.scale-0.ml-3 2000
+                    .d-flex.justify-content-between.align-items-center.py-1
+                        a.text-dark.rwd-h5.scale-0(href="javascript:;") 我的榮譽章
+                        .ml-3.d-flex.align-items-center
+                            img.mx-1(src='./assets/image/medal-01.png' width='20')
+                            img.mx-1(src='./assets/image/medal-02.png' width='20')
+                            img.mx-1(src='./assets/image/medal-03.png' width='20')
+                    .py-1
+                        a.text-dark.rwd-h5.scale-0(href="javascript:;") 等級說明
+            .row.py-2
+                .col-6.col-sm-3.py-2.hover-block
+                    .border.border-primary.position-relative.d-flex.flex-center
+                        .p-3.text-center
+                            .icon-user.size-85x55.mb-2
+                            a.stretched-link.text-nowrap(href="javascript:;") 我的資料
+                .col-6.col-sm-3.py-2.hover-block
+                    .border.border-primary.position-relative.d-flex.flex-center
+                        .p-3.text-center
+                            .icon-search-one.size-85x55.mb-2
+                            a.stretched-link.text-nowrap(href="javascript:;") 我的P幣
+                .col-6.col-sm-3.py-2.hover-block
+                    .border.border-primary.position-relative.d-flex.flex-center
+                        .p-3.text-center
+                            .icon-coupon.size-85x55.mb-2
+                            a.stretched-link.text-nowrap(href="javascript:;") 我的優惠券
+                .col-6.col-sm-3.py-2.hover-block
+                    .border.border-primary.position-relative.d-flex.flex-center
+                        .p-3.text-center
+                            .icon-order-note.size-85x55.mb-2
+                            a.stretched-link.text-nowrap(href="javascript:;") 訂單查詢
+            .border.border-primary
+                nav.tab.container-fluid
+                    ul.list-unstyled.row.no-gutter.mb-0
+                        li.col-4.text-center.border-bottom.border-primary.py-4.active
+                            a.stretched-link(href="javascript:;") 會員資料
+                        li.col-4.text-center.border-bottom.border-left.border-right.border-primary.py-4
+                            a.stretched-link(href="javascript:;") 信用卡
+                        li.col-4.text-center.border-bottom.border-primary.py-4
+                            a.stretched-link(href="javascript:;") 修改密碼
+                .container-fluid
+                    .row.no-gutter.text-dark
+                        .col-sm-auto.px-4.py-3
+                            .bg-primary.rounded-circle.d-flex.flex-center.mx-auto(style='width:80px;height:80px;') 
+                                span.text-white.h4.mb-0 初始
+                            .pt-2.text-center 會員等級
+                        .col-sm.border-rwd.border-primary.d-flex.flex-column.justify-content-between.py-3
+                            .d-flex.justify-content-between.flex-sm-row.flex-column.my-2
+                                span 12個月內累積消費額
+                                span 會籍到期日 永遠
+                            .d-flex.justify-content-between.flex-sm-row.flex-column.my-2
+                                span.text-success NT$0
+                                span 消費成功立即升級
+                            .rounded-pill.bg-gray-light.overflow-hidden.d-flex.my-2(style='height:20px;')
+                                .bg-primary.h-100(style='width: 33%;')
+                            p.my-1 更新時間為訂單完成付款後的隔日，若因取消訂單或退貨未達成升級條件則不會升級
+                .border-top.border-primary.container-fluid
+                    article.row.py-sm-3.px-sm-5.text-dark.rwd-h5
+                        .col-4.py-3.font-weight-bold 姓名
+                        .col.py-3 黃一參
+                        .w-100.border-top.border-primary
+                        .col-4.py-3.font-weight-bold FB綁定
+                        .col.py-3 ＡＡＡＡ
+                        .w-100.border-top.border-primary
+                        .col-4.py-3.font-weight-bold 手機
+                        .col.py-3 0911-234-456
+                        .w-100.border-top.border-primary
+                        .col-4.py-3.font-weight-bold 連絡電話
+                        .col.py-3 02-234-567
+                        .w-100.border-top.border-primary
+                        .col-4.py-3.font-weight-bold E-MAIL
+                        .col.py-3 Qdfgf@gmail.com
+                        .w-100.border-top.border-primary
+                        .col-4.py-3.font-weight-bold 地址
+                        .col.py-3 111 台北市 大安區
+                    
+
+        

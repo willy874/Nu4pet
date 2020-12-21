@@ -36,8 +36,12 @@
 @import 'utilities';
 
 // Components
+@import 'components/from';
 @import 'components/icon';
+@import 'components/dialog';
 @import 'components/pagination';
+@import 'components/other/prod-card';
+@import 'components/other/tab';
 
 // WebSite Page
 @import 'page/layout';
@@ -46,7 +50,8 @@
 @import 'page/home';
 @import 'page/shop';
 @import 'page/shop-detail';
-@import 'page/nutrition';
+@import 'page/pet';
+@import 'page/member';
 
 // Browser
 @import 'browser'

@@ -185,16 +185,6 @@
         article{
             padding: 1rem 3rem;
         }
-        figure{
-            padding: 1rem 15px 2rem 15px;
-            figcaption{
-                font-size: 20px;
-                margin-bottom: 0.5rem;
-                line-height: 30px;
-                height: 30px*3;
-                overflow: hidden;
-            }
-        }
         @include media-max(576px){
             article{
                 padding: 1rem 1rem;

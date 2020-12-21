@@ -1,0 +1,24 @@
+.hover-block{
+    a{
+        color: #5a5b5b;
+    }
+    svg{
+        color: #5a5b5b;
+    }
+    &:hover{
+        a{
+            color: #49c5b1;
+        }
+        svg{
+            color: #49c5b1;
+        }
+    }
+    .router-link-active{
+        a{
+            color: #49c5b1;
+        }
+        svg{
+            color: #49c5b1;
+        }
+    }
+}

@@ -1,15 +1,23 @@
 const Controller = require('../controller')
 
+
 module.exports =  class Route{
     constructor(app){
         this.app = app
+
         this.handleCallback = (data)=>{
             const handle = (callback)=>{
                 if(typeof callback === 'function'){
                     return callback
-                }else if(typeof callback === 'string'){
+                }else if(typeof callback === 'string' && /@/.test(callback)){
                     const str = callback.split('@')
+                    if (!Controller[str[0]]) {
+                        throw new Error(`沒有名為 ${str[0]} 的 Controller`)
+                    }
                     const contro = new Controller[str[0]](app)
+                    if (!contro[str[1]]) {
+                        throw new Error(`沒有名為 ${str[1]} 的 Function`)
+                    }
                     return contro[str[1]]
                 }else{
                     throw new Error('必須是個 Controller')

@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import { getPetDataById } from '@/api'
+import { getPetListDataByAccount } from '@/api'
 import { ListModel,PetModel } from '@/models'
-import axios from 'axios'
+import getUserPromise from './get-user'
 
 export default {
     data(){
@@ -60,34 +60,15 @@ export default {
         }
     },
     created(){
-        const user = this.$store.state.user
-        if(Array.isArray(user.pet)){
-            this.model = this.$store.state.user.pet
-        }else if (typeof user.pet === 'string') {
-            const arrUserPet = this.$store.state.user.pet.split(',')
-            Promise.all(arrUserPet.map(id=>getPetDataById(id) )).then(res =>{
-                res.forEach(item=>{
-                    this.model.push( new PetModel(item.data) )
-                    this.$store.commit('setUser',{ pet: this.model})
-                })
-            }).catch(err =>{
-                console.log({err});
-                axios.get('./api/pet.json').then(res=>{
-                    res.data.forEach(item=>{
-                        this.model.push( new PetModel(item) )
-                        this.$store.commit('setUser',{ pet: this.model})
-                    })
+        getUserPromise((user)=>{
+            getPetListDataByAccount(user.account).then(res=>{
+                this.model = new ListModel({
+                    model: PetModel,
+                    data: res.data.data
                 })
             })
-        }else{
-            console.error('User pet data is not PetModel.')
-        }
+        })
         window.scrollTo({top: 0})
-        // this.$watch('model',(newVal,oldVal)=>{
-        //     console.log(newVal, oldVal);
-        // },{
-        //     deep: true
-        // })
     }
 };
 </script>

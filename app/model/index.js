@@ -1,5 +1,6 @@
 module.exports = {
-    Shop: require('./shop'),
+    Shop: require('./prod'),
     Pet: require('./pet'),
     User: require('./user'),
+    PetStatus: require('./pet_status'),
 }

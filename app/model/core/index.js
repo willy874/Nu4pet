@@ -5,6 +5,7 @@ const fs = require('fs')
  * @param {Array<String>} fillable
  * @param {String} primaryKey
  * @param {Function} insertRules
+ * @param {Collection<Function>} middleware
  */
 module.exports = class Model {
     constructor(ops){
@@ -89,7 +90,7 @@ module.exports = class Model {
     }
     get(){
         if (this.whereRules.length) {
-            return this.whereRules.reduce((where,val)=>{
+            return this.whereRules.reduce((val,where)=>{
                 return where(val)
             },this.DB)
         }
@@ -122,9 +123,9 @@ module.exports = class Model {
             primaryKey,
             table,
             fillable,
-            middleware,
-            DB
+            middleware
         } = this
+        const DB = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
         const newData = {}
         if (data[primaryKey]) {
             if (DB.some(p=>p[primaryKey]==data[primaryKey])) {
@@ -142,23 +143,44 @@ module.exports = class Model {
             }
         }
         fillable.forEach(key=>{
-            if (data[key] !== undefined) {
-                if (middleware.addTable) {
-                    newData[key] = middleware.addTable(data,key)
-                }else{
-                    newData[key] = data[key]
-                }
+            if (middleware.addTable) {
+                newData[key] = middleware.addTable(data,key)
+            }else{
+                newData[key] = data[key]
             }
         })
         DB.push(newData)
-        fs.writeFile(`./app/db/${table}.json`, JSON.stringify(newData) , (err)=> {
+        fs.writeFile(`./app/db/${table}.json`, JSON.stringify(DB) , (err)=> {
             if (err) {
                 return console.error(err)
             }
             console.log(`Add ${table} data in DB.`.green)
         })
     }
-    update(){
-
+    update(data,id){
+        const {
+            table,
+            fillable,
+            middleware,
+            primaryKey
+        } = this
+        const DB = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
+        DB.forEach(table=>{
+            const newData = (String(table[primaryKey]) === String(id)) ? data : table
+            fillable.forEach(key=>{
+                if (middleware.updateTable) {
+                    table[key] = middleware.updateTable(newData[key],key) || middleware.updateTable(table[key],key)
+                }else{
+                    table[key] = newData[key] || table[key]
+                }
+            })
+        })
+        fs.writeFile(`./app/db/${table}.json`, JSON.stringify(DB) , (err)=> {
+            if (err) {
+                return console.error(err)
+            }
+            console.log(`Update ${table} data in DB.`.green)
+        })
+        return DB.find(p=>String(p[primaryKey]) === String(id))
     }
 }

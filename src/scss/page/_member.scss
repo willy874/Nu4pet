@@ -1,0 +1,45 @@
+#member-page{
+    .position-block{
+        bottom: 5%;
+        left: 5%;
+    }
+    @include media-max(576px){
+        .position-block{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 0.9rem;
+        }
+    }
+    .border-rwd{
+        border-style: solid;
+        border-width: 0 0 0 1px;
+    }
+    @include media-max(576px){
+        .border-rwd{
+            border-width: 1px 0 0 0;
+        }
+    }
+    .tab{
+        li{
+            a{
+                color: $dark;
+            }
+            &.active{
+                background-color: $primary;
+                a{
+                    color: $white;
+                }
+            }
+            &:hover{
+                background-color: $primary;
+                a{
+                    color: $white;
+                }
+            }
+        }
+    }
+}

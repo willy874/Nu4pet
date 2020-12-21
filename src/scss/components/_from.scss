@@ -1,0 +1,19 @@
+@import 'text-input/base';
+@import 'text-input/bottomlime';
+@import 'text-input/outline';
+@import 'textarea/base';
+@import 'textarea/bottomlime';
+@import 'textarea/outline';
+@import 'image-box/photo-frame';
+
+.error-message{
+    margin-top: 0.25rem;
+    font-size: 14px;
+    color: $danger;
+}
+.content-area{
+    flex-grow: 1;
+    @media screen and (max-width: 576px){
+        min-height: 150px;
+    }
+}

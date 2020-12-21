@@ -1,0 +1,289 @@
+[{
+    "id": 1,
+    "type": "dog",
+    "name": "DrinkWater",
+    "text": "不喝水水",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-不喝水水（狗）.gif"
+},{
+    "id": 2,
+    "type": "dog",
+    "name": "Young",
+    "text": "幼幼小犬",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-幼幼小犬（狗）.gif"
+},{
+    "id": 3,
+    "type": "dog",
+    "name": "SkinHealth",
+    "text": "皮膚保健",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-皮膚保健問題（狗）.gif"
+},{
+    "id": 4,
+    "type": "dog",
+    "name": "OldHealth",
+    "text": "老年保健",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-老年保健問題（狗）.gif"
+},{
+    "id": 5,
+    "type": "dog",
+    "name": "Excretion",
+    "text": "拉水便便",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-拉水便便（狗）.gif"
+},{
+    "id": 6,
+    "type": "dog",
+    "name": "Vision",
+    "text": "視力糊糊",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-視力糊糊（狗）.gif"
+},{
+    "id": 7,
+    "type": "dog",
+    "name": "Digestion",
+    "text": "腸胃不佳",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-腸胃吸收不佳（狗）.gif"
+},{
+    "id": 8,
+    "type": "dog",
+    "name": "Fat",
+    "text": "過重胖胖",
+    "physiological": "體重過重、常昏昏欲睡、缺乏動力和精力對於運動、玩耍或活動表現出興趣缺缺。",
+    "disease": "糖尿病、心血管疾病",
+    "eat": "降低脂肪含量並提供高必需脂肪酸攝取量添加膳食纖維以增加飽足感，促進脂肪的燃燒、抑制碳水化合物轉為脂肪囤積達到減重的效果。",
+    "image_url": "./assets/image/毛孩狀態評估-過重胖胖（狗）.gif"
+},{
+    "id": 9,
+    "type": "dog",
+    "name": "Stomachache",
+    "text": "嘔吐胃痛",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-嘔吐胃痛（狗）.gif"
+},{
+    "id": 10,
+    "type": "dog",
+    "name": "BadBreath",
+    "text": "嘴巴臭臭",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-嘴巴臭臭（狗）.gif"
+},{
+    "id": 11,
+    "type": "dog",
+    "name": "Strong",
+    "text": "頭好壯壯",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-頭好壯壯（狗）.gif"
+},{
+    "id": 12,
+    "type": "dog",
+    "name": "Malnutrition",
+    "text": "營養不良",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-營養不良（狗）.gif"
+},{
+    "id": 13,
+    "type": "dog",
+    "name": "Pregnancy",
+    "text": "懷孕媽咪",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-懷孕媽咪（狗）.gif"
+},{
+    "id": 14,
+    "type": "dog",
+    "name": "JointDysfunction",
+    "text": "關節卡卡",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-關節卡卡（狗）.gif"
+},{
+    "id": 15,
+    "type": "dog",
+    "name": "DungSmell",
+    "text": "糞臭問題",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-糞臭問題（狗）.gif"
+},{
+    "id": 16,
+    "type": "cat",
+    "name": "DrinkWater",
+    "text": "不喝水水",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-不喝水水（貓）.gif"
+},{
+    "id": 17,
+    "type": "cat",
+    "name": "Young",
+    "text": "幼幼小犬",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-幼幼小貓（貓）.gif"
+},{
+    "id": 18,
+    "type": "cat",
+    "name": "SkinHealth",
+    "text": "皮膚保健",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-皮膚毛髮問題（貓）.gif"
+},{
+    "id": 19,
+    "type": "cat",
+    "name": "OldHealth",
+    "text": "老年保健",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-老年保健問題（貓）.gif"
+},{
+    "id": 20,
+    "type": "cat",
+    "name": "Excretion",
+    "text": "拉水便便",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-拉水便便（貓）.gif"
+},{
+    "id": 21,
+    "type": "cat",
+    "name": "BreastFeeding",
+    "text": "哺乳貓咪",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-哺乳貓咪（貓）.gif"
+},{
+    "id": 22,
+    "type": "cat",
+    "name": "Vision",
+    "text": "視力糊糊",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-視力糊糊（貓）.gif"
+},{
+    "id": 23,
+    "type": "cat",
+    "name": "Digestion",
+    "text": "腸胃不佳",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-腸道問題（貓）.gif"
+},{
+    "id": 24,
+    "type": "cat",
+    "name": "Fat",
+    "text": "過重胖胖",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-過重胖胖（貓）.gif"
+},{
+    "id": 25,
+    "type": "cat",
+    "name": "Stomachache",
+    "text": "嘔吐胃痛",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-嘔吐胃痛（貓）.gif"
+},{
+    "id": 26,
+    "type": "cat",
+    "name": "BadBreath",
+    "text": "嘴巴臭臭",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-嘴巴臭臭（貓）.gif"
+},{
+    "id": 27,
+    "type": "cat",
+    "name": "Strong",
+    "text": "頭好壯壯",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-頭好壯壯（貓）.gif"
+},{
+    "id": 28,
+    "type": "cat",
+    "name": "Malnutrition",
+    "text": "營養不良",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-營養不良（貓）.gif"
+},{
+    "id": 29,
+    "type": "cat",
+    "name": "Pregnancy",
+    "text": "懷孕媽咪",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-懷孕媽咪（貓）.gif"
+},{
+    "id": 30,
+    "type": "cat",
+    "name": "JointDysfunction",
+    "text": "關節卡卡",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-關節卡卡（貓）.gif"
+},{
+    "id": 31,
+    "type": "cat",
+    "name": "Urinary",
+    "text": "泌尿問題",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-泌尿道問題（貓）.gif"
+},{
+    "id": 32,
+    "type": "cat",
+    "name": "Hair",
+    "text": "化毛問題",
+    "physiological": "",
+    "disease": "",
+    "eat": "",
+    "image_url": "./assets/image/毛孩狀態評估-化毛問題（貓）.gif"
+}]
