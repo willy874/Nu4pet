@@ -1,22 +1,20 @@
-/*
+/**
+ * 
      _ _      _       _
  ___| (_) ___| | __  (_)___
 / __| | |/ __| |/ /  | / __|
 \__ \ | | (__|   < _ | \__ \
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
-
- Version: 1.8.1
-  Author: Ken Wheeler
- Website: http://kenwheeler.github.io
-    Docs: http://kenwheeler.github.io/slick
-    Repo: http://github.com/kenwheeler/slick
-  Issues: http://github.com/kenwheeler/slick/issues
-
- */
-/* global: window, document, define, jQuery, setInterval, clearInterval */
-/**
- * 因 slick 原始碼存在漏洞，因而另外進行一些修改與優化
+ * 
+ * @version  1.8.1
+ * @author Ken Wheeler
+ * @website http://kenwheeler.github.io
+ * @tutorial http://kenwheeler.github.io/slick
+ * @repo http://github.com/kenwheeler/slick
+ * @issues http://github.com/kenwheeler/slick/issues
+ * @global window,document,define,jQuery,setInterval,clearInterval
+ * @todo 因 slick 原始碼存在漏洞，因而另外進行一些修改與優化
  */
 import $ from 'jquery'
 

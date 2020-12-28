@@ -6,7 +6,7 @@ export default class Popup {
         this.attrs = Object.assign({
             position: {
                 x: 'center',
-                y: 'top'
+                y: 'center'
             },
         },option.attrs)
         this.position = {top: null,left: null}

@@ -12,7 +12,7 @@ export default function (callback){
     if (user) {
         if (callback) callback(user)
     }else{
-        return getUserLogin(userData.account,userData.password).then(res =>{
+        getUserLogin(userData.account,userData.password).then(res =>{
             localStorage.setItem('user',JSON.stringify(res.data))
             store.commit('setUser',res.data)
             if (callback) callback(res.data)

@@ -18,6 +18,7 @@ module.exports = class Model {
         } || {}
 
         this.primaryKey = ops.primaryKey || 'id'
+        this.deleteKey = ops.deleteKey || 'deleted_at'
         this.insertRules = ops.insertRules || function(){console.log(`Insert is not rules.`)}
         const value = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
         Object.defineProperty(this,'DB',{
@@ -37,7 +38,7 @@ module.exports = class Model {
                 return getDB(getTable(value))
             }
         })
-        this.whereRules = []
+        this.whereRules = [(DB)=>DB.filter(p=>!p[this.deleteKey])]
     }
     where(key,param1,param2){
         const param = {}
@@ -123,55 +124,59 @@ module.exports = class Model {
             primaryKey,
             table,
             fillable,
-            middleware
+            middleware,
+            insertRules
         } = this
-        const DB = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
+        const DB = JSON.parse(fs.readFileSync(`./app/db/${table}.json`).toString())
         const newData = {}
-        if (data[primaryKey]) {
-            if (DB.some(p=>p[primaryKey]==data[primaryKey])) {
-                return console.error(`The ${table} primary key already exists.`)
-            }
-        }else{
-            const dataCount = DB.length
-            const lastCount = Number(DB[dataCount-1][primaryKey])
-            if (DB.some(p=>p[primaryKey]==dataCount)) {
-                data[primaryKey] = dataCount
-            }else if(lastCount===lastCount){
-                data[primaryKey] = lastCount +1
-            }else{
-                this.insertRules(data)
-            }
-        }
+        const lastCount = Number(DB[DB.length-1][primaryKey])
         fillable.forEach(key=>{
+            console.log(key);
             if (middleware.addTable) {
-                newData[key] = middleware.addTable(data,key)
+                newData[key] = middleware.addTable(data[key],key)
             }else{
                 newData[key] = data[key]
             }
         })
-        DB.push(newData)
+        if (data[primaryKey]) {
+            if (DB.some(p=>p[primaryKey]===data[primaryKey])) {
+                return console.error(`The ${table} primary key already exists.`)
+            }else{
+                DB.push(data)
+            }
+        }else{
+            if(lastCount===lastCount){
+                newData[primaryKey] = lastCount + 1
+                DB.push(newData)
+            }else if(insertRules){
+                insertRules.call(this,DB,data)
+            }else{
+                return console.error(`The primary key does not meet the preset rules.`)
+            }
+        }
         fs.writeFile(`./app/db/${table}.json`, JSON.stringify(DB) , (err)=> {
             if (err) {
                 return console.error(err)
             }
             console.log(`Add ${table} data in DB.`.green)
         })
+        return lastCount
     }
-    update(data,id){
+    update(data){
         const {
             table,
             fillable,
             middleware,
             primaryKey
         } = this
-        const DB = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
-        DB.forEach(table=>{
-            const newData = (String(table[primaryKey]) === String(id)) ? data : table
+        const DB = JSON.parse(fs.readFileSync(`./app/db/${table}.json`).toString())
+        DB.forEach(dbTable=>{
+            const newData = (String(dbTable[primaryKey]) === String(data[primaryKey])) ? data : dbTable
             fillable.forEach(key=>{
                 if (middleware.updateTable) {
-                    table[key] = middleware.updateTable(newData[key],key) || middleware.updateTable(table[key],key)
+                    dbTable[key] = middleware.updateTable(newData[key],key) || middleware.updateTable(dbTable[key],key)
                 }else{
-                    table[key] = newData[key] || table[key]
+                    dbTable[key] = newData[key] || dbTable[key]
                 }
             })
         })
@@ -181,6 +186,20 @@ module.exports = class Model {
             }
             console.log(`Update ${table} data in DB.`.green)
         })
-        return DB.find(p=>String(p[primaryKey]) === String(id))
+    }
+    delete(id){
+        const {
+            table,
+            primaryKey
+        } = this
+        const DB = JSON.parse(fs.readFileSync(`./app/db/${table}.json`).toString())
+        const arrKeyIndex = DB.map(p=>p[primaryKey]).indexOf(id)
+        DB.splice(arrKeyIndex,1)
+        fs.writeFile(`./app/db/${table}.json`, JSON.stringify(DB) , (err)=> {
+            if (err) {
+                return console.error(err)
+            }
+            console.log(`Delete ${table} data in DB.`.red)
+        })
     }
 }

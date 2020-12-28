@@ -36,7 +36,9 @@
         line-height: 0.8 + ( $i * 0.2 );
     }
 }
-
+.p-100{
+    padding-top: 100%;
+}
 .desktop{
     @include media-max (1200px){
         display: none !important;

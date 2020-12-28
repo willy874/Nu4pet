@@ -19,7 +19,7 @@ module.exports = class UserController extends Controller {
                 UserData.pet = PetModel.where('user_id',UserData.id).get()
                 const response = UserData
                 UserData.pet.forEach(p=>{
-                    p.recommend = getRecommend()
+                    p.recommend = getRecommend(3)
                 })
                 res.send( response )
                 

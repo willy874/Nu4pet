@@ -1,0 +1,16 @@
+.shop-car-1{
+    .prod-list{
+        .prod-item{
+            .border-spacing{
+                margin: 1rem 0;
+                border-top: 1px solid $gray-light;
+            }
+        }
+        .prod-item:first-child{
+            .border-spacing{
+                margin: 0;
+                border-top: 0px solid $gray-light;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 <template>
     <div class="pet-list">
         <div class="row">
-            <div class="col-lg-6" v-for="item in model" :key="item.id">
+            <div class="col-lg-6" v-for="item in model.data" :key="item.id">
                 <div class="border border-primary rounded px-3">
                     <div class="d-flex pb-3 flex-wrap">
                         <div class="photo">
@@ -48,7 +48,7 @@
 <script>
 import { getPetListDataByAccount } from '@/api'
 import { ListModel,PetModel } from '@/models'
-import getUserPromise from './get-user'
+import getUserPromise from '../get-user'
 
 export default {
     data(){
@@ -66,6 +66,7 @@ export default {
                     model: PetModel,
                     data: res.data.data
                 })
+                console.log(this.model)
             })
         })
         window.scrollTo({top: 0})

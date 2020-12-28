@@ -1,7 +1,6 @@
 const Controller = require('./core')
 const Model = require('../model')
 const formidable = require('formidable')
-const form = new formidable.IncomingForm()
 const getRecommend = require('./data/get-recommend')
 
 
@@ -13,7 +12,7 @@ module.exports = class PetController extends Controller {
         const PetModel = new Model.Pet
         const response = PetModel.get()
         response.forEach(p=>{
-            p.recommend = getRecommend()
+            p.recommend = getRecommend(3)
         })
         res.send( response )
     }
@@ -21,7 +20,7 @@ module.exports = class PetController extends Controller {
         const PetModel = new Model.Pet
         const response = PetModel.pagination(req.query)
         response.data.forEach(p=>{
-            p.recommend = getRecommend()
+            p.recommend = getRecommend(3)
         })
         res.send( response )
     }
@@ -32,7 +31,7 @@ module.exports = class PetController extends Controller {
         const PetModel = new Model.Pet
         const response = PetModel.where('user_id',userId).pagination(req.query)
         response.data.forEach(p=>{
-            p.recommend = getRecommend()
+            p.recommend = getRecommend(3)
         })
         res.send( response )
     }
@@ -41,7 +40,7 @@ module.exports = class PetController extends Controller {
         const { id } = req.params
         const data = PetModel.get().find(p=>Number(p.id)===Number(id))
         if (data) {
-            data.recommend = getRecommend()
+            data.recommend = getRecommend(3)
         }
         const response = data || {}
         res.send(response)
@@ -52,14 +51,14 @@ module.exports = class PetController extends Controller {
         res.send('success')
     }
     updatePetDataById(req, res){
-        const { id } = req.params
         // param-3 files
+        const form = new formidable.IncomingForm()
         form.parse(req, function(err,fields) {
             if (err) {
                 return 
             }
             const PetModel = new Model.Pet
-            PetModel.update(fields,id)
+            PetModel.update(fields)
             res.send('success')
         })
     }

@@ -8,6 +8,7 @@ module.exports =  (option)=>{
         {name: 'pet'},
         {name: 'member'},
         {name: 'evaluation'},
+        {name: 'shop-car'},
     ].map((chunk)=>{
         return new HtmlWebpackPlugin({
             template: `./src/pug/${chunk.name}.pug`,

@@ -9,14 +9,7 @@
 export default {
     data(){
         return {
-            dialog: this.$dialog
         }
-    },
-    created(){
-        // const user = localStorage.getItem('user')
-        // if (user) {
-        //     this.$store.commit('setUser',JSON.parse(user))
-        // }
     }
 }
 </script>

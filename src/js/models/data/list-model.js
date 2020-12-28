@@ -3,20 +3,24 @@ import DataModel from './data-model'
 import '../validate'
 
 // RequestPayloadModel
-export default class ListModel extends Array {
+export default class ListModel {
     constructor(args) {
-        super()
-        const entity = args ? args : {}
-        const data = entity.data || []
+        const entity = (() => {
+            if (args) {
+                return (typeof args === 'string') ? JSON.parse(args) : args
+            }
+            return {}
+        })()
         const Model = entity.model || DataModel
-        data.forEach((item,index)=>{
-            this[index] = new Model(item)
-        })
+        this.data = entity.data && entity.data.map(p=>new Model(p)) || []
+        this.listErrors = entity.listErrors || []
+        this.loaded = entity.loaded || !args
         this.definePropertySet({
-            listErrors: [],
-            loaded: entity.loaded || !args
+            entity,
+            modelType: Model
         },{
             enumerable: false,
+            writable: true,
         })
     }
     definePropertySet(obj,set){

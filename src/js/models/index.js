@@ -1,7 +1,15 @@
 import ListModel from './data/list-model'
 import PetModel from './data/pet'
+import UserModel from './data/user'
+import ShopCarModel from './data/shop_car'
+import ProdModel from './data/prod'
+import RecordModel from './data/record'
 
 export {
     ListModel,
-    PetModel
+    PetModel,
+    UserModel,
+    ShopCarModel,
+    ProdModel,
+    RecordModel
 }

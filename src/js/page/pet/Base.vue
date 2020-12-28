@@ -265,12 +265,12 @@ export default {
         onCreatedDetail.call(this,(model)=>{
             getPetStatusAllData(model.type).then(res=>{
                 this.petStatus = res.data
-                console.log('model',this.model);
-                console.log('petStatus',this.petStatus);
-                console.log('petData-dog',this.petData.dog);
-                console.log('petData-cat',this.petData.cat);
-                console.log('assets-dog',this.assets.dog);
-                console.log('assets-cat',this.assets.cat);
+                // console.log('model',this.model);
+                // console.log('petStatus',this.petStatus);
+                // console.log('petData-dog',this.petData.dog);
+                // console.log('petData-cat',this.petData.cat);
+                // console.log('assets-dog',this.assets.dog);
+                // console.log('assets-cat',this.assets.cat);
             })
         })
         this.$watch('modelEdit',()=>{

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "prod_id": 1,
+        "url": "./assets/image/prod-01.min.jpg",
+        "created_at": "2020/12/01",
+        "updated_at": "2020/12/01",
+        "deleted_at": null
+    },
+    {
+        "id": 2,
+        "prod_id": 2,
+        "url": "./assets/image/prod-02.min.jpg",
+        "created_at": "2020/12/01",
+        "updated_at": "2020/12/01",
+        "deleted_at": null
+    },
+    {
+        "id": 3,
+        "prod_id": 3,
+        "url": "./assets/image/prod-03.min.jpg",
+        "created_at": "2020/12/01",
+        "updated_at": "2020/12/01",
+        "deleted_at": null
+    }
+]

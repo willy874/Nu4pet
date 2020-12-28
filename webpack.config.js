@@ -11,8 +11,7 @@ module.exports = (evn,option)=>{
     return {
         mode: option.mode,
         entry: {
-            main: './src/main.js',
-            nutrition: './src/js/page/nutrition.js'
+            main: './src/main.js'
         },
         devtool: 'source-map',
         output: {
@@ -43,8 +42,3 @@ module.exports = (evn,option)=>{
     }
     
 }
-
-/**
- * webpack-cli 當升到 4 以上版本 webpack-dev-server 將無法使用
- * 
- */

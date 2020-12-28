@@ -13135,6 +13135,10 @@ a:hover, button:hover {
   line-height: 2.8;
 }
 
+.p-100 {
+  padding-top: 100%;
+}
+
 @media (max-width: 1200px) {
   .desktop {
     display: none !important;
@@ -15974,5 +15978,15 @@ aside.sub-nav-mobile .nav-sub-link:hover {
 
 #member-page .tab li:hover a {
   color: #fff;
+}
+
+.shop-car-1 .prod-list .prod-item .border-spacing {
+  margin: 1rem 0;
+  border-top: 1px solid #dcdcdc;
+}
+
+.shop-car-1 .prod-list .prod-item:first-child .border-spacing {
+  margin: 0;
+  border-top: 0px solid #dcdcdc;
 }
 /*# sourceMappingURL=main.css.map */

@@ -4,7 +4,7 @@ import DataModel from './data-model'
 export default class PetModel extends DataModel {
     constructor(args) {
         super(args)
-        const entity = args ? args : {}
+        const entity = this.entity || {}
         this.id = entity.id || 0
         this.sort = entity.sort || 0
         this.name = entity.name || ''
@@ -37,6 +37,7 @@ export default class PetModel extends DataModel {
     }
     toDatabase(addObject) {
         const formData = new FormData()
+        if(this.id) formData.append('id',this.id)
         formData.append('sort',this.sort)
         formData.append('name',this.name)
         formData.append('type',this.type)

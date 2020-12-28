@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './pet/App.vue'
-import store from './pet/store'
+import store from './store'
 import router from './pet/router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'

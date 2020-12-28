@@ -1,25 +1,27 @@
 import Validate from 'validate.js'
 import '../validate'
+import dayjs from 'dayjs'
 
-
-// RequestPayloadModel
+/**
+ * @param {*} args 若為 JSON 字串則會經過轉型
+ * @param {String} created_at 該筆資料建立時間 YYYY/MM/DD HH:MM:ss
+ * @param {String} updated_at 該筆資料最後編輯時間 YYYY/MM/DD HH:MM:ss
+ * @param {String} deleted_at 該筆資料刪除時間 YYYY/MM/DD HH:MM:ss
+ */
 export default class DataModel {
     constructor(args) {
         const entity = (() => {
             if (args) {
-                if (typeof args === 'string') {
-                    return JSON.parse(args)
-                }else{
-                    return args
-                }
+                return (typeof args === 'string') ? JSON.parse(args) : args
             }
             return {}
         })()
-        this.created_at = entity.created_at || null
-        this.updated_at = entity.updated_at || null
+        this.created_at = entity.created_at || dayjs().format('YYYY/MM/DD HH:mm:ss')
+        this.updated_at = entity.updated_at || dayjs().format('YYYY/MM/DD HH:mm:ss')
         this.deleted_at = entity.deleted_at || null
         this.errors = entity.errors || {}
         this.definePropertySet({
+            entity,
             loaded: !entity,
             baseData: [],
             mode: entity.mode || 'static',

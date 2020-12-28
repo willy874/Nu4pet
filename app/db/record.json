@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "order_code": "EGT05167",
+        "status": "ready",
+        "name": "測試管理者",
+        "sex": "M",
+        "phone": "0900123456",
+        "email": "admin@nu4pet.com",
+        "address_code": "100",
+        "address_city": "台北市",
+        "address_area": "中正區",
+        "address": "忠孝東路一段100號",
+        "pay": "atm",
+        "card_code": "****-****-****-1234",
+        "card_date": "12/23",
+        "card_security": "123",
+        "donate_price": 0,
+        "prod_price": 2947,
+        "prod_point": 4900,
+        "created_at": "2020/12/01",
+        "updated_at": "2020/12/01",
+        "deleted_at": null
+    }
+]
