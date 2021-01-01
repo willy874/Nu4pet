@@ -115,10 +115,10 @@
                                 </div>
                                 <div class="col-5 col-sm-6 col-md-7">
                                     <div v-if="!editMode">
-                                        <div type="text" class="btn btn-primary rounded-pill text-white">
+                                        <small class="bg-primary rounded-pill text-white text-center d-inline-block px-3 py-2">
                                             <span v-if="model.ligation">是</span>
                                             <span v-else>否</span>
-                                        </div>
+                                        </small>
                                     </div>
                                     <div v-if="editMode">
                                         <button type="button" @click="setModel({ligation: true})" :class="['btn','rounded-pill','text-white',
@@ -265,12 +265,6 @@ export default {
         onCreatedDetail.call(this,(model)=>{
             getPetStatusAllData(model.type).then(res=>{
                 this.petStatus = res.data
-                // console.log('model',this.model);
-                // console.log('petStatus',this.petStatus);
-                // console.log('petData-dog',this.petData.dog);
-                // console.log('petData-cat',this.petData.cat);
-                // console.log('assets-dog',this.assets.dog);
-                // console.log('assets-cat',this.assets.cat);
             })
         })
         this.$watch('modelEdit',()=>{
@@ -355,7 +349,7 @@ export default {
                     icon: 'error',
                     title: '系統錯誤'
                 })
-                console.log({err});
+                console.log({err})
             })
         },
         openInfo(model){
@@ -371,6 +365,3 @@ export default {
     }
 };
 </script>
-<style scoped>
-    
-</style>

@@ -33,6 +33,7 @@ module.exports = class ShopCarController extends Controller {
             const ProdData = ProdModel.where('id',p.prod_id).get().find(p=>p)
             const ProdImageData = ProdImageModel.where('prod_id',p.prod_id).get()
             ProdData.count = p.count
+            ProdData.shop_car_id = p.id
             ProdData.image = ProdImageData
             response.push(ProdData) 
         })

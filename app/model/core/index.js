@@ -20,7 +20,9 @@ module.exports = class Model {
         this.primaryKey = ops.primaryKey || 'id'
         this.deleteKey = ops.deleteKey || 'deleted_at'
         this.insertRules = ops.insertRules || function(){console.log(`Insert is not rules.`)}
-        const value = JSON.parse(fs.readFileSync(`./app/db/${this.table}.json`).toString())
+        const jsonFile = fs.readFileSync(`./app/db/${this.table}.json`)
+        const jsonString = jsonFile.toString()
+        const value = JSON.parse(jsonString)
         Object.defineProperty(this,'DB',{
             get: function(){
                 const getTable = (param) =>{
@@ -125,13 +127,13 @@ module.exports = class Model {
             table,
             fillable,
             middleware,
-            insertRules
+            insertRules,
+            DB
         } = this
-        const DB = JSON.parse(fs.readFileSync(`./app/db/${table}.json`).toString())
         const newData = {}
-        const lastCount = Number(DB[DB.length-1][primaryKey])
+        const lastCount = DB.length ? (Number(DB[DB.length-1][primaryKey]) + 1) : 1
+        let resultIndex = -1
         fillable.forEach(key=>{
-            console.log(key);
             if (middleware.addTable) {
                 newData[key] = middleware.addTable(data[key],key)
             }else{
@@ -145,11 +147,12 @@ module.exports = class Model {
                 DB.push(data)
             }
         }else{
-            if(lastCount===lastCount){
-                newData[primaryKey] = lastCount + 1
+            if(!isNaN(lastCount)){
+                newData[primaryKey] = lastCount
                 DB.push(newData)
+                resultIndex = lastCount
             }else if(insertRules){
-                insertRules.call(this,DB,data)
+                resultIndex = insertRules.call(this,DB,data)
             }else{
                 return console.error(`The primary key does not meet the preset rules.`)
             }
@@ -160,16 +163,16 @@ module.exports = class Model {
             }
             console.log(`Add ${table} data in DB.`.green)
         })
-        return lastCount
+        return resultIndex
     }
     update(data){
         const {
             table,
             fillable,
             middleware,
-            primaryKey
+            primaryKey,
+            DB
         } = this
-        const DB = JSON.parse(fs.readFileSync(`./app/db/${table}.json`).toString())
         DB.forEach(dbTable=>{
             const newData = (String(dbTable[primaryKey]) === String(data[primaryKey])) ? data : dbTable
             fillable.forEach(key=>{

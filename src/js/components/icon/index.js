@@ -2,6 +2,8 @@ import ATM from './pattern/atm'
 import ArrowRight from './pattern/arrow-right'
 import ArrowDoubleRight from './pattern/arrow-double-right'
 import Boy from './pattern/boy'
+import BtnMinus from './pattern/btn-minus'
+import BtnPlus from './pattern/btn-plus'
 import CatType from './pattern/cat-type'
 import Close from './pattern/close'
 import Copy from './pattern/copy'
@@ -51,6 +53,8 @@ export {
     ArrowRight,
     ArrowDoubleRight,
     Boy,
+    BtnMinus,
+    BtnPlus,
     CatType,
     Close,
     Copy,

@@ -54,7 +54,7 @@
                         <div class="mb-3 card-img">
                             <img class="w-100 img-cover" :src="item.image_url" alt="">
                             <div class="card-hover py-2 bg-primary text-center">
-                                <a class="text-white stretched-link" href="javascript:;" @click="addShowCar(item.id)">加入購物袋</a>
+                                <a class="text-white stretched-link" href="javascript:;" @click="addShopCar(item.id)">加入購物袋</a>
                             </div>
                         </div>
                         <figcaption class="font-weight-bold text-dark mb-2 overflow-line-20 px-3">多貓家庭 <br>搭伙合菜『美味雞魚配方』</figcaption>
@@ -117,7 +117,7 @@ export default {
         })
     },
     methods: {
-        addShowCar(id){
+        addShopCar(id){
             console.log(id);
         }
     },

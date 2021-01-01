@@ -45,7 +45,7 @@ module.exports = class PetController extends Controller {
         const response = data || {}
         res.send(response)
     }
-    addPetDataById(req, res){
+    addPetData(req, res){
         const PetModel = new Model.Pet
         PetModel.add(req.body)
         res.send('success')
@@ -59,6 +59,10 @@ module.exports = class PetController extends Controller {
             }
             const PetModel = new Model.Pet
             PetModel.update(fields)
+            // const delayTimeout = setTimeout(() => {
+            //     res.send('success')
+            // },1000);
+            // clearTimeout(delayTimeout);
             res.send('success')
         })
     }

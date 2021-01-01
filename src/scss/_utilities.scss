@@ -206,3 +206,39 @@
     overflow: hidden;
     box-sizing: content-box;
 }
+.overflow-line-16{
+    font-size: 16px;
+    line-height: 1.5;
+    height: 16px*1.5*3;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+
+input[type="text"].form-control{
+    padding: 0 0.5rem;
+    border-radius: 99rem;
+    background-color:  #F3F3F3;
+    border-color: #F3F3F3;
+}
+input[type="text"].form-control.is-invalid{
+    border-color:#ff0000;
+}
+input.form-control::placeholder{
+    color: #9D9D9D;
+}
+
+select.custom-select{
+    background-color:  #F3F3F3;
+    border-radius: 99rem;
+}
+
+.horizontal-line-1{
+    background-color: #5A5B5B;
+    height: 1px;
+}
+
+.horizontal-line-2{
+    background-color: #5A5B5B;
+    height: 2px;
+}

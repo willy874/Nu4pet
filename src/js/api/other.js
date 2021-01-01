@@ -1,4 +1,6 @@
 import { request } from './config.js'
 
-export const getRecommend = ({user_id,account,count}) => request.get(`recommend?user_id=${user_id}&account=${account}&count=${count}`)
-
+export const getRecommend = (id) => request.get(`recommend/user/${id}`)
+export const getDiscountRules = (id)=>request.get(`discount/user/${id}`)
+export const getSaleCodeDiscount = (code)=>request.get(`discount/salecode/${code}`)
+export const getCity = ()=>request.get(`city`)

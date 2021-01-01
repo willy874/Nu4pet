@@ -6,5 +6,6 @@ module.exports = {
     Prod: require('./prod'),
     ProdImage: require('./prod_image'),
     ShopCar: require('./shop_car'),
+    Record: require('./record'),
     RecordRelation: require('./record_relation'),
 }

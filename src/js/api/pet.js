@@ -10,5 +10,5 @@ export const getPetListData = (page = 1,per = 10) => request.get(`pet?page=${pag
 export const getPetAllData = () => request.get('/pet/all')
 export const getPetListDataByAccount = (account) => request.get(`pet/user/${account}`)
 export const getPetDataById = (id) => request.get(`pet/${id}`)
-export const addPetDataById = (data) => request.post(`pet`,data,FromDataHeader)
+export const addPetData = (data) => request.post(`pet`,data,FromDataHeader)
 export const updatePetDataById = (id,data) => request.post(`pet/${id}`,data,FromDataHeader)

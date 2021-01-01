@@ -8,6 +8,7 @@ export default new Vuex.Store({
         step: 1,
         shopCar: undefined,
         record: undefined,
+        city: undefined,
     },
     mutations: {
         setUser (state,data) {
@@ -20,16 +21,16 @@ export default new Vuex.Store({
             state.step++
         },
         setShopCar (state,data) {
-            state.shopCar = {
-                ...state.shopCar,
-                ...data
-            }
+            state.shopCar = data
         },
-        seRecord (state,data) {
+        setRecord (state,data) {
             state.record = {
                 ...state.record,
                 ...data
             }
+        },
+        setCity (state,data) {
+            state.city = data
         },
     },
     getters: {},
