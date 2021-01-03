@@ -49,6 +49,11 @@ module.exports = (args)=>{
     Route.api('get','/discount/user/:id?', 'OrderController@getDiscountRules')
     Route.api('get','/discount/salecode/:code?', 'OrderController@getSaleCodeDiscount')
 
+    // ToolController
+    Route.get('/api/svg/all','ToolController@getSvgAll')
+    Route.post('/api/svg/create','ToolController@createSvgJavascript')
+    Route.put('/api/svg/index','ToolController@updateIndex')
+
     return Route
 }
 

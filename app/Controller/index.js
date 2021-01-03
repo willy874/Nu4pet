@@ -6,4 +6,5 @@ module.exports = {
     RecordController: require('./record'),
     ShopCarController: require('./shop_car'),
     OrderController: require('./order'),
+    ToolController: require('./tool'),
 }

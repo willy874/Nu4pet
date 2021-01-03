@@ -26,32 +26,12 @@ const wss = new SocketServer({
         console.log('Shop Car',`http://localhost:${port}/shop-car.html`.blue)
         console.log('WebSocket'.yellow)
         console.log(':',`ws://localhost:${port}`.blue)
+        console.log('Tool'.yellow)
+        console.log('Shop Car',`http://localhost:${port}/svg-tool.html`.blue)
     })
 })
 
 wss.on('connection', ws => {
-    // console.log('Client connected')
-    const Route = createRoute({
-        app,
-        webSocket: wss,
-        connSocket: ws
-    })
-    console.log('Route'.yellow)
-    Route.apiData.forEach(r=>{
-        if (r.url==='/prod'&&r.method==='get') console.log('ProdController'.green)
-        if (r.url==='/pet'&&r.method==='get') console.log('PetController'.green)
-        if (r.url==='/login'&&r.method==='get') console.log('UserController'.green)
-        if (r.url==='/shopcar'&&r.method==='get') console.log('ShopCarController'.green)
-        if (r.url==='//record/all'&&r.method==='get') console.log('RecordController'.green)
-        if (r.url==='/city'&&r.method==='get') console.log('OtherController'.green)
-
-        console.log('method:',r.method.brightGreen,',','url:',`http://localhost:${port}/api${r.url}`.blue)
-
-        if (r.url==='/pet/user/:account?') console.log('test:',r.url.green,',',`http://localhost:3000/api/pet/user/admin`.blue);
-        if (r.url==='/login') console.log('test:',r.url.green,',',`http://localhost:${port}/api/login?account=admin&password=password`.blue);
-        if (r.url==='/pet/status/:type?') console.log('test:',r.url.green,',',`http://localhost:${port}/api/pet/status/dog`.blue);
-    })
-
     app.get('/ws/:str?',(req, res)=>{
         const {
             str
@@ -63,6 +43,25 @@ wss.on('connection', ws => {
     })
     
     ws.on('close', () => {
-        // console.log('Close connected')
     })
+})
+
+const Route = createRoute({
+    app,
+    webSocket: wss
+})
+console.log('Route'.yellow)
+Route.apiData.forEach(r=>{
+    if (r.url==='/prod'&&r.method==='get') console.log('ProdController'.green)
+    if (r.url==='/pet'&&r.method==='get') console.log('PetController'.green)
+    if (r.url==='/login'&&r.method==='get') console.log('UserController'.green)
+    if (r.url==='/shopcar'&&r.method==='get') console.log('ShopCarController'.green)
+    if (r.url==='//record/all'&&r.method==='get') console.log('RecordController'.green)
+    if (r.url==='/city'&&r.method==='get') console.log('OtherController'.green)
+
+    console.log('method:',r.method.brightGreen,',','url:',`http://localhost:${port}/api${r.url}`.blue)
+
+    if (r.url==='/pet/user/:account?') console.log('test:',r.url.green,',',`http://localhost:3000/api/pet/user/admin`.blue);
+    if (r.url==='/login') console.log('test:',r.url.green,',',`http://localhost:${port}/api/login?account=admin&password=password`.blue);
+    if (r.url==='/pet/status/:type?') console.log('test:',r.url.green,',',`http://localhost:${port}/api/pet/status/dog`.blue);
 })

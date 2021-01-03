@@ -6,12 +6,14 @@ const WebpackModules = require('webpack-modules')
 const WebpackModuleSettings = require('./webpack.module.js')
 const WebpackHtmlSettings = require('./webpack.html.js')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = (evn,option)=>{
     return {
         mode: option.mode,
         entry: {
-            main: './src/main.js'
+            main: './src/main.js',
+            svgTool: './src/svg-tool.js'
         },
         devtool: 'source-map',
         output: {
@@ -20,6 +22,11 @@ module.exports = (evn,option)=>{
         },
         plugins: [
             ...WebpackHtmlSettings(option),
+            new HtmlWebpackPlugin({
+                template: `./src/pug/svg-tool.pug`,
+                filename: `svg-tool.html`,
+                chunks: 'svgTool'
+            }),
             new VueLoaderPlugin(),
             new ESLintPlugin(),
             new MiniCssExtractPlugin({

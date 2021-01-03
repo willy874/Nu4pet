@@ -1,101 +1,108 @@
-import ATM from './pattern/atm'
-import ArrowRight from './pattern/arrow-right'
-import ArrowDoubleRight from './pattern/arrow-double-right'
-import Boy from './pattern/boy'
-import BtnMinus from './pattern/btn-minus'
-import BtnPlus from './pattern/btn-plus'
-import CatType from './pattern/cat-type'
-import Close from './pattern/close'
-import Copy from './pattern/copy'
-import CopyRound from './pattern/copy-round'
-import Coupon from './pattern/coupon'
-import FBRound from './pattern/fb-round'
-import LineRound from './pattern/line-round'
-import LinkRound from './pattern/link-round'
-import DogBall from './pattern/dog-ball'
-import DogFood from './pattern/dog-food'
-import DogHouse from './pattern/dog-house'
-import DogRun from './pattern/dog-run'
-import DogType from './pattern/dog-type'
-import Email from './pattern/email'
-import Evaluation from './pattern/evaluation'
-import FB from './pattern/fb'
-import Line from './pattern/line'
-import Girl from './pattern/girl'
-import Heart from './pattern/heart'
-import HeartFill from './pattern/heart-fill'
-import HeartRound from './pattern/heart-round'
-import Logo1 from './pattern/logo-1'
-import Logo2 from './pattern/logo-2'
-import MasterCard from './pattern/master-card'
-import Member from './pattern/member'
-import Messenger from './pattern/messenger'
-import Navbtn from './pattern/nav-btn'
-import OrderNote from './pattern/order-note'
-import Phone from './pattern/phone'
-import Record from './pattern/record'
-import Search from './pattern/search'
-import SearchOne from './pattern/search-one'
-import Share from './pattern/share'
-import Shop from './pattern/shop'
-import ShopSolid from './pattern/shop-solid'
-import Timer from './pattern/timer'
-import Top from './pattern/top'
-import User from './pattern/user'
+import ArrowDoubleLeft from './pattern/arrow-double-left.js'
+import ArrowDoubleRight from './pattern/arrow-double-right.js'
+import ArrowLeftRound from './pattern/arrow-left-round.js'
+import ArrowRightRound from './pattern/arrow-right-round.js'
+import ArrowRight from './pattern/arrow-right.js'
+import Atm from './pattern/atm.js'
+import Boy from './pattern/boy.js'
+import BtnMinus from './pattern/btn-minus.js'
+import BtnPlus from './pattern/btn-plus.js'
+import CatType from './pattern/cat-type.js'
+import Close from './pattern/close.js'
+import Cook2 from './pattern/cook-2.js'
+import CopyRound from './pattern/copy-round.js'
+import Copy from './pattern/copy.js'
+import Coupon from './pattern/coupon.js'
+import DogBall from './pattern/dog-ball.js'
+import DogFood from './pattern/dog-food.js'
+import DogHouse from './pattern/dog-house.js'
+import DogRun from './pattern/dog-run.js'
+import DogType from './pattern/dog-type.js'
+import Email from './pattern/email.js'
+import Evaluation from './pattern/evaluation.js'
+import FbRound from './pattern/fb-round.js'
+import Fb from './pattern/fb.js'
+import FiveHeartedEnjoyment from './pattern/five-hearted-enjoyment.js'
+import Girl from './pattern/girl.js'
+import HeartFill from './pattern/heart-fill.js'
+import HeartRound from './pattern/heart-round.js'
+import Heart from './pattern/heart.js'
+import LineRound from './pattern/line-round.js'
+import Line from './pattern/line.js'
+import LinkRound from './pattern/link-round.js'
+import Logo1 from './pattern/logo-1.js'
+import Logo2 from './pattern/logo-2.js'
+import MasterCard from './pattern/master-card.js'
+import Member from './pattern/member.js'
+import Messenger from './pattern/messenger.js'
+import NavBtn from './pattern/nav-btn.js'
+import News2 from './pattern/news-2.js'
+import OrderNote from './pattern/order-note.js'
+import PassionForPets from './pattern/passion-for-pets.js'
+import Phone from './pattern/phone.js'
+import Plus from './pattern/plus.js'
+import Record from './pattern/record.js'
+import SearchOne from './pattern/search-one.js'
+import Search from './pattern/search.js'
+import Share from './pattern/share.js'
+import ShopSolid from './pattern/shop-solid.js'
+import Shop from './pattern/shop.js'
+import Timer from './pattern/timer.js'
+import Top from './pattern/top.js'
+import User from './pattern/user.js'
 
-import PassionForPets from './pattern/passion-for-pets'
-import FiveHeartedEnjoyment from './pattern/five-hearted-enjoyment'
-import news2 from './pattern/news-2'
-import cook2 from './pattern/cook-2'
 
 export {
-    ATM,
-    ArrowRight,
-    ArrowDoubleRight,
-    Boy,
-    BtnMinus,
-    BtnPlus,
-    CatType,
-    Close,
-    Copy,
-    CopyRound,
-    Coupon,
-    FBRound,
-    LineRound,
-    LinkRound,
-    DogBall,
-    DogFood,
-    DogHouse,
-    DogRun,
-    DogType,
-    Email,
-    Evaluation,
-    FB,
-    Line,
-    Girl,
-    Heart,
-    HeartRound,
-    HeartFill,
-    Logo1,
-    Logo2,
-    MasterCard,
-    Member,
-    Messenger,
-    Navbtn,
-    OrderNote,
-    Phone,
-    Record,
-    Search,
-    SearchOne,
-    Share,
-    Shop,
-    ShopSolid,
-    Timer,
-    Top,
-    User,
-
-    PassionForPets,
-    FiveHeartedEnjoyment,
-    news2,
-    cook2
+  ArrowDoubleLeft,
+  ArrowDoubleRight,
+  ArrowLeftRound,
+  ArrowRightRound,
+  ArrowRight,
+  Atm,
+  Boy,
+  BtnMinus,
+  BtnPlus,
+  CatType,
+  Close,
+  Cook2,
+  CopyRound,
+  Copy,
+  Coupon,
+  DogBall,
+  DogFood,
+  DogHouse,
+  DogRun,
+  DogType,
+  Email,
+  Evaluation,
+  FbRound,
+  Fb,
+  FiveHeartedEnjoyment,
+  Girl,
+  HeartFill,
+  HeartRound,
+  Heart,
+  LineRound,
+  Line,
+  LinkRound,
+  Logo1,
+  Logo2,
+  MasterCard,
+  Member,
+  Messenger,
+  NavBtn,
+  News2,
+  OrderNote,
+  PassionForPets,
+  Phone,
+  Plus,
+  Record,
+  SearchOne,
+  Search,
+  Share,
+  ShopSolid,
+  Shop,
+  Timer,
+  Top,
+  User
 }
