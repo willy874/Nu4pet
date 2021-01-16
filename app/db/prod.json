@@ -7,7 +7,9 @@
         "sale_price": 1488,
         "created_at": "2020/12/01",
         "updated_at": "2020/12/01",
-        "deleted_at": null
+        "deleted_at": null,
+        "is_pet_customized": true,
+        "pet_size": 50
     },
     {
         "id": 2,
@@ -17,7 +19,9 @@
         "sale_price": 1488,
         "created_at": "2020/12/01",
         "updated_at": "2020/12/01",
-        "deleted_at": null
+        "deleted_at": null,
+        "is_pet_customized": false,
+        "pet_size": 0
     },
     {
         "id": 3,
@@ -27,6 +31,8 @@
         "sale_price": 1488,
         "created_at": "2020/12/01",
         "updated_at": "2020/12/01",
-        "deleted_at": null
+        "deleted_at": null,
+        "is_pet_customized": false,
+        "pet_size": 0
     }
 ]

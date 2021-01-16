@@ -3,12 +3,15 @@ import $ from 'jquery'
 const shop = 'slick-home-shop' 
 const benner = 'slick-home-benner'
 const evaluation = 'slick-home-evaluation'
+const shopHome1 = 'slick-shop-home-1'
+const shopHome2 = 'slick-shop-home-2'
 
 $(`#${benner}`).slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    autoplaySpeed: 5000,
     dots: true,
     arrows: true,
     responsive: [{
@@ -41,7 +44,35 @@ $(`#${shop}`).slick({
         }
       ]
 })
+
 $(`#${evaluation}`).slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    responsive: [{
+      breakpoint: 576,
+      settings: {
+        arrows: false,
+      }
+    }]
+})
+
+$(`#${shopHome1}`).slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    responsive: [{
+      breakpoint: 576,
+      settings: {
+        arrows: false,
+      }
+    }]
+})
+$(`#${shopHome2}`).slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,

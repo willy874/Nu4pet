@@ -56,7 +56,7 @@ module.exports = class ToolController extends Controller {
             res.send('success')
         })
     }
-    updateIndex(req, res){
+    updateSvgIndex(req, res){
         const {
             path,
         } = req.body

@@ -1,0 +1,174 @@
+extends ./layout/index.pug
+
+
+block content
+  main.col.shop-home
+    section.container.py-4
+      img.w-100(src="./assets/image/benner-04.min.jpg")
+    section.container.py-4
+      ul#slick-shop-home-1.p-0
+        li
+          img.w-100(src="./assets/image/benner-01.min.jpg")
+        li
+          img.w-100(src="./assets/image/benner-02.min.jpg")
+        li
+          img.w-100(src="./assets/image/benner-03.min.jpg")
+    section.container.py-3
+      .row
+        .col-6.col-sm-3.py-2
+          a.d-block(href='javascript:;')
+            img.w-100(src="./assets/image/latest-offers.png")
+        .col-6.col-sm-3.py-2
+          a.d-block(href='javascript:;')
+            img.w-100(src="./assets/image/dog-special-area.png")
+        .col-6.col-sm-3.py-2
+          a.d-block(href='javascript:;')
+            img.w-100(src="./assets/image/cat-special-area.png")
+        .col-6.col-sm-3.py-2
+          a.d-block(href='javascript:;')
+            img.w-100(src="./assets/image/recommend-friends.png")
+    section.container.py-3
+      .row
+        .col-3.py-2
+          a.d-block.icon-new-shopping.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 新品購
+        .col-3.py-2
+          a.d-block.icon-custom-food.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 客製糧
+        .col-3.py-2
+          a.d-block.icon-staple-food.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 主食罐
+        .col-3.py-2
+          a.d-block.icon-functional-powder.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 機能粉
+        .col-3.py-2
+          a.d-block.icon-point-exchange.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 積分兌換
+        .col-3.py-2
+          a.d-block.icon-handmade-snacks.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 手工零食
+        .col-3.py-2
+          a.d-block.icon-healthy-things.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 健康小物
+        .col-3.py-2
+          a.d-block.icon-online-service.mx-auto.btn-max(href='javascript:;')
+          h3.rwd-h4.font-weight-bold.text-center.my-3 獻上客服
+    section.container.py-4
+      .row
+        .col-md-6.py-2
+          .rounded-xl.h-100.py-4.px-3.px-sm-5(style="background-color: #F8C351;")
+            .d-flex.flex-column.justify-content-between.align-items-start
+              h3.rwd-h1.text-white 人氣推薦
+              .rwd-img.py-2
+                img(src="./assets/image/popular-recommendation.png")
+              .btn-shop-now(style="background-color: #FADA93;")
+                a.text-white(href='javascript:;') SHOW<br>NOW
+        .col-md-6.py-2
+          .rounded-xl.h-100.py-4.px-3.px-sm-5(style="background-color: #FC7A63;")
+            h3.rwd-h1.text-white 人氣推薦
+            .rwd-img.py-2
+              img(src="./assets/image/pet-unpacking.png")
+            .btn-shop-now(style="background-color: #FCAE9F;")
+              a.text-white(href='javascript:;') SHOW<br>NOW
+        .col-md-6.py-2
+          .rounded-xl.h-100.py-4.px-3.px-sm-5(style="background-color: #4AC0B0;")
+            .d-flex.flex-column.justify-content-between.align-items-start.h-100
+              h3.rwd-h1.text-white 人氣推薦
+              .py-2
+                img(src="./assets/image/limited-time-offer.png")
+              .w-100.countdown-timer(data-horus="60" data-minutes="00" data-seconds="00")
+                  svg.w-100(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358 105")
+                    style .text-number{font: bold 50px sans-serif;} .text-string{font: bold 22px sans-serif;}
+                    text.text-string(x="0" y="105" fill="#000") horus
+                    text.text-string(x="126.24" y="105" fill="#000") minutes
+                    text.text-string(x="252.49" y="105" fill="#000") seconds
+                    rect(fill="#fff" x="0" width="50.2" height="83.67" rx="8.36")
+                    rect(fill="#fff" x="55.02" width="50.2" height="83.67" rx="8.36")
+                    rect(fill="#fff" x="252.49" width="50.2" height="83.67" rx="8.36")
+                    rect(fill="#fff" x="307.51" width="50.2" height="83.67" rx="8.36")
+                    rect(fill="#fff" x="126.24" width="50.2" height="83.67" rx="8.36")
+                    rect(fill="#fff" x="181.27" width="50.2" height="83.67" rx="8.36")
+                    path(fill="#040000" d="M240.58,35.34a1.4,1.4,0,1,1,2.8,0v1.27a1.4,1.4,0,0,1-2.8,0Zm0,18.84a1.4,1.4,0,1,1,2.8,0v1.27a1.4,1.4,0,0,1-2.8,0Z")
+                    path(fill="#040000" d="M114.34,35.34a1.4,1.4,0,1,1,2.79,0v1.27a1.4,1.4,0,1,1-2.79,0Zm0,18.84a1.4,1.4,0,1,1,2.79,0v1.27a1.4,1.4,0,1,1-2.79,0Z")
+                    text.text-number(x="11" y="59" fill="#000").svg-horus-0 0
+                    text.text-number(x="67" y="59" fill="#000").svg-horus-1 0
+                    text.text-number(x="138" y="59" fill="#000").svg-minutes-0 0
+                    text.text-number(x="193" y="59" fill="#000").svg-minutes-1 0
+                    text.text-number(x="264" y="59" fill="#000").svg-seconds-0 0
+                    text.text-number(x="318" y="59" fill="#000").svg-seconds-1 0
+              .btn-shop-now(style="background-color: #90D9CF;bottom: 50%;")
+                a.text-white(href='javascript:;') SHOW<br>NOW
+        .col-md-6.py-2
+          .rounded-xl.h-100.py-4.px-3.px-sm-5(style="background-color: #21C7D7;")
+            .d-flex.flex-column.justify-content-between.align-items-start
+              h3.rwd-h1.text-white 人氣推薦
+              .rwd-img.py-2
+                img(src="./assets/image/novice-early-adopters.png")
+              .btn-shop-now(style="background-color: #6CDDE7;")
+                a.text-white(href='javascript:;') SHOW<br>NOW
+    section.container.py-4
+      ul#slick-shop-home-2.p-0
+        li
+          img.w-100(src="./assets/image/benner-01.min.jpg")
+        li
+          img.w-100(src="./assets/image/benner-02.min.jpg")
+        li
+          img.w-100(src="./assets/image/benner-03.min.jpg")
+    section.container.py-4
+      h2.font-weight-bold.text-dark.text-center.py-3 人氣推薦 TOP10
+      .row
+        each val in [1, 2, 3, 4]
+          .col-sm-6.col-xl-3
+            figure.border.prod-card
+                .card-img.mb-3
+                  img.w-100(src='./assets/image/prod-01.min.jpg' alt='')
+                  .card-hover.py-2.bg-primary.text-center
+                    a.text-white.stretched-link(href='javascript:;') 加入購物袋
+                figcaption.font-weight-bold.text-dark.mb-2.overflow-line-20.px-3
+                  | 多貓家庭 
+                  br
+                  | 搭伙合菜『美味雞魚配方』
+                .border-bottom
+                .d-flex.justify-content-between.py-2.px-3
+                  .pt-1
+                    div
+                      span.font-weight-bold.h6.text-dark NT$
+                      span.font-weight-bold.h3.text-dark 1488
+                    div
+                      span.text-dark 原價：
+                      del.text-dark 1900
+                  div
+                    a.d-inline-block(href='javascript:;')
+                      .size-41.icon-heart-round.text-primary
+                    a.d-inline-block(href='javascript:;')
+                      .size-41.icon-share.text-primary.ml-2
+    section.container.py-4
+      h2.font-weight-bold.text-dark.text-center.py-3 新品上市
+      .row
+        each val in [1, 2, 3, 4]
+          .col-sm-6.col-xl-3
+            figure.border.prod-card
+                .card-img.mb-3
+                  img.w-100(src='./assets/image/prod-01.min.jpg' alt='')
+                  .card-hover.py-2.bg-primary.text-center
+                    a.text-white.stretched-link(href='javascript:;') 加入購物袋
+                figcaption.font-weight-bold.text-dark.mb-2.overflow-line-20.px-3
+                  | 多貓家庭 
+                  br
+                  | 搭伙合菜『美味雞魚配方』
+                .border-bottom
+                .d-flex.justify-content-between.py-2.px-3
+                  .pt-1
+                    div
+                      span.font-weight-bold.h6.text-dark NT$
+                      span.font-weight-bold.h3.text-dark 1488
+                    div
+                      span.text-dark 原價：
+                      del.text-dark 1900
+                  div
+                    a.d-inline-block(href='javascript:;')
+                      .size-41.icon-heart-round.text-primary
+                    a.d-inline-block(href='javascript:;')
+                      .size-41.icon-share.text-primary.ml-2
+    
+                

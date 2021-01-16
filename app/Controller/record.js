@@ -19,9 +19,27 @@ module.exports = class RecordController extends Controller {
                 return {
                     ...ProdData,
                     pet: PetData,
-                    count: d.count
+                    count: d.count,
+                    order_code: d.order_code
                 }
             })
+        })
+        res.send( response )
+    }
+    getRecordAddress(req, res){
+        const { account } = req.params
+        const UserModel = new Model.User
+        const UserData = UserModel.where('account',account).get().find(p=>p)
+        const RecordModel = new Model.Record
+        const RecordData = RecordModel.where('user_id',UserData.id).get()
+        const response = RecordData.map(p=>{
+            return {
+                id: p.id,
+                address_code: p.address_code,
+                address_city: p.address_city,
+                address_area: p.address_area,
+                address: p.address
+            }
         })
         res.send( response )
     }
@@ -39,8 +57,10 @@ module.exports = class RecordController extends Controller {
                 const PetData = PetModel.where('id',p.pet_id).get().find(p=>p) || {}
                 return {
                     ...ProdData,
+                    shop_car_id: p.id,
                     pet: PetData,
-                    count: p.count
+                    count: p.count,
+                    order_code: p.order_code
                 }
             })
         }
@@ -50,24 +70,48 @@ module.exports = class RecordController extends Controller {
     addRecordData(req, res){
         const RecordModel = new Model.Record
         const RecordRelationModel = new Model.RecordRelation
+        const body = req.body
+        body.order_code = `N000${RecordRelationModel.get().length}`
         const RecordId = RecordModel.add(req.body)
         const ShopCarList = req.body.ShopCarList
-        for(let i = 0; i < ShopCarList.length; i += 1) {
+        ShopCarList.forEach((shopCar,index)=>{
             const relation = {
                 record_id: RecordId,
-                prod_id: ShopCarList[i].id,
-                user_id: ShopCarList[i].user_id,
-                pet_id: ShopCarList[i].pet_id,
-                count: ShopCarList[i].count
+                prod_id: shopCar.id,
+                user_id: shopCar.user_id,
+                pet_id: shopCar.pet_id,
+                order_code: shopCar.is_pet_customized ? `R${RecordId}${shopCar.id}${RecordRelationModel.get().length}${index}` : '',
+                count: shopCar.is_pet_customized ? 1 : shopCar.count
             }
-            RecordRelationModel.add(relation)
+            if (shopCar.is_pet_customized) {
+                const customizedData = new Array(shopCar.count).fill()
+                customizedData.forEach(()=>{
+                    RecordRelationModel.add(relation)
+                })
+            }else{
+                RecordRelationModel.add(relation)
+            }
+        }) 
+        const response = {
+            toRouter: 3
         }
-        res.send( 'success' )
+        res.send( response )
     }
     updateRecordData(req, res){
         const RecordModel = new Model.Record
+        const RecordRelationModel = new Model.RecordRelation
         RecordModel.update(req.body)
-        res.send( 'success' )
+        const ShopCarList = req.body.ShopCarList
+        ShopCarList.forEach(shopCar=>{
+            RecordRelationModel.update({
+                ...shopCar,
+                id: shopCar.shop_car_id,
+                prod_id: shopCar.id
+            })
+        })
+        const response = {
+            toRouter: 0
+        }
+        res.send( response )
     }
-    deleteRecordData(){}
 }

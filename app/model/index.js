@@ -8,4 +8,5 @@ module.exports = {
     ShopCar: require('./shop_car'),
     Record: require('./record'),
     RecordRelation: require('./record_relation'),
+    PayMethod: require('./pay-method'),
 }

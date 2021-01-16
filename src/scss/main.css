@@ -12976,6 +12976,38 @@ body.swal2-toast-column .swal2-toast .swal2-validation-message {
   bottom: -24px;
 }
 
+#slick-shop-home-1 .slick-arrow {
+  z-index: 1;
+}
+
+#slick-shop-home-1 .slick-arrow.slick-prev {
+  left: 1.5rem;
+}
+
+#slick-shop-home-1 .slick-arrow.slick-next {
+  right: 1.5rem;
+}
+
+#slick-shop-home-1 .slick-dots {
+  bottom: -24px;
+}
+
+#slick-shop-home-2 .slick-arrow {
+  z-index: 1;
+}
+
+#slick-shop-home-2 .slick-arrow.slick-prev {
+  left: 1.5rem;
+}
+
+#slick-shop-home-2 .slick-arrow.slick-next {
+  right: 1.5rem;
+}
+
+#slick-shop-home-2 .slick-dots {
+  bottom: -24px;
+}
+
 a svg, a div, a span, a img, button svg, button div, button span, button img {
   pointer-events: none;
 }
@@ -15476,6 +15508,67 @@ aside.sub-nav-mobile .nav-sub-link:hover {
   }
 }
 
+.shop-home .btn-max {
+  max-width: 150px;
+}
+
+.shop-home .rounded-xl {
+  border-radius: 1rem;
+}
+
+.shop-home .rwd-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+}
+
+@media (max-width: 1200px) {
+  .shop-home .rwd-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .shop-home .rwd-img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-home .rwd-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .shop-home .rwd-img {
+    height: 100px;
+  }
+}
+
+.shop-home .rwd-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.shop-home .btn-shop-now {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem 0 0 1rem;
+  position: absolute;
+  right: 15px;
+  bottom: 15%;
+}
+
 #shop-aside.type-desktop {
   width: 160px;
 }
@@ -15641,79 +15734,79 @@ aside.sub-nav-mobile .nav-sub-link:hover {
   text-decoration: none;
 }
 
-.shop article figure .card-body {
+.shop-list article figure .card-body {
   padding: 0.5rem;
 }
 
-.shop article figure h3 {
+.shop-list article figure h3 {
   font-size: 1.5rem;
 }
 
-.shop article figure .heading-sub {
+.shop-list article figure .heading-sub {
   font-size: 1.125rem;
 }
 
-.shop article figure .text-price {
+.shop-list article figure .text-price {
   font-size: 1.125rem;
 }
 
-.shop article figure .text-price h4 {
+.shop-list article figure .text-price h4 {
   font-size: 1.75rem;
 }
 
-.shop article figure .text-del-price {
+.shop-list article figure .text-del-price {
   margin-top: -0.75rem;
 }
 
-.shop article figure .icon-block {
+.shop-list article figure .icon-block {
   width: 41px;
   height: 41px;
   margin-left: 0.5rem;
 }
 
 @media (max-width: 768px) {
-  .shop article figure .card-body {
+  .shop-list article figure .card-body {
     padding: 0.25rem;
   }
-  .shop article figure h3 {
+  .shop-list article figure h3 {
     font-size: 1.25rem;
   }
-  .shop article figure .heading-sub {
+  .shop-list article figure .heading-sub {
     font-size: 1rem;
   }
-  .shop article figure .text-price {
+  .shop-list article figure .text-price {
     font-size: 1rem;
   }
-  .shop article figure .text-price h4 {
+  .shop-list article figure .text-price h4 {
     font-size: 1.25rem;
   }
-  .shop article figure .text-del-price {
+  .shop-list article figure .text-del-price {
     font-size: 1rem;
     margin-top: -0.5rem;
   }
-  .shop article figure .icon-block {
+  .shop-list article figure .icon-block {
     width: 30px;
     height: 30px;
   }
 }
 
 @media (max-width: 576px) {
-  .shop article figure h3 {
+  .shop-list article figure h3 {
     font-size: 1rem;
   }
-  .shop article figure .heading-sub {
+  .shop-list article figure .heading-sub {
     font-size: 0.75rem;
   }
-  .shop article figure .text-price {
+  .shop-list article figure .text-price {
     font-size: 0.75rem;
   }
-  .shop article figure .text-price h4 {
+  .shop-list article figure .text-price h4 {
     font-size: 1rem;
   }
-  .shop article figure .text-del-price {
+  .shop-list article figure .text-del-price {
     font-size: 0.75rem;
   }
-  .shop article figure .icon-block {
+  .shop-list article figure .icon-block {
     width: 20px;
     height: 20px;
     margin-left: 0.25rem;
@@ -15721,38 +15814,38 @@ aside.sub-nav-mobile .nav-sub-link:hover {
 }
 
 @media (max-width: 374px) {
-  .shop article figure h3 {
+  .shop-list article figure h3 {
     font-size: 0.75rem;
   }
-  .shop article figure .text-price {
+  .shop-list article figure .text-price {
     position: relative;
     left: -0.25rem;
   }
-  .shop article figure .text-price span {
+  .shop-list article figure .text-price span {
     -webkit-transform: scale(0.75);
             transform: scale(0.75);
   }
-  .shop article figure .text-price h4 {
+  .shop-list article figure .text-price h4 {
     -webkit-transform: scale(0.75);
             transform: scale(0.75);
     position: relative;
     left: -0.25rem;
   }
-  .shop article figure .text-del-price {
+  .shop-list article figure .text-del-price {
     position: relative;
     left: -0.375rem;
   }
-  .shop article figure .text-del-price span {
+  .shop-list article figure .text-del-price span {
     -webkit-transform: scale(0.75);
             transform: scale(0.75);
   }
-  .shop article figure .text-del-price del {
+  .shop-list article figure .text-del-price del {
     -webkit-transform: scale(0.75);
             transform: scale(0.75);
     position: relative;
     left: -0.5rem;
   }
-  .shop article figure .icon-block {
+  .shop-list article figure .icon-block {
     width: 15px;
     height: 15px;
     margin: 0.125rem;

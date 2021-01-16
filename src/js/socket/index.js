@@ -11,5 +11,3 @@ ws.onclose = () => {
 ws.onmessage = event => {
     console.log('Web Socket',event.data,event)
 }
-
-export default ws

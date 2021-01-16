@@ -239,7 +239,7 @@
 </template>
 
 <script>
-import assets from '@assets'
+import * as assets from '@assets'
 import { PetModel } from '@/models'
 import { getPetDataById,updatePetDataById,getPetStatusAllData } from '@/api'
 import $ from 'jquery'

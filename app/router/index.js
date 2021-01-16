@@ -29,6 +29,7 @@ module.exports = (args)=>{
 
     // UserController
     Route.api('get','/login', 'UserController@getUserLogin')
+    Route.api('put','/user', 'UserController@updateUserData')
 
     // ShopCarController
     Route.api('get','/shopcar', 'ShopCarController@getShopCarData')
@@ -38,21 +39,26 @@ module.exports = (args)=>{
 
     // RecordController
     Route.api('get','/record/all', 'RecordController@getRecordAllData')
+    Route.api('get','/record/address/:account?', 'RecordController@getRecordAddress')
     Route.api('get','/record/:id?', 'RecordController@getRecordDataById')
     Route.api('post','/record', 'RecordController@addRecordData')
     Route.api('put','/record', 'RecordController@updateRecordData')
-    Route.api('delete','/record', 'RecordController@deleteRecordData')
 
     // OrderController
     Route.api('get','/city', 'OrderController@getCity')
     Route.api('get','/recommend/user/:id?', 'OrderController@getRecommend')
     Route.api('get','/discount/user/:id?', 'OrderController@getDiscountRules')
     Route.api('get','/discount/salecode/:code?', 'OrderController@getSaleCodeDiscount')
+    Route.api('get','/pay/method','OrderController@getPayMethod')
+    Route.api('get','/vehicle/mobile/:code?', 'OrderController@checkMobileVehicle')
+    Route.api('get','/vehicle/natural/:code?', 'OrderController@checkNaturalVehicle')
+    Route.api('get','/pay/atm', 'OrderController@getVirtualAccount')
+    Route.api('post','/pay/card', 'OrderController@checkCardCode')
 
     // ToolController
     Route.get('/api/svg/all','ToolController@getSvgAll')
     Route.post('/api/svg/create','ToolController@createSvgJavascript')
-    Route.put('/api/svg/index','ToolController@updateIndex')
+    Route.put('/api/svg/index','ToolController@updateSvgIndex')
 
     return Route
 }

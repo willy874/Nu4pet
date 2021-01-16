@@ -4,7 +4,8 @@ module.exports = class ProdModel extends Model {
     constructor(){
         super({
             table: 'prod',
-            fillable: ['id','subject','content','sale_price','original_price','created_at','updated_at','deleted_at']
+            fillable: ['id','subject','content','sale_price','pet_size','original_price','is_pet_customized','created_at','updated_at','deleted_at']
         })
     }
 }
+// "pet_size": "3.4kg以下"

@@ -56,109 +56,12 @@
                     </div>
                     <div class="col-12 d-lg-none"></div>
                     <div class="col py-2">
-                        <input :class="['form-control',{'is-invalid':model.errors['address']}]" placeholder="請輸入您的地址" type="text" v-model="model.address">
+                        <input :class="['form-control',{'is-invalid':model.errors['address']}]" :list="uuid.address" placeholder="請輸入您的地址" type="text" v-model="model.address">
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="border my-3">
-            <div class="text-center">
-                <h5 class="mb-0 p-3">選擇付款方式</h5>
-            </div>
-            <div class="border-top px-3">
-                <div class="border-bottom">
-                    <div class="row">
-                        <div :class="['py-2',model.pay==='card'?'col-lg-6':'col-12']">
-                            <div class="custom-control custom-radio my-3">
-                                <input type="radio" :class="['custom-control-input',{'is-invalid':model.errors['pay']}]" :id="uuid.card" value="card" v-model="model.pay">
-                                <label class="custom-control-label" :for="uuid.card">信用卡一次付清</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 py-2" v-show="model.pay==='card'">
-                            <div class="row no-gutters align-items-center py-2 mx-n2">
-                                <div class="col-auto px-2">
-                                    信用卡號：
-                                </div>
-                                <div class="w-100 d-sm-none py-1"></div>
-                                <div class="col pl-2">
-                                    <input class="text-center card-input" type="text" 
-                                    @input="inputCardCode($event,0)" @focus="focusCardCode($event,0)" ref="CardCode[0]">
-                                </div>
-                                <div class="col-auto px-1 px-sm-2">
-                                    <div class="horizontal-line-1"></div>
-                                </div>
-                                <div class="col">
-                                    <input class="text-center card-input" type="text" 
-                                    @input="inputCardCode($event,1)" @focus="focusCardCode($event,1)" ref="CardCode[1]">
-                                </div>
-                                <div class="col-auto px-1 px-sm-2">
-                                    <div class="horizontal-line-1"></div>
-                                </div>
-                                <div class="col">
-                                    <input class="text-center card-input" type="text" 
-                                    @input="inputCardCode($event,2)" @focus="focusCardCode($event,2)" ref="CardCode[2]">
-                                </div>
-                                <div class="col-auto px-1 px-sm-2">
-                                    <div class="horizontal-line-1"></div>
-                                </div>
-                                <div class="col pr-2">
-                                    <input class="text-center card-input" type="text" 
-                                    @input="inputCardCode($event,3)" @focus="focusCardCode($event,3)" ref="CardCode[3]">
-                                </div>
-                            </div>
-                            <div class="row no-gutters align-items-center mx-n2">
-                                <div class="col-auto p-2">
-                                    到期日
-                                </div>
-                                <div class="col p-2">
-                                    <input class="text-center card-input" placeholder="MM/YY" type="text" 
-                                    @input="inputCardDate" @change="changeCardDate" @focus="focusCardDate" ref="CardDate">
-                                </div>
-                                <div class="w-100 d-sm-none"></div>
-                                <div class="col-auto p-2">
-                                    信用卡安全碼
-                                </div>
-                                <div class="col p-2">
-                                    <input class="text-center card-input" type="text" ref="CardSecurity" 
-                                    @input="inputCardSecurity">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-bottom">
-                    <div class="row align-items-center">
-                        <div :class="['py-2',model.pay==='atm'?'col-lg-6':'col-12']">
-                            <div class="custom-control custom-radio my-3">
-                                <input type="radio" :class="['custom-control-input',{'is-invalid':model.errors['pay']}]" :id="uuid.atm" value="atm" v-model="model.pay">
-                                <label class="custom-control-label" :for="uuid.atm">ATM一次付清</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 py-2" v-show="model.pay==='atm'">
-                            <div class="d-flex">
-                                <div>※</div>
-                                <div>
-                                    訂購完成後，請記住14碼的「付款帳號」，或可至訂單查詢查詢該筆訂單的付款帳號，並於指定日期前至自動櫃員機或線上ATM操作轉帳。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="row align-items-center">
-                        <div :class="['py-2',model.pay==='staging'?'col-lg-6':'col-12']">
-                            <div class="custom-control custom-radio my-3">
-                                <input type="radio" :class="['custom-control-input',{'is-invalid':model.errors['pay']}]" :id="uuid.staging" value="staging" v-model="model.pay">
-                                <label class="custom-control-label" :for="uuid.staging">
-                                    <span>信用卡定期定額</span>
-                                    <span>只有單筆寵糧的季方案或年方案才能使用此付款！</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 py-2" v-show="model.pay==='staging'">
-                            <div>信用卡號：</div>
-                            <div>{{ model.staging_card_code }}</div>
-                        </div>
+                <div v-if="recordAddress.length" class="row justify-content-end">
+                    <div class="col-auto py-2">
+                        <div class="btn btn-light text-dark rounded-pill" @click="changeLastAddressDate">填入最近使用收件地址</div>
                     </div>
                 </div>
             </div>
@@ -172,7 +75,7 @@
                     <div class="col-auto my-3">
                         <div class="custom-control custom-radio"> 
                             <input type="radio" :class="['custom-control-input',{'is-invalid':model.errors['invoice_type']}]" :id="uuid.double" value="double" v-model="model.invoice_type">
-                            <label class="custom-control-label" :for="uuid.triple">二聯式電子發票</label>
+                            <label class="custom-control-label" :for="uuid.double">二聯式電子發票</label>
                         </div>
                     </div>
                     <div class="col-auto my-3">
@@ -193,30 +96,117 @@
                             <label class="custom-control-label" :for="uuid.natural">自然人憑證條碼</label>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="border-bottom d-flex align-items-center justify-content-center">
-                        <div class="col-auto my-3">
-                            <div class="custom-control custom-radio"> 
-                                <input type="radio" class="custom-control-input" :id="uuid.donateY" value="Y" v-model="model.invoice_donate">
-                                <label class="custom-control-label" :for="uuid.donateY">捐贈發票</label>
+                    <div class="col-12">
+                        <div v-if="model.invoice_type==='vehicle'" class="p-3 mx-auto my-3 bg-light invoice-block" style="max-width: 768px">
+                            <div class="row align-items-center">
+                                <div class="col-12 py-2">
+                                    使用手機條碼載具（手機條碼請至<a target="_blank" title="財政部電子發票整合服務平台(另開視窗)" href="https://www.einvoice.nat.gov.tw/">財政部電子發票整合服務平台</a>申請）
+                                </div>
+                                <div class="col-sm-4 py-2">請輸入您的手機條碼</div>
+                                <div class="col-sm-8 py-2">
+                                    <input type="text" :class="['form-control',{'is-invalid':model.errors['invoice_code']}]" v-model="model.invoice_code" @change="checkMobileVehicle">
+                                </div>
+                                <div class="col-sm-4 py-2">手機條碼確認</div>
+                                <div class="col-sm-8 py-2">
+                                    <input type="text" :class="['form-control',{'is-invalid':model.errors['invoice_code_check']}]" v-model="model.invoice_code_check" @change="checkMobileVehicle">
+                                </div>
+                                <small class="col-12 py-2">*** 含斜線及英數碼，共8碼，例如：/RZREDHQ手機條碼確認。（請再次確認手機條碼是否正確）</small>
                             </div>
                         </div>
+                        <div v-if="model.invoice_type==='natural'" class="p-3 mx-auto my-3 bg-light invoice-block" style="max-width: 768px">
+                            <div class="row align-items-center">
+                                <div class="col-12 py-2">
+                                    使用自然人憑證條碼載具（自然人憑證條碼請至<a target="_blank" title="財政部電子發票整合服務平台(另開視窗)" href="https://www.einvoice.nat.gov.tw/">財政部電子發票整合服務平台</a>申請）
+                                </div>
+                                <div class="col-sm-4 py-2">請輸入您的自然人憑證條碼</div>
+                                <div class="col-sm-8 py-2">
+                                    <input type="text" :class="['form-control',{'is-invalid':model.errors['invoice_code']}]" v-model="model.invoice_code" @change="checkNaturalVehicle">
+                                </div>
+                                <div class="col-sm-4 py-2">自然人憑證條碼確認</div>
+                                <div class="col-sm-8 py-2">
+                                    <input type="text" :class="['form-control',{'is-invalid':model.errors['invoice_code']}]" v-model="model.invoice_code_check" @change="checkNaturalVehicle">
+                                </div>
+                                <small class="col-12 py-2">*** 含英數碼，共16碼，例如：GP00000012345678自然人憑證條碼確認（請再次確認自然人憑證條碼是否正確）</small>
+                            </div>
+                        </div>
+                        <div v-if="model.invoice_type==='triple'" class="p-3 mx-auto my-3 bg-light invoice-block" style="max-width: 768px">
+                            <div class="row align-items-center">
+                                <div class="col-12 py-2">
+                                    為公司行號報稅使用，一般消費者請選擇開立個人發票。
+                                </div>
+                                <div class="col-sm-4 py-2">請輸入公司名稱</div>
+                                <div class="col-sm-8 py-2">
+                                    <input type="text" :class="['form-control',{'is-invalid':model.errors['corporation_name']}]" v-model="model.corporation_name">
+                                </div>
+                                <div class="col-sm-4 py-2">請輸入統一編號</div>
+                                <div class="col-sm-8 py-2">
+                                    <input type="text" :class="['form-control',{'is-invalid':model.errors['corporation_code']}]" v-model="model.corporation_code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-bottom" v-if="model.invoice_type!=='triple'">
+                    <div class="row align-items-center justify-content-center">
                         <div class="col-auto my-3">
                             <div class="custom-control custom-radio"> 
                                 <input type="radio" class="custom-control-input" :id="uuid.donateN" value="N" v-model="model.invoice_donate">
                                 <label class="custom-control-label" :for="uuid.donateN">不捐贈發票</label>
                             </div>
                         </div>
+                        <div class="col-auto my-3">
+                            <div class="custom-control custom-radio"> 
+                                <input type="radio" class="custom-control-input" :id="uuid.donateY" value="Y" v-model="model.invoice_donate">
+                                <label class="custom-control-label" :for="uuid.donateY">捐贈發票</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div v-if="model.invoice_donate==='Y'" class="invoice-block bg-light p-3 mx-auto my-3" style="max-width: 768px">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-4 py-2">請輸入自訂捐款單位之捐贈碼</div>
+                                    <div class="col-sm-8 py-2">
+                                        <input type="text" :class="['form-control',{'is-invalid':model.errors['invoice_donate_code']}]" v-model="model.invoice_donate_code">
+                                    </div>
+                                    <small class="col-12 text-center"><a target="_blank" title="財政部電子發票整合服務平台(另開視窗)" href="https://www.einvoice.nat.gov.tw/APCONSUMER/BTC603W/">查詢更多捐贈機關或團體的捐贈碼</a></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-4">
+                    <div class="text-danger text-center mb-3">陪心寵糧依財政部規定，發票已託管，無需開立紙本發票。</div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="px-3">
+                            <icon-component class="text-primary" pattern="ChechRound" size="40"></icon-component>
+                        </div>
+                        <div style="max-width: 404px;">申請人需理解線上電子交易的退貨流程需人工辦理折讓單退貨，並同意授權陪心寵糧代為處理折讓單事宜，即無需提供折讓單。</div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="py-3">
-            <img class="w-100" :src="bank" alt="">
+            <div class="row no-gutters">
+                <div class="col-md-3 col-xl-2 d-none d-md-block bg-primary">
+                    <svg class="w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+                        <g id="precautions">
+                            <text x="125" y="115" text-anchor="middle">注意</text>
+                            <text x="125" y="185" text-anchor="middle">事項</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="col-12 col-md-9 col-xl-10 bg-light py-3 px-4 d-flex flex-center">
+                    <div class="text-dark">
+                        <h2 class="text-center font-weight-bold d-md-none mb-4">注意事項</h2>
+                        <h4 class="text-primary">按下"下一步"之前請注意 !</h4>
+                        <div class="py-lg-2"></div>
+                        <div>請確認所購買之商品品項，若按下一步產生訂單編號後，即不能修改訂單。若您在產生訂單編號後欲修改商品品項則需重新下單。</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="d-flex justify-content-center">
-            <a class="btn btn-primary text-white rounded-pill" @click="nextStep">下一步</a>
+            <a class="btn btn-primary text-white rounded-pill mx-3" @click="prevStep">上一步</a>
+            <a class="btn btn-primary text-white rounded-pill mx-3" @click="nextStep">下一步</a>
         </div>
     </div>
 </template>
@@ -224,11 +214,11 @@
 import { v4 as uuidv4 } from 'uuid';
 import $ from 'jquery'
 import Swal from 'sweetalert2'
-import { addRecordData } from '@/api'
+import { mapState } from 'vuex'
+import { addRecordData,getRecordAddress,checkMobileVehicle,checkNaturalVehicle } from '@/api'
 import { RecordModel,UserModel } from '@/models'
 import getUserPromise from '../get-user'
 import getCityPromise from '../get-city'
-import assets from '@assets'
 
 export default {
     data(){
@@ -236,65 +226,53 @@ export default {
             model: new RecordModel,
             user: new UserModel,
             city: undefined,
-            cardCode: new Array(4).fill(''),
+            recordAddress: new Array,
             uuid: {
-                card: uuidv4(),
-                atm: uuidv4(),
-                staging: uuidv4(),
                 triple: uuidv4(),
                 double: uuidv4(),
                 vehicle: uuidv4(),
                 natural: uuidv4(),
                 donateY: uuidv4(),
                 donateN: uuidv4(),
+                address: uuidv4()
             },
-            mountedPromise: undefined,
-            bank: assets.bank
+            validError: {}
         }
     },
     created(){
-        this.mountedPromise = new Promise((resolve)=>{
-            const record = this.$store.state.record
-            if (record) {
-                getUserPromise(user=>{
-                    this.model = new RecordModel(record)
-                    this.user = new UserModel(user)
-                    resolve({user,record})
+        const record = this.$store.state.record
+        if (record && (record.status==='step1' || record.status==='step2')) {
+            getUserPromise(user=>{
+                this.model = new RecordModel(record)
+                this.user = new UserModel(user)
+                this.model.set({
+                    user_id: record.user_id || user.id,
+                    name: record.name || user.name,
+                    sex: record.sex || user.sex,
+                    email: record.email || user.email,
+                    phone: record.phone || user.phone,
+                    address_code: record.address_code || user.address_code,
+                    address_city: record.address_city || user.address_city,
+                    address_area: record.address_area || user.address_area,
+                    address: record.address || user.address,
                 })
-            }else{
-                this.$router.replace('1')
-            }
-        })
-    },
-    mounted(){
-        this.mountedPromise.then(({user,record})=>{
-            this.cardCode[0] = this.$refs['CardCode[0]'].value = record.card_code.split('-')[0] || ''
-            this.cardCode[1] = this.$refs['CardCode[1]'].value = record.card_code.split('-')[1] || ''
-            this.cardCode[2] = this.$refs['CardCode[2]'].value = record.card_code.split('-')[2] || ''
-            this.cardCode[3] = this.$refs['CardCode[3]'].value = record.card_code.split('-')[3] || ''
-            this.$refs['CardDate'].value = record.card_date || ''
-            this.$refs['CardSecurity'].value = record.card_security || ''
-            this.model.name = record.name || user.name
-            this.model.sex = record.sex || user.sex
-            this.model.email = record.email || user.email
-            this.model.phone = record.phone || user.phone
-            this.model.address_code = record.address_code || user.address_code
-            this.model.address_city = record.address_city || user.address_city
-            this.model.address_area = record.address_area || user.address_area
-            this.model.address = record.address || user.address
-            this.model.staging_card_code = record.staging_card_code || user.staging_card_code
-            this.model.staging_card_date = record.staging_card_date || user.staging_card_date
-            this.model.staging_card_security = record.staging_card_security || user.staging_card_security
-            getCityPromise.call(this,()=>{
-                this.inputAddressCode()
-                this.changeAddressCityOrArea()
+                getRecordAddress(user.account).then(res=>{
+                    this.recordAddress = res.data
+                })
+                getCityPromise.call(this,()=>{
+                    this.inputAddressCode()
+                    this.changeAddressCityOrArea()
+                })
             })
-        })
+        }else{
+            this.$router.replace('1')
+        }
     },
     updated(){
         this.$store.commit('setRecord',this.model)
     },
     computed: {
+        ...mapState(['step','record']),
         arrCityList(){
             if (this.city) {
                 return this.city.map(p=>p.city_name)
@@ -335,66 +313,67 @@ export default {
                 }
             }
         },
-        inputCardCode(e,index){
-            let value = e.target.value
-            if ( isNaN(Number(value)) ) {
-                e.target.value = ''
-                this.cardCode[index] = ''
-            }else{
-                this.cardCode[index] = value.split('').splice(0,4).join('')
-            }
-            if (value.length >= 4) {
-                if (index >= 3) {
-                    this.$refs[`CardDate`].focus()
+        // TODO: 填入最近使用收件地址 click 事件
+        changeLastAddressDate(){
+
+        },
+        checkInvoiceError(){
+            this.validError.invoice_code = this.model.errors.invoice_code
+            this.validError.invoice_code_check = this.model.errors.invoice_code_check
+        },
+        checkMobileVehicle(){
+            if (this.model.invoice_code && this.model.invoice_code_check){
+                if (this.model.invoice_code===this.model.invoice_code_check) {
+                    checkMobileVehicle(this.model.invoice_code).then(()=>{
+                        this.model.errors.invoice_code = null
+                        this.model.errors.invoice_code_check = null
+                        this.validError.invoice_code = null
+                        this.validError.invoice_code_check = null
+                    }).catch(()=>{
+                        this.model.errors = {
+                            invoice_code: ['手機條碼載具不正確'],invoice_code_check: ['']
+                        }
+                        this.checkInvoiceError()
+                    })
                 }else{
-                    this.$refs[`CardCode[${index+1}]`].focus()
+                    this.model.errors = {
+                        invoice_code: ['手機條碼載具與確認碼不相符'],invoice_code_check: ['']
+                    }
+                    this.checkInvoiceError()
                 }
             }
-            this.model.card_code = this.cardCode.join('-')
         },
-        focusCardCode(e,index){
-            e.target.value = ''
-            this.cardCode[index] = ''
-        },
-        inputCardDate(e){
-            let value = e.target.value
-            if (value.length >= 4) {
-                this.$refs[`CardSecurity`].focus()
-            }
-            this.model.card_date = value
-        },
-        changeCardDate(e){
-            let value = e.target.value
-            if (value.length >= 2) {
-                const arrString = value.split('')
-                if (arrString.every(s=>isNaN(Number(s)))) {
-                    value = ''
+        checkNaturalVehicle(){
+            if (this.model.invoice_code && this.model.invoice_code_check) {
+                if (this.model.invoice_code===this.model.invoice_code_check) {
+                    checkNaturalVehicle(this.model.invoice_code).then(()=>{
+                        this.model.errors.invoice_code = null
+                        this.model.errors.invoice_code_check = null
+                        this.validError.invoice_code = null
+                        this.validError.invoice_code_check = null
+                    }).catch(()=>{
+                        this.model.errors = {
+                            invoice_code: ['自然人憑證條碼不正確'],invoice_code_check: ['']
+                        }
+                        this.checkInvoiceError()
+                    })
                 }else{
-                    arrString.splice(2,0,'/')
-                    value = arrString.join('')
+                    this.model.errors = {
+                        invoice_code: ['自然人憑證條碼與確認碼不相符'],invoice_code_check: ['']
+                    }
+                    this.checkInvoiceError()
                 }
             }
-            e.target.value = value
-            this.model.card_date = value
         },
-        focusCardDate(e){
-            e.target.value = ''
-            this.model.card_date = ''
-        },
-        inputCardSecurity(e){
-            let value = e.target.value
-            if ( isNaN(Number(value)) ) {
-                e.target.value = ''
-                this.model.card_security = ''
-            }else{
-                this.model.card_security = value
-            }
-            if (value.length >= 3) {
-                e.target.blur()
-            }
+        prevStep(){
+            this.model.status = 'step1'
+            this.$store.commit('setRecord',this.model)
+            this.$store.commit('setStep',1)
+            this.$router.push('1')
         },
         nextStep(){
-            const errors = this.model.validate()
+            const errors = Object.assign(this.validError,this.model.validate() || {})
+            console.log(errors)
             const errorsMessage = Object.keys(errors).map(key=>errors[key][0])
             if (errorsMessage.length) {
                 Swal.fire({
@@ -406,33 +385,28 @@ export default {
                 })
                 return
             }
-            this.$store.commit('setRecord',this.model)
-            this.$store.commit('nextStep')
-            this.$router.push('3')
-            $('html,body').animate({scrollTop: 216}, 400);
-            if (this.model) {
-                return // 暫時不要送出
-            }
             addRecordData(this.model).then(res=>{
-                console.log(res.data)
+                const toRouter = res.data.toRouter || 3
+                this.$store.commit('setRecord',this.model)
+                localStorage.removeItem('shopCar')
+                this.$store.commit('setShopCar',undefined)
+                this.$store.commit('setStep',Number(toRouter))
+                this.$router.push(String(toRouter))
             })
+            $('html,body').animate({scrollTop: 216}, 400);
         }
     }
 }
 </script>
 <style scoped>
-    .card-input{
-        width: 100%;
-        border-radius: 0.5rem;
-        border: 1px solid #5B5B5B;
-        outline: none;
+    .invoice-block{
+        border-radius: 1rem;
     }
-    .horizontal-line-1{
-        width: 8px;
+    .invoice-block input{
+        background-color: #ffffff;
     }
-    @media (min-width:576px) {
-        .horizontal-line-1{
-            width: 30px;
-        }
+    #precautions{
+        fill: #ffffff;
+        font: bold 72px sans-serif;
     }
 </style>

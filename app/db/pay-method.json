@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "card",
+        "title": "信用卡一次付清",
+        "description": "",
+        "disabled": false
+    },
+    {
+        "id": 2,
+        "name": "linepay",
+        "title": "Line Pay一次付清",
+        "description": "",
+        "disabled": false
+    },
+    {
+        "id": 3,
+        "name": "atm",
+        "title": "ATM一次付清",
+        "description": "訂購完成後，請記住14碼的「付款帳號」，或可至訂單查詢查詢該筆訂單的付款帳號，並於指定日期前至自動櫃員機或線上ATM操作轉帳。",
+        "disabled": false
+    },
+    {
+        "id": 4,
+        "name": "staging",
+        "title": "信用卡定期定額",
+        "description": "只有單筆寵糧的<span class=\"text-danger\">季方案</span>或<span class=\"text-danger\">年方案</span>才能使用此付款！",
+        "disabled": true
+    }
+]

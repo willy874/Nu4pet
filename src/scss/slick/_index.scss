@@ -81,3 +81,32 @@
         }
     }
 }
+
+#slick-shop-home-1{
+    .slick-arrow {
+        z-index: 1;
+        &.slick-prev{
+            left: 1.5rem;
+        }
+        &.slick-next{
+            right: 1.5rem;
+        }
+    }
+    .slick-dots{
+        bottom: -24px;
+    }
+}
+#slick-shop-home-2{
+    .slick-arrow {
+        z-index: 1;
+        &.slick-prev{
+            left: 1.5rem;
+        }
+        &.slick-next{
+            right: 1.5rem;
+        }
+    }
+    .slick-dots{
+        bottom: -24px;
+    }
+}

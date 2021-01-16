@@ -14,9 +14,9 @@ import PetModel from './pet'
  * @param {String} email 
  * @param {String} phone 
  * @param {Number} point  
- * @param {String} staging_card_code 
- * @param {String} staging_card_date 
- * @param {String[3]} staging_card_security 
+ * @param {String} bind_card_code 綁定信用卡卡號
+ * @param {String} bind_card_date 綁定信用卡到期日
+ * @param {String[3]} bind_card_security 綁定信用卡安全碼
  * @param {String} competence 
  * @param {Array<PetModel>} pet 用戶的寵物資訊
  */
@@ -36,9 +36,9 @@ export default class UserModel extends DataModel {
     this.email = entity.email || ''
     this.phone = entity.phone || ''
     this.point = entity.point || 0
-    this.staging_card_code = entity.staging_card_code || ''
-    this.staging_card_date = entity.staging_card_date || ''
-    this.staging_card_security = entity.staging_card_security || ''
+    this.bind_card_code = entity.bind_card_code || ''
+    this.bind_card_date = entity.bind_card_date || ''
+    this.bind_card_security = entity.bind_card_security || ''
     // this.createDate = entity.create_date || ''
     const competence = (typeof entity.competence === 'string') ? JSON.parse(entity.competence) : entity.competence
     this.competence = competence || []

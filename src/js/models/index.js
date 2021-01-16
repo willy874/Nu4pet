@@ -4,6 +4,7 @@ import UserModel from './data/user'
 import ShopCarModel from './data/shop_car'
 import ProdModel from './data/prod'
 import RecordModel from './data/record'
+import GiveawayModel from './data/giveaway'
 
 export {
     ListModel,
@@ -11,5 +12,6 @@ export {
     UserModel,
     ShopCarModel,
     ProdModel,
-    RecordModel
+    RecordModel,
+    GiveawayModel
 }

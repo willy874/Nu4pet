@@ -8,5 +8,6 @@ export default class ShopCarModel extends ProdModel {
     this.pet_id = entity.pet_id || 0
     this.user_id = entity.user_id || 0
     this.count = entity.count || 0
+    this.order_code = entity.order_code || ''
   }
 }

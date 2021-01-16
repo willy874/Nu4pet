@@ -11,24 +11,28 @@ app.use(express.static('dist'))
 app.use(cors())
 app.use(bodyParser.json())
 
-
-
-
 const wss = new SocketServer({
     server: app.listen(port, () => {
         console.log('Web'.yellow)
         console.log('Server app listening.')
         console.log('Home',`http://localhost:${port}/home.html`.blue)
         console.log('Pet',`http://localhost:${port}/pet.html`.blue)
-        console.log('Shop',`http://localhost:${port}/shop.html`.blue)
+        console.log('Shop Home',`http://localhost:${port}/shop-home.html`.blue)
+        console.log('Shop List',`http://localhost:${port}/shop-list.html`.blue)
         console.log('Shop Detail',`http://localhost:${port}/shop-detail.html`.blue)
         console.log('Member',`http://localhost:${port}/member.html`.blue)
         console.log('Shop Car',`http://localhost:${port}/shop-car.html`.blue)
         console.log('WebSocket'.yellow)
         console.log(':',`ws://localhost:${port}`.blue)
         console.log('Tool'.yellow)
-        console.log('Shop Car',`http://localhost:${port}/svg-tool.html`.blue)
+        console.log('SVG',`http://localhost:${port}/svg-tool.html`.blue)
     })
+})
+
+
+const Route = createRoute({
+    app,
+    webSocket: wss
 })
 
 wss.on('connection', ws => {
@@ -46,10 +50,7 @@ wss.on('connection', ws => {
     })
 })
 
-const Route = createRoute({
-    app,
-    webSocket: wss
-})
+
 console.log('Route'.yellow)
 Route.apiData.forEach(r=>{
     if (r.url==='/prod'&&r.method==='get') console.log('ProdController'.green)

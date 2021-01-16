@@ -64,10 +64,8 @@ export default class DataModel {
      * @return {object} 取得與 model 同結構且需驗證項目的所有錯誤訊息
      */
     validate() {
-        const data = this
         const rules = this.rules() || {}
-
-        this.errors = Validate(data, rules) || {}
+        this.errors = Validate(this , rules) || {}
         return this.errors || false
     }
     /**

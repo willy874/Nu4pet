@@ -17,8 +17,12 @@ export default new Vuex.Store({
                 ...data
             }
         },
-        nextStep (state) {
-            state.step++
+        setStep (state,step) {
+            if (step) {
+                state.step = step
+            }else{
+                state.step++
+            }
         },
         setShopCar (state,data) {
             state.shopCar = data

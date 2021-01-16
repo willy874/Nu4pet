@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports =  (option)=>{
     return [
         {name: 'home'},
-        {name: 'shop'},
+        {name: 'shop-list'},
+        {name: 'shop-home'},
         {name: 'shop-detail'},
         {name: 'pet'},
         {name: 'member'},

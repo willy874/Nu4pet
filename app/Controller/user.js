@@ -30,4 +30,9 @@ module.exports = class UserController extends Controller {
             res.status(500).send('無此帳號')
         }
     }
+    updateUserData(req, res){
+        const UserModel = new Model.User
+        UserModel.update(req.body)
+        res.send( 'success' )
+    }
 }
