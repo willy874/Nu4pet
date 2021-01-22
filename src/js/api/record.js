@@ -4,3 +4,4 @@ export const getRecordAddress = (account) => request.get(`record/address/${accou
 export const getRecordDataById = (id) => request.get(`/record/${id}`)
 export const addRecordData = (data) => request.post(`record`,data)
 export const updateRecordData = (data) => request.put(`record`,data)
+export const updateRecordShopCarListData = (data) => request.put(`record/shopcar`,data)

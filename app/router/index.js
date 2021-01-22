@@ -43,6 +43,7 @@ module.exports = (args)=>{
     Route.api('get','/record/:id?', 'RecordController@getRecordDataById')
     Route.api('post','/record', 'RecordController@addRecordData')
     Route.api('put','/record', 'RecordController@updateRecordData')
+    Route.api('put','/record/shopcar', 'RecordController@updateRecordShopCarListData')
 
     // OrderController
     Route.api('get','/city', 'OrderController@getCity')

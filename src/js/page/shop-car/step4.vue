@@ -1,26 +1,26 @@
 <template>
     <div class="shop-car-4 py-3">
-        <div>親愛的 {{ user.name }} 您好，訂單含有客製化寵糧，綁定完成即可完成訂單唷！</div>
-        <div class="text-danger">***提醒：您的訂單含有客製化寵糧，尚有 {{ customizedOrderCount }} 筆客製化寵糧未綁定毛孩！！</div>
+        <div class="py-1">親愛的 {{ user.name }} 您好，訂單含有客製化寵糧，綁定完成即可完成訂單唷！</div>
+        <div class="text-danger py-1">***提醒：您的訂單含有客製化寵糧，尚有 {{ customizedOrderCount }} 筆客製化寵糧未綁定毛孩！！</div>
         <div class="border">
             <div class="text-center p-3 border-bottom">訂單編號 : {{ model.order_code }}</div>
             <div :class="['container-fluid',{'border-top': index!==0}]" v-for="(item,index) in model.ShopCarList" :key="item.shop_car_id">
-                <div class="row align-items-center py-4">
-                    <div class="h5 mb-0 col-auto">{{ index + 1 }}</div>
-                    <div class="col-2">
+                <div class="row align-items-center py-2">
+                    <div class="h5 mb-0 col-auto d-none d-xs-block">{{ index + 1 }}</div>
+                    <div class="col col-lg-2 py-3">
                         <img v-if="item.image&&item.image.length" class="w-100" :src="item.image[0].url" :alt="item.subject">
-                        <div class="bg-light p-100"></div>
+                        <div v-else class="bg-light p-100"></div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-xs py-3">
                         <div>客製寵糧訂單編號：</div>
                         <div>{{ item.order_code }}</div>
                         <div v-html="item.subject"></div>
                     </div>
-                    <div class="col d-flex align-items-center text-danger"  v-if="!item.pet_id && item.order_code">
+                    <div class="col-12 col-lg d-flex align-items-center text-danger py-3"  v-if="!item.pet_id && item.order_code">
                         <icon-component pattern="Warning" size="20"></icon-component>
                         <div class="ml-3">此客製化寵糧尚未綁定毛孩！</div>
                     </div>
-                    <div class="col d-flex align-items-center" v-if="item.pet_id && item.order_code">
+                    <div class="col-12 col-lg d-flex align-items-center py-3" v-if="item.pet_id && item.order_code">
                         <div class="row align-items-center">
                             <div class="col-4">
                                 <div class="rounded-circle p-1 bg-primary">
@@ -43,22 +43,26 @@
                         <div>若有無法綁定的狀況，歡迎透過<a href="javascript:;">Facebook</a>或<a href="javascript:;">Line</a>與客服聯繫</div>
                         <div>或撥打：<a href="tel:0800-029-920">0800-029-920</a>由專人為您服務</div>
                     </div>
-                    <div class="d-flex justify-content-center py-3">
-                        <div class="col-2" v-for="pet in user.pet" :key="pet.id">
-                            <button class="btn btn-icon text-center" type="button" @click="selectPet(pet.id,index)" :disabled="pet.body_weight > item.pet_size || item.pet_size === 0">
-                                <div :class="['rounded-circle','p-1',{'bg-primary': Number(pet.id)===bindPet[index],'bg-gray-light': Number(pet.id)!==bindPet[index]}]">
-                                    <div class="bg-white rounded-circle p-1">
-                                        <img class="w-100 rounded-circle" :src="pet.image_url" alt="">
-                                    </div>
+                    <div class="position-relative mx-auto" style="height:200px;width:100%;max-width: 992px;">
+                        <div class="position-fill overflow-auto">
+                            <div class="d-flex justify-content-lg-center">
+                                <div class="mx-2 flex-shrink-0" v-for="pet in user.pet" :key="pet.id" style="width: 120px;">
+                                    <button class="btn btn-icon text-center" type="button" @click="selectPet(pet.id,index)" :disabled="pet.body_weight > item.pet_size || item.pet_size === 0">
+                                        <div :class="['rounded-circle','p-1',{'bg-primary': Number(pet.id)===Number(bindPet[index]),'bg-gray-light': Number(pet.id)!==Number(bindPet[index])}]">
+                                            <div class="bg-white rounded-circle p-1">
+                                                <img class="w-100 rounded-circle" :src="pet.image_url" alt="">
+                                            </div>
+                                        </div>
+                                        <div>{{ pet.name }}</div>
+                                        <div>{{ pet.body_weight }}kg</div>
+                                    </button>
                                 </div>
-                                <div>{{ pet.name }}</div>
-                                <div>{{ pet.body_weight }}kg</div>
-                            </button>
-                        </div>
-                        <div class="col-2">
-                            <button class="btn btn-icon p-3" type="button" @click="addPet">
-                                <icon-component class="text-gray-light" pattern="Plus" size="100%"></icon-component>
-                            </button>
+                                <div class="mx-2 flex-shrink-0">
+                                    <button class="btn btn-icon p-3" type="button" style="width: 120px;" @click="addPet">
+                                        <icon-component class="text-gray-light" pattern="Plus" size="100%"></icon-component>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="py-3 d-flex flex-column flex-center">
@@ -76,7 +80,7 @@
 <script>
 import $ from 'jquery'
 import Swal from 'sweetalert2'
-// import {  } from '@/api'
+import { updateRecordShopCarListData } from '@/api'
 import { RecordModel,UserModel,PetModel } from '@/models'
 import getUserPromise from '../get-user'
 
@@ -89,7 +93,7 @@ export default {
         }
     },
     created(){
-        const record = this.$store.state.record || JSON.parse(localStorage.getItem('record'))
+        const record = this.$store.state.record
         if (record) {
             getUserPromise(user=>{
                 this.user = new UserModel(user)
@@ -126,9 +130,23 @@ export default {
                     cancelButtonText: '取消'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        this.model.ShopCarList[index].pet_id = this.bindPet[index]
-                        this.bindPet[index] = this.user.pet.find(p=>p.id===this.bindPet[index])
-                        this.$forceUpdate()
+                        const bindPetIndex = this.bindPet[index]
+                        this.bindPet[index] = this.user.pet.find(p=>Number(p.id)===Number(this.bindPet[index]))
+                        if (!this.bindPet[index]) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '找不到此毛孩！'
+                            })
+                            this.bindPet[index] = 0
+                            return
+                        }
+                        this.model.ShopCarList[index].pet_id = bindPetIndex
+                        updateRecordShopCarListData(this.model.ShopCarList[index]).then(() => {
+                            this.$forceUpdate()
+                        }).catch(err=>{
+                            this.model.ShopCarList[index].pet_id = 0
+                            console.error(err)
+                        })
                     }
                 })
             }else{
@@ -143,7 +161,7 @@ export default {
             if (!this.model.ShopCarList.every((shopCar,index)=>{
                     if (this.bindPet[index] instanceof PetModel) {
                         return true
-                    }else if (shopCar.pet_id && shopCar.order_code === ''){
+                    }else if (shopCar.pet_id === 0 && shopCar.order_code === ''){
                         return true
                     }
                     return false
@@ -154,7 +172,7 @@ export default {
                     title: '客製化寵糧尚未綁定毛孩！'
                 })
             }
-            const toRouter = 5
+             const toRouter = 5
             this.$store.commit('setRecord',this.model)
             this.$store.commit('setStep',Number(toRouter))
             this.$router.push(String(toRouter))

@@ -177,7 +177,7 @@
                     <div class="text-danger text-center mb-3">陪心寵糧依財政部規定，發票已託管，無需開立紙本發票。</div>
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="px-3">
-                            <icon-component class="text-primary" pattern="ChechRound" size="40"></icon-component>
+                            <icon-component class="text-primary" pattern="CheckRound" size="40"></icon-component>
                         </div>
                         <div style="max-width: 404px;">申請人需理解線上電子交易的退貨流程需人工辦理折讓單退貨，並同意授權陪心寵糧代為處理折讓單事宜，即無需提供折讓單。</div>
                     </div>

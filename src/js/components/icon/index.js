@@ -8,7 +8,7 @@ import Boy from './pattern/boy.js'
 import BtnMinus from './pattern/btn-minus.js'
 import BtnPlus from './pattern/btn-plus.js'
 import CatType from './pattern/cat-type.js'
-import ChechRound from './pattern/chech-round.js'
+import CheckRound from './pattern/check-round.js'
 import Close from './pattern/close.js'
 import Cook2 from './pattern/cook-2.js'
 import CopyRound from './pattern/copy-round.js'
@@ -78,7 +78,7 @@ export {
   BtnMinus,
   BtnPlus,
   CatType,
-  ChechRound,
+  CheckRound,
   Close,
   Cook2,
   CopyRound,

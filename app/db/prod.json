@@ -9,7 +9,8 @@
         "updated_at": "2020/12/01",
         "deleted_at": null,
         "is_pet_customized": true,
-        "pet_size": 50
+        "pet_size": 50,
+        "case": "year"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "updated_at": "2020/12/01",
         "deleted_at": null,
         "is_pet_customized": false,
-        "pet_size": 0
+        "pet_size": 0,
+        "case": ""
     },
     {
         "id": 3,
@@ -33,6 +35,7 @@
         "updated_at": "2020/12/01",
         "deleted_at": null,
         "is_pet_customized": false,
-        "pet_size": 0
+        "pet_size": 0,
+        "case": ""
     }
 ]

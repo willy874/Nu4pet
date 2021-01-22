@@ -12,6 +12,7 @@ export default class ProdModel extends DataModel {
     this.original_price = entity.original_price || 0
     this.is_pet_customized = entity.is_pet_customized || false
     this.pet_size = entity.pet_size || ''
+    this.case = entity.case || ''
     this.image = entity.image && entity.image.map(p=>new ImageModel(p)) || []
   }
   toDatabase(){

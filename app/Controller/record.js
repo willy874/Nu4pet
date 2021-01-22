@@ -14,10 +14,13 @@ module.exports = class RecordController extends Controller {
             p.ShopCarList = ShopCarData.map(d=>{
                 const ProdModel = new Model.Prod
                 const PetModel = new Model.Pet
+                const ProdImageModel = new Model.ProdImage
+                const ProdImageData = ProdImageModel.where('prod_id',p.prod_id).get()
                 const ProdData = ProdModel.where('id',d.prod_id).get().find(p=>p) || {}
                 const PetData = PetModel.where('id',d.pet_id).get().find(p=>p) || {}
                 return {
                     ...ProdData,
+                    image: ProdImageData,
                     pet: PetData,
                     count: d.count,
                     order_code: d.order_code
@@ -53,10 +56,13 @@ module.exports = class RecordController extends Controller {
             data.ShopCarList = ShopCarData.map(p=>{
                 const ProdModel = new Model.Prod
                 const PetModel = new Model.Pet
+                const ProdImageModel = new Model.ProdImage
+                const ProdImageData = ProdImageModel.where('prod_id',p.prod_id).get()
                 const ProdData = ProdModel.where('id',p.prod_id).get().find(p=>p) || {}
                 const PetData = PetModel.where('id',p.pet_id).get().find(p=>p) || {}
                 return {
                     ...ProdData,
+                    image: ProdImageData,
                     shop_car_id: p.id,
                     pet: PetData,
                     count: p.count,
@@ -113,5 +119,14 @@ module.exports = class RecordController extends Controller {
             toRouter: 0
         }
         res.send( response )
+    }
+    updateRecordShopCarListData(req, res){
+        const RecordRelationModel = new Model.RecordRelation
+        RecordRelationModel.update({
+            ...req.body,
+            id: req.body.shop_car_id,
+            prod_id: req.body.id
+        })
+        res.send( 'success' )
     }
 }
