@@ -266,9 +266,7 @@
                         <div class="col-lg-6 py-2">
                             <div class="d-flex" v-if="item.description">
                                 <div>※</div>
-                                <div v-html="item.description">
-                                    訂購完成後，請記住14碼的「付款帳號」，或可至訂單查詢查詢該筆訂單的付款帳號，並於指定日期前至自動櫃員機或線上ATM操作轉帳。
-                                </div>
+                                <div v-html="item.description"></div>
                             </div>
                         </div>
                     </div>
@@ -316,7 +314,6 @@ import { RecordModel,ProdModel,ShopCarModel,UserModel,GiveawayModel } from '@/mo
 import { addShopCarMethod,updateShopCarMethod,deleteShopCarMethod } from '@/library'
 import Slick from '@/plugins/slick/vue'
 import getShopCarPromise from '../get-shop-car'
-import axios from 'axios';
 
 export default {
     data(){
@@ -376,14 +373,7 @@ export default {
                         shop_discount: res.data.shop_discount
                     })
                 }).catch(err =>{
-                    axios('./api/discount.json').then(res=>{
-                        this.model = new RecordModel({
-                            ShopCarList: shopCar.map(p=>new ShopCarModel(p)),
-                            ...res.data
-                        })
-                    }).catch(()=>{
-                        console.error(err)
-                    })
+                    console.error(err)
                 })
             }
             
@@ -393,14 +383,7 @@ export default {
                     p.uuid = uuidv4()
                 })
             }).catch(err =>{
-                axios('./api/recommend.json').then(res=>{
-                    this.recommend = res.data.map(p=>new ProdModel(p))
-                    this.recommend.forEach(p=>{
-                        p.uuid = uuidv4()
-                    })
-                }).catch(()=>{
-                    console.error(err)
-                })
+                console.error(err)
             })
 
             getPayMethod().then(res=>{
@@ -409,14 +392,7 @@ export default {
                     return p 
                 })
             }).catch(err =>{
-                axios('./api/pay-method.json').then(res=>{
-                    this.payMethod = res.data
-                    this.payMethod.forEach(p=>{
-                        p.uuid = uuidv4()
-                    })
-                }).catch(()=>{
-                    console.error(err)
-                })
+                console.error(err)
             })
         })
     },

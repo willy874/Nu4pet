@@ -249,7 +249,6 @@ import petData from './pet-data'
 import onCreatedDetail from './created-detail'
 import PetInfoHeaderDialog from './dialog/pet-info-header.vue'
 import PetInfoBodyDialog from './dialog/pet-info-body.vue'
-import axios from 'axios'
 
 export default {
     data(){
@@ -267,11 +266,7 @@ export default {
             getPetStatusAllData(model.type).then(res=>{
                 this.petStatus = res.data
             }).catch(err=>{
-                axios('./api/pet_status.json').then(res=>{
-                    this.petStatus = res.data
-                }).catch(()=>{
-                    console.error(err);
-                })
+                console.error(err)
             })
         })
         this.$watch('modelEdit',()=>{

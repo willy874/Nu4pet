@@ -56,12 +56,25 @@
                     </div>
                     <div class="col-12 d-lg-none"></div>
                     <div class="col py-2">
-                        <input :class="['form-control',{'is-invalid':model.errors['address']}]" :list="uuid.address" placeholder="請輸入您的地址" type="text" v-model="model.address">
+                        <div class="position-relative">
+                            <input :class="['form-control',{'is-invalid':model.errors['address']}]" :list="uuid.address" placeholder="請輸入您的地址" type="text" v-model="model.address">
+                            <div class="position-absolute bg-light py-3 border" style="border-radius:1.25rem;z-index:1;" v-show="addressSelect">
+                                <div class="d-flex flex-between px-4">
+                                    <div class="px-2">請選擇填入地址</div>
+                                    <button class="btn btn-light border-0 px-2" type="button" @click="toggleAddressSelect(false)">
+                                        <icon-component pattern="Close" size="12"></icon-component>
+                                    </button>
+                                </div>
+                                <div class="px-4" v-for="item in recordAddressFilter" :key="item.id">
+                                    <button class="btn btn-light border-0 px-2" type="button" @click="changeLastAddressDate(item)">{{ item.address_code + item.address_city + item.address_area + item.address }}</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div v-if="recordAddress.length" class="row justify-content-end">
                     <div class="col-auto py-2">
-                        <div class="btn btn-light text-dark rounded-pill" @click="changeLastAddressDate">填入最近使用收件地址</div>
+                        <div class="btn btn-light text-dark rounded-pill" @click="toggleAddressSelect(true)">填入最近使用收件地址</div>
                     </div>
                 </div>
             </div>
@@ -227,6 +240,7 @@ export default {
             user: new UserModel,
             city: undefined,
             recordAddress: new Array,
+            addressSelect: false,
             uuid: {
                 triple: uuidv4(),
                 double: uuidv4(),
@@ -286,6 +300,15 @@ export default {
                 return cityData ? cityData.area_list.map(p=>p.area_name) : ''
             }
             return []
+        },
+        recordAddressFilter(){
+            const arr = []
+            return this.recordAddress.filter(p=>{
+                const str = p.address_code + p.address_city + p.address_area + p.address
+                const result = arr.includes(str)
+                arr.push(str)
+                return !result
+            })
         }
     },
     methods: {
@@ -313,9 +336,15 @@ export default {
                 }
             }
         },
-        // TODO: 填入最近使用收件地址 click 事件
-        changeLastAddressDate(){
-
+        changeLastAddressDate(item){
+            this.model.address_code = item.address_code
+            this.model.address_city = item.address_city
+            this.model.address_area = item.address_area
+            this.model.address = item.address
+            this.toggleAddressSelect(false)
+        },
+        toggleAddressSelect(bool){
+            this.addressSelect = bool
         },
         checkInvoiceError(){
             this.validError.invoice_code = this.model.errors.invoice_code

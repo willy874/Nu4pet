@@ -1,7 +1,7 @@
 <template>
     <div class="shop-car-4 py-3">
         <div class="py-1">親愛的 {{ user.name }} 您好，訂單含有客製化寵糧，綁定完成即可完成訂單唷！</div>
-        <div class="text-danger py-1">***提醒：您的訂單含有客製化寵糧，尚有 {{ customizedOrderCount }} 筆客製化寵糧未綁定毛孩！！</div>
+        <div class="text-danger py-1" v-if="customizedOrderCount">***提醒：您的訂單含有客製化寵糧，尚有 {{ customizedOrderCount }} 筆客製化寵糧未綁定毛孩！！</div>
         <div class="border">
             <div class="text-center p-3 border-bottom">訂單編號 : {{ model.order_code }}</div>
             <div :class="['container-fluid',{'border-top': index!==0}]" v-for="(item,index) in model.ShopCarList" :key="item.shop_car_id">
@@ -109,7 +109,7 @@ export default {
     },
     computed: {
         customizedOrderCount(){
-            return this.model.ShopCarList.filter(p=>p.order_code).length
+            return this.model.ShopCarList.filter(p=>p.order_code && !p.pet_id).length
         }
     },
     methods: {
@@ -142,6 +142,9 @@ export default {
                         }
                         this.model.ShopCarList[index].pet_id = bindPetIndex
                         updateRecordShopCarListData(this.model.ShopCarList[index]).then(() => {
+                            this.model.ShopCarList[index].pet = this.bindPet[index]
+                            console.log(this.bindPet[index])
+                            console.log(this.model.ShopCarList[index].pet)
                             this.$forceUpdate()
                         }).catch(err=>{
                             this.model.ShopCarList[index].pet_id = 0
@@ -180,4 +183,4 @@ export default {
         }
     }
 }
-</script>disabled
+</script>

@@ -1,5 +1,4 @@
 import { getCity } from '@/api'
-import axios from 'axios'
 
 export default function (callback){
     const cityStorage = localStorage.getItem('city')
@@ -21,9 +20,6 @@ export default function (callback){
                 callback(cityAjax)
             }).catch(err=>{
                 console.error(err)
-                axios.get('./api/city.json').then(res=>{
-                    callback(res.data)
-                })
             })
         }
     }

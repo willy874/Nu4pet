@@ -49,7 +49,6 @@
 import { getPetListDataByAccount } from '@/api'
 import { ListModel,PetModel } from '@/models'
 import getUserPromise from '../get-user'
-import axios from 'axios'
 
 export default {
     data(){
@@ -68,15 +67,8 @@ export default {
                     data: res.data.data
                 })
                 console.log(this.model)
-            }).catch(()=>{
-                axios('./api/pet.json').then(res=>{
-                    this.model = new ListModel({
-                        model: PetModel,
-                        data: res.data
-                    })
-                }).catch(err=>{
-                    console.error(err);
-                })
+            }).catch(err=>{
+                console.error(err)
             })
         })
         window.scrollTo({top: 0})

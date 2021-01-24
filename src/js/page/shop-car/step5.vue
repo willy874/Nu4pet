@@ -18,7 +18,7 @@
         <div class="border-bottom py-3">
             <div>繳費詳情</div>
             <div class="px-4" v-if="payMethod.length">
-                <div>您選擇的付款方式為{{ getPayMethod.title }}，繳費資訊如下：</div>
+                <div>您選擇的付款方式為{{ getPayMethod.title || '' }}，繳費資訊如下：</div>
                 <div v-if="model.pay==='card'">
                     <div>繳費信用卡：{{ hiddenCardCode }}</div>
                 </div>
@@ -134,10 +134,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 py-2">
-                            <div v-if="item.case==='mouth' || item.case==='season'"></div>
-                            <div v-else-if="item.case==='year'"></div>
-                            <div></div>
+                        <!-- TODO: 彈窗選項 -->
+                        <div class="col-md-6 py-2" v-if="recordCount">
+                            <div class="p-3" v-if="recordCount === 1">
+                                <div class="pb-1">試吃包出貨日期：：</div>
+                                <div class="p-2">
+                                    <input class="form-control rounded-pill bg-light" type="date" v-model="item.taste_date">
+                                </div>
+                            </div>
+                            <div class="p-3" v-else-if="item.case==='mouth' || item.case==='season'">
+                                <div class="pb-1">指定出貨日期：</div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-light text-left rounded-pill w-100" @click="openDialog(item)">
+                                        <span class="text-gray" v-if="item.taste_date">選擇日期</span>
+                                        <span v-else>{{ item.taste_date }}</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-3" v-else-if="item.case==='year'">
+                                <div class="pb-1">指定出貨日期：</div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-light text-left rounded-pill w-100" @click="openDialog(item)">
+                                        <span class="text-gray" v-if="!item.taste_date">選擇日期</span>
+                                        <span v-else>{{ item.taste_date }}</span>
+                                    </button>
+                                </div>
+                                <div class="pb-1">指定單月特調口味：</div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-light text-left rounded-pill w-100" @click="openDialog(item)">
+                                        <span class="text-gray" v-if="!item.taste_odd">選擇口味</span>
+                                        <span v-else>{{ item.taste_odd }}</span>
+                                    </button>
+                                </div>
+                                <div class="pb-1">指定雙月特調口味：</div>
+                                <div class="p-2">
+                                    <button type="button" class="btn btn-light text-left rounded-pill w-100" @click="openDialog(item)">
+                                        <span class="text-gray" v-if="!item.taste_even">選擇口味</span>
+                                        <span v-else>{{ item.taste_even }}</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -228,44 +264,41 @@
     </div>
 </template>
 <script>
-// import Swal from 'sweetalert2'
-import axios from 'axios'
+import Swal from 'sweetalert2'
 import { v4 as uuidv4 } from 'uuid';
-import { getPayMethod } from '@/api'
+import { getPayMethod,getProdTaste,updateRecordShopCarListData,getRecordCountByAccount } from '@/api'
 import { RecordModel,UserModel } from '@/models'
 import getUserPromise from '../get-user'
+import DialogView from './dialog.vue'
 
 export default {
     data(){
         return {
             model: new RecordModel,
             user: new UserModel,
-            payMethod: []
+            payMethod: [],
+            recordCount: 0
         }
     },
     created(){
+        // TODO: test mode
         const record = this.$store.state.record || JSON.parse(localStorage.getItem('record'))
         if (record) {
             localStorage.setItem('record',JSON.stringify(record))
             getUserPromise(user=>{
                 this.user = new UserModel(user)
                 this.model = new RecordModel(record)
+                getRecordCountByAccount(this.user.account).then(res=>{
+                    this.recordCount = Number(res.data)
+                })
             })
-
             getPayMethod().then(res=>{
                 this.payMethod = res.data.map(p=>{
                     p.uuid = uuidv4()
                     return p 
                 })
             }).catch(err =>{
-                axios('./api/pay-method.json').then(res=>{
-                    this.payMethod = res.data
-                    this.payMethod.forEach(p=>{
-                        p.uuid = uuidv4()
-                    })
-                }).catch(()=>{
-                    console.error(err)
-                })
+                console.error(err)
             })
         }else{
             this.$router.replace('1')
@@ -310,6 +343,47 @@ export default {
         },
         recordPriceSum(){
             return this.prodPriceSum - this.model.shop_discount - this.model.code_discount - this.pointDiscount + this.model.shipping_rate + this.model.donate_price
+        }
+    },
+    methods: {
+        openDialog(model){
+            if (model.taste_date) {
+                return
+            }
+            getProdTaste(model.id).then(res=>{
+                const taste_odd = res.data.map(item=>{
+                    return {
+                        ...item,
+                        uuid: uuidv4()
+                    }
+                })
+                const taste_even = res.data.map(item=>{
+                    return {
+                        ...item,
+                        uuid: uuidv4()
+                    }
+                })
+                this.$dialog.popup({
+                    body: DialogView,
+                    size: '630px',
+                    attrs: {
+                        model,
+                        taste_odd,
+                        taste_even
+                    }
+                }).then(attrs=>{
+                    updateRecordShopCarListData(attrs.model).then(() => {
+                        Swal.fire({
+                            icon: 'success',
+                            timer: 1500,
+                            title: '已成功修改指定出貨資訊',
+                            showConfirmButton: false,
+                        })
+                    })
+                }).catch(()=>{
+                    return
+                })
+            })
         }
     }
 }

@@ -209,6 +209,27 @@
                         </div>
                     </div>
                     <div class="border-bottom py-2">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="py-2 text-center">每次扣款</div>
+                            </div>
+                            <div class="col-6">
+                                NT${{ model.staging_price }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-bottom py-2">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="py-2 text-center">扣款區間</div>
+                            </div>
+                            <div class="col-6">
+                                每月自動扣款１次<br/>
+                                扣款上限為{{ model.staging_limt }}次
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-bottom py-2">
                         <div class="row flex-center">
                             <div class="col-auto my-2">
                                 <div class="custom-control custom-radio"> 
@@ -341,9 +362,9 @@
 import { v4 as uuidv4 } from 'uuid';
 import $ from 'jquery'
 import Swal from 'sweetalert2'
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
 import { mapState } from 'vuex'
-import { getRecordDataById,getVirtualAccount,updateRecordData,updateUserData,checkCardCode } from '@/api'
+import { getRecordDataById,getPayMethodData,updateRecordData,updateUserData,checkCardCode } from '@/api'
 import { RecordModel,UserModel } from '@/models'
 import getUserPromise from '../get-user'
 import { bank013Logo } from '@assets'
@@ -366,8 +387,8 @@ export default {
         ...mapState(['step','record'])
     },
     created(){
-        // const record = this.$store.state.record
-        // if (record) {
+        const record = this.$store.state.record
+        if (record) {
         // record.id
             getRecordDataById(1).then(res=>{
                 this.model = new RecordModel({
@@ -378,22 +399,18 @@ export default {
                 this.$watch(()=>this.cardCode,this.cardCodetoModel)
                 this.$watch(()=>this.model.card_code,this.cardCodetoData)
                 this.cardCodetoData(this.model.card_code)
-                if (this.model.pay==='atm') {
-                    getVirtualAccount(this.model.order_code).then(res=>{
-                        this.model.set({
-                            bank_code: res.data.bank_code,
-                            virtual_account: res.data.virtual_account,
-                            payment_deadline: dayjs(res.data.payment_deadline).format('YYYY/MM/DD HH:mm:ss'),
-                        })
+                getPayMethodData(this.model.order_code).then(res=>{
+                    this.model.set({
+                        ...res.data
                     })
-                }
+                })
             })
             getUserPromise(user=>{
                 this.user = new UserModel(user)
             })
-        // }else{
-        //     this.$router.replace('1')
-        // }
+        }else{
+            this.$router.replace('1')
+        }
     },
     updated(){
         this.$store.commit('setRecord',this.model)
