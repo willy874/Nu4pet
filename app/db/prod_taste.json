@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "經典",
+        "subject": "原味經典",
+        "prod_id": 1
+    },
+    {
+        "id": 2,
+        "name": "雞肉",
+        "subject": "雞油香氣",
+        "prod_id": 1
+    },
+    {
+        "id": 3,
+        "name": "羊肉",
+        "subject": "羊油香氣",
+        "prod_id": 1
+    },
+    {
+        "id": 4,
+        "name": "起司",
+        "subject": "濃厚起司粉",
+        "prod_id": 1
+    }
+]

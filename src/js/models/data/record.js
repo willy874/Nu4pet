@@ -35,6 +35,8 @@ import GiveawayModel from './giveaway'
  * @param {String[3]} bank_code 虛擬帳戶銀行代號
  * @param {String} virtual_account 虛擬帳戶號碼
  * @param {String} payment_deadline 虛擬帳戶繳費期限
+ * @param {String} staging_price 分期金額
+ * @param {Number} staging_limt 分期上限期數
  * @param {Array<ShopCarModel>} ShopCarList 購物袋商品
  * @param {Array<GiveawayModel>} giveaway 贈品
  * @param {Number} shop_discount 商城折扣
@@ -79,6 +81,8 @@ export default class RecordModel extends DataModel {
         this.bank_code = entity.bank_code || ''
         this.virtual_account = entity.virtual_account || ''
         this.payment_deadline = entity.payment_deadline || ''
+        this.staging_price = entity.staging_price || ''
+        this.staging_limt = entity.staging_limt || 0
         this.ShopCarList = entity.ShopCarList && entity.ShopCarList.map(p => new ShopCarModel(p)) || []
         this.giveaway = entity.giveaway && entity.giveaway.map(p => new GiveawayModel(p)) || []
         this.shop_discount = entity.shop_discount || 0

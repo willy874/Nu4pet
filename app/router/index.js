@@ -39,7 +39,9 @@ module.exports = (args)=>{
 
     // RecordController
     Route.api('get','/record/all', 'RecordController@getRecordAllData')
+    Route.api('get','/record/pay', 'RecordController@getPayMethodData')
     Route.api('get','/record/address/:account?', 'RecordController@getRecordAddress')
+    Route.api('get','/record/count/:account?', 'RecordController@getRecordCountByAccount')
     Route.api('get','/record/:id?', 'RecordController@getRecordDataById')
     Route.api('post','/record', 'RecordController@addRecordData')
     Route.api('put','/record', 'RecordController@updateRecordData')
@@ -47,13 +49,13 @@ module.exports = (args)=>{
 
     // OrderController
     Route.api('get','/city', 'OrderController@getCity')
+    Route.api('get','/prod/taste/:id?', 'OrderController@getProdTaste')
     Route.api('get','/recommend/user/:id?', 'OrderController@getRecommend')
     Route.api('get','/discount/user/:id?', 'OrderController@getDiscountRules')
     Route.api('get','/discount/salecode/:code?', 'OrderController@getSaleCodeDiscount')
     Route.api('get','/pay/method','OrderController@getPayMethod')
     Route.api('get','/vehicle/mobile/:code?', 'OrderController@checkMobileVehicle')
     Route.api('get','/vehicle/natural/:code?', 'OrderController@checkNaturalVehicle')
-    Route.api('get','/pay/atm', 'OrderController@getVirtualAccount')
     Route.api('post','/pay/card', 'OrderController@checkCardCode')
 
     // ToolController

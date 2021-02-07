@@ -10,6 +10,7 @@
         "deleted_at": null,
         "is_pet_customized": true,
         "pet_size": 50,
+        "prod_size": "M",
         "case": "year"
     },
     {
@@ -23,6 +24,7 @@
         "deleted_at": null,
         "is_pet_customized": false,
         "pet_size": 0,
+        "prod_size": "",
         "case": ""
     },
     {
@@ -36,6 +38,7 @@
         "deleted_at": null,
         "is_pet_customized": false,
         "pet_size": 0,
+        "prod_size": "",
         "case": ""
     }
 ]

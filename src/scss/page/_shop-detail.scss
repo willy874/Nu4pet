@@ -96,6 +96,55 @@
         }
         .modal{
             background-color: rgba(255, 255, 255, 0.8);
+            .form-check{
+                .form-check-input{
+                    opacity: 0;
+                    pointer-events: none;
+                    &:checked~.form-check-label{
+                        background-color: $primary;
+                    }
+                }
+                .form-check-label{
+                    background-color: $dark;
+                    min-width: 50px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $primary;
+                    }
+                }
+            }
+            .count-bar{
+                background-color: $light;
+                .btn{
+                    background-color: transparent;
+                    color: $dark;
+                    min-width: auto;
+                }
+                input{
+                    background-color: transparent;
+                    border: 0;
+                    width: 40px;
+                }
+            }
+            .box-link{
+                background-color: $gray-light;
+                &:hover {
+                    background-color: $primary;
+                }
+                a{
+                    color: #fff;
+                }
+                .arrow{
+                    margin-bottom: -8px;
+                    transform: rotate(90deg);
+                }
+            }
+            #submit{
+                background-color: transparent;
+                color: #fff;
+                border: 0;
+                outline: 0;
+            }
         }
     }
 }

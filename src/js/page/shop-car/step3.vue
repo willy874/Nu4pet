@@ -329,17 +329,23 @@
         <div v-if="model.pay==='card' || model.pay==='staging'" class="bg-light d-flex flex-center" style="min-height: 250px;">
             <div class="p-3 d-flex flex-center">
                 <div>
-                    <div class="mx-auto mb-3 text-center" style="max-width: 460px;">
-                        ※提供VISA、MasterCard、JCB信用卡交易，全程使全程使用安全加密，信用卡資料將不會儲存於網站，您可以安心使用信用卡付款。
+                    <div class="mx-auto mb-3 text-center" style="max-width: 580px;">
+                        ※ 提供VISA、MasterCard、JCB信用卡交易，全程使全程使用安全加密，信用卡資料將不會儲存於網站，您可以安心使用信用卡付款。
                     </div>
-                    <div class="mx-auto mb-3 text-danger text-center" style="max-width: 460px;">
-                        ※若您透過APP開發頁面發現無法支付狀況，請改用其他瀏覽器開啟頁面，透過
+                    <div class="mx-auto mb-3 text-danger text-center" style="max-width: 600px;">
+                        ※ 若您透過APP開發頁面發現無法支付狀況，請改用其他瀏覽器開啟頁面，透過
                         <a target="_blank" href="m.me/nu4pet">m.me/nu4pet</a>
                         聯繫客服或撥打：
                         <a target="_blank" href="tel:+886800-029-920">0800-029-920</a>
                         由客服為您服務。
                     </div>
                     <div class="d-flex align-items-center">
+                        <img class="mx-1 my-2" :src="visaLogo" alt="" height="30px">
+                        <img class="mx-1 my-2" :src="mastercardLogo" alt="" height="40px">
+                        <img class="mx-1 my-2" :src="jcbLogo" alt="" height="35px">
+                        <span class="mx-1">刷卡服務由</span>
+                        <img class="mx-1 my-2" :src="tappayLogo" alt="" height="30px">
+                        <img class="mx-1 my-2" :src="bank013Logo" alt="" height="40px">
                         <span>提供</span>
                     </div>
                 </div>
@@ -367,7 +373,7 @@ import { mapState } from 'vuex'
 import { getRecordDataById,getPayMethodData,updateRecordData,updateUserData,checkCardCode } from '@/api'
 import { RecordModel,UserModel } from '@/models'
 import getUserPromise from '../get-user'
-import { bank013Logo } from '@assets'
+import { bank013Logo,tappayLogo,mastercardLogo,jcbLogo,visaLogo } from '@assets'
 
 export default {
     data(){
@@ -380,7 +386,11 @@ export default {
                 unBindCard: uuidv4(),
                 checkBindCard: uuidv4()
             },
-            bank013Logo
+            bank013Logo,
+            tappayLogo,
+            mastercardLogo,
+            jcbLogo,
+            visaLogo
         }
     },
     computed: {

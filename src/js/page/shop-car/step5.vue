@@ -15,7 +15,7 @@
         <div class="border-bottom py-3">
             <div>親愛的 {{ user.name }} 您好，感謝您的訂購。</div>
         </div>
-        <div class="border-bottom py-3">
+        <div class="border-bottom py-3" v-if="model.pay==='atm'">
             <div>繳費詳情</div>
             <div class="px-4" v-if="payMethod.length">
                 <div>您選擇的付款方式為{{ getPayMethod.title || '' }}，繳費資訊如下：</div>
@@ -43,7 +43,8 @@
                     
                 </div>
                 <div v-else-if="model.invoice_type==='triple'">
-                    
+                    <div>公司名稱：{{ corporation_name }}</div>
+                    <div>統一編號：{{ corporation_code }}</div>
                 </div>
                 <div v-else-if="model.invoice_type==='vehicle'">
                     

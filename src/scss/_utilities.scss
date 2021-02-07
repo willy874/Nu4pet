@@ -25,7 +25,9 @@
 .filter-grayscale{
     filter: grayscale(100%);
 }
-
+.cursor-pointer{
+    cursor: pointer;
+}
 @for $i from 1 through 10 {
     .letter-spacing-#{$i} {
         letter-spacing: $i*1px;

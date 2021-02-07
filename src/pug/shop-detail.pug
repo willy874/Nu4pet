@@ -3,7 +3,7 @@ extends ./layout/index.pug
 block content
   main.col.shop-detail
     section.container
-      .row
+      form.row
         .col-lg-6.py-3
           .d-flex
             .flex-shrink-0.d-flex.flex-column
@@ -11,34 +11,40 @@ block content
                 .scroll-panel
                   ul.list-unstyled.m-0.pr-1
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-01.min.jpg")
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-02.min.jpg")
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-03.min.jpg")
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-01.min.jpg")
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-02.min.jpg")
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-03.min.jpg")
                     li.mb-1
-                      button.border-0.w-100.p-0(type='button')
-                        .bg-gray-light(style='padding-top: 100%;')
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-01.min.jpg")
+                    li.mb-1
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-02.min.jpg")
+                    li.mb-1
+                      button.border-0.w-100.p-0.change-img(type='button')
+                        img.w-100(src="./assets/image/prod-03.min.jpg")
             .flex-grow-1.pl-3
               a(href='javascript:;')
-                .w-100.bg-gray-light(style='padding-top: 100%;')
+                img.w-100.prod-img(src="./assets/image/prod-01.min.jpg")
         .col-lg-6.d-flex.flex-column.py-3
           h2.text-dark
             | 多貓家庭搭伙合菜
             br
-            |                     『美味雞魚配方』
+            | 『美味雞魚配方』
           .d-flex.align-items-end.py-3.pl-4
             .text-price.d-flex.align-items-end.pr-3
               span.font-weight-bold.text-primary NT$
@@ -64,7 +70,7 @@ block content
         a.icon-line-round.size-36.mx-1(href='javascript:;')
         a.icon-link-round.size-36.mx-1(href='javascript:;')
       .select-case.d-flex.justify-content-center.border-bottom.py-3
-        button.btn.btn-primary.text-white.d-flex.align-items-center.rounded-pill(type='button')
+        button#shop-detail-modal.btn.btn-primary.text-white.d-flex.align-items-center.rounded-pill(type='button')
           .icon-shop-solid.mr-2
           span 選擇方案
       nav.row.justify-content-around.py-2
@@ -76,14 +82,111 @@ block content
           a.font-weight-bold(href='javascript:;') 好評推薦
     section
       .modal(tabindex='-1')
-        .modal-dialog
+        .modal-dialog.modal-lg
           .modal-content
-            .modal-header
-              h5.modal-title Modal title
-              button.close(type='button' data-dismiss='modal' aria-label='Close')
-                span(aria-hidden='true') ×
-            .modal-body
-              p Modal body text goes here.
-            .modal-footer
-              button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-              button.btn.btn-primary(type='button') Save changes
+            .modal-header.border-0
+              h5.modal-title
+              button.modal-close.btn-icon.icon-close.size-20(type='button' data-dismiss='modal' aria-label='Close')
+            .modal-body.px-4
+              .row.pb-4
+                .col-lg-6
+                  img.w-100(src="./assets/image/prod-01.min.jpg")
+                .col-lg-6
+                  h3.pt-lg-0.pt-3
+                    |多貓家庭搭伙合菜
+                    br
+                    |『美味雞魚配方』
+                  .d-flex.align-items-center
+                    .p-3.text-primary
+                      span.h5 NT$
+                      span.h3.price-number 1488
+                    .p-3 
+                      span 原價：
+                      del.price-number-del 1900
+                  .border
+                  .py-3
+                    p 客製化寵糧尺寸是依據毛孩實際體重去調配，請依照毛孩實際體重選擇適合的寵糧尺寸。
+                  div
+                    span.h2.mb-0.mr-1.font-weight-bold.text-primary.size-data-display S
+                    span 尺寸
+                  div 
+                    span 適合一隻 體重
+                    span.text-primary 3.4公斤
+                    span 以下的貓毛孩
+              .py-2
+                h6 體重尺寸
+                .d-flex.flex-wrap.mx-n1
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="size" id="size-S" value="S" checked)
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2.text-center(for='size-S') S
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="size" id="size-M" value="M")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2.text-center(for='size-M') M
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="size" id="size-L" value="L")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2.text-center(for='size-L') L
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="size" id="size-XL" value="XL")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2.text-center(for='size-XL') XL
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="size" id="size-XXL" value="XXL")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2.text-center(for='size-XXL') XXL
+              .py-2
+                h6 購買方案
+                .d-flex.flex-wrap.mx-n1
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="case" id="case-mouth" value="mouth" checked)
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2(for='case-mouth') 月・方案
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="case" id="case-season" value="season")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2(for='case-season') 季・方案
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="case" id="case-year" value="year")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2(for='case-year') 年・方案
+                  .form-check.p-1
+                    input.form-check-input(type="radio" name="case" id="case-season-double" value="season-double")
+                    label.form-check-label.text-white.font-weight-bold.rounded-pill.py-1.px-2(for='case-season-double') 兩週・嘗鮮方案
+              .py-2.d-flex
+                .row.align-items-center.py-1
+                  .col-auto
+                    div 數量
+                  .col-auto
+                    .bg-light.rounded-pill.d-flex.align-items-center.count-bar
+                      button.btn.icon-btn-minus.size-10(type='button')
+                      input.text-center(type='text' value="1")
+                      button.btn.icon-btn-plus.size-10(type='button')
+              .py-2
+                h6 選購升級區
+                .d-flex.flex-wrap.mx-n1
+                  .p-1
+                    .box-link.py-2.px-4.text-center.position-relative
+                      .d-inline-block.size-54.icon-pet-food.text-white
+                      div
+                      a.d-inline-block.stretched-link(href='javascript:;') 試・吃・包
+                      div
+                      .d-inline-block.size-20.icon-arrow-right.text-white.arrow
+                  .p-1
+                    .box-link.py-2.px-4.text-center.position-relative
+                      .d-inline-block.size-54.icon-dog-face.text-white
+                      div
+                      a.d-inline-block.stretched-link(href='javascript:;') 適・口・性
+                      div
+                      .d-inline-block.size-20.icon-arrow-right.text-white.arrow
+                  .p-1
+                    .box-link.py-2.px-4.text-center.position-relative
+                      .d-inline-block.size-54.icon-dog.text-white
+                      div
+                      a.d-inline-block.stretched-link(href='javascript:;') 機・能・性
+                      div
+                      .d-inline-block.size-20.icon-arrow-right.text-white.arrow
+                  .p-1
+                    .box-link.py-2.px-4.text-center.position-relative
+                      .d-inline-block.size-54.icon-package-send.text-white
+                      div
+                      a.d-inline-block.stretched-link(href='javascript:;') 外・包・裝
+                      div
+                      .d-inline-block.size-20.icon-arrow-right.text-white.arrow
+              .py-2
+                button.btn.btn-primary.d-flex.align-items-center.rounded-pill.py-1(type="button")
+                  label.text-white.cursor-pointer(for="submit").icon-shop-solid.mr-1.size-20
+                  input(id="submit" type='submit' value="加入購物袋")

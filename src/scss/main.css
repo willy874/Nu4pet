@@ -13091,6 +13091,10 @@ a:hover, button:hover {
           filter: grayscale(100%);
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .letter-spacing-1 {
   letter-spacing: 1px;
 }
@@ -14237,6 +14241,18 @@ select.custom-select {
   pointer-events: none;
 }
 
+.size-10 > svg {
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+
+.size-20 > svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
 .size-41 > svg {
   width: 41px;
   height: 41px;
@@ -14361,7 +14377,7 @@ svg {
 }
 
 .popup-view {
-  background-color: #f3f3f3;
+  background-color: #fff;
   border-radius: 0.5rem;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -15951,6 +15967,66 @@ aside.sub-nav-mobile .nav-sub-link:hover {
 
 .shop-detail section .modal {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.shop-detail section .modal .form-check .form-check-input {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.shop-detail section .modal .form-check .form-check-input:checked ~ .form-check-label {
+  background-color: #49c5b1;
+}
+
+.shop-detail section .modal .form-check .form-check-label {
+  background-color: #5a5b5b;
+  min-width: 50px;
+  cursor: pointer;
+}
+
+.shop-detail section .modal .form-check .form-check-label:hover {
+  background-color: #49c5b1;
+}
+
+.shop-detail section .modal .count-bar {
+  background-color: #f6f6f6;
+}
+
+.shop-detail section .modal .count-bar .btn {
+  background-color: transparent;
+  color: #5a5b5b;
+  min-width: auto;
+}
+
+.shop-detail section .modal .count-bar input {
+  background-color: transparent;
+  border: 0;
+  width: 40px;
+}
+
+.shop-detail section .modal .box-link {
+  background-color: #dcdcdc;
+}
+
+.shop-detail section .modal .box-link:hover {
+  background-color: #49c5b1;
+}
+
+.shop-detail section .modal .box-link a {
+  color: #fff;
+}
+
+.shop-detail section .modal .box-link .arrow {
+  margin-bottom: -8px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.shop-detail section .modal #submit {
+  background-color: transparent;
+  color: #fff;
+  border: 0;
+  outline: 0;
 }
 
 .prt-base .base-data {

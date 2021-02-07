@@ -75,21 +75,17 @@ module.exports = class PetStatusController extends Controller {
             res.status('500').send( '找不到該條碼' )
         }
     }
-    getVirtualAccount(req, res){
-        const { order } = req.query
-        const response = {
-            order_code: order,
-            bank_code: '013',
-            virtual_account: '40430110053565',
-            payment_deadline: '2021/01/10 23:59:59',
-        }
-        res.send( response )
-    }
     checkCardCode(req, res){
         if (req.body.card_code&&req.body.card_date&&req.body.card_security) {
             res.send( 'OK' )
         }else{
             res.status('500').send( '信用卡資料不正確' )
         }
+    }
+    getProdTaste(req, res){
+        const { id } = req.params
+        const ProdTasteModel = new Model.ProdTaste
+        const response = ProdTasteModel.where('prod_id',id).get()
+        res.send( response )
     }
 }

@@ -16,10 +16,12 @@ import Copy from './pattern/copy.js'
 import Coupon from './pattern/coupon.js'
 import CustomFood from './pattern/custom-food.js'
 import DogBall from './pattern/dog-ball.js'
+import DogFace from './pattern/dog-face.js'
 import DogFood from './pattern/dog-food.js'
 import DogHouse from './pattern/dog-house.js'
 import DogRun from './pattern/dog-run.js'
 import DogType from './pattern/dog-type.js'
+import Dog from './pattern/dog.js'
 import Email from './pattern/email.js'
 import Evaluation from './pattern/evaluation.js'
 import FbRound from './pattern/fb-round.js'
@@ -45,7 +47,9 @@ import NewShopping from './pattern/new-shopping.js'
 import News2 from './pattern/news-2.js'
 import OnlineService from './pattern/online-service.js'
 import OrderNote from './pattern/order-note.js'
+import PackageSend from './pattern/package-send.js'
 import PassionForPets from './pattern/passion-for-pets.js'
+import PetFood from './pattern/pet-food.js'
 import Phone from './pattern/phone.js'
 import Plus from './pattern/plus.js'
 import PointExchange from './pattern/point-exchange.js'
@@ -86,10 +90,12 @@ export {
   Coupon,
   CustomFood,
   DogBall,
+  DogFace,
   DogFood,
   DogHouse,
   DogRun,
   DogType,
+  Dog,
   Email,
   Evaluation,
   FbRound,
@@ -115,7 +121,9 @@ export {
   News2,
   OnlineService,
   OrderNote,
+  PackageSend,
   PassionForPets,
+  PetFood,
   Phone,
   Plus,
   PointExchange,

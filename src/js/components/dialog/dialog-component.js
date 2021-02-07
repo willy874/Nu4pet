@@ -32,7 +32,7 @@ export default {
                                 item.onBackgroundClick(this.$dialog.arrPopup)
                             }
                             if (item.onBackgroundClick === true) {
-                                this.$dialog.close(index)
+                                this.$dialog.cancel(index)
                             }
                         })
                     }

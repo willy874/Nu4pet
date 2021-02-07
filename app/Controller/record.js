@@ -129,4 +129,34 @@ module.exports = class RecordController extends Controller {
         })
         res.send( 'success' )
     }
+    getPayMethodData(req, res){
+        const { order } = req.query
+        const RecordModel = new Model.Record
+        const RecordData = RecordModel.where('order_code',order).get().find(p=>p)
+        if (RecordData.pay === 'atm') {
+            const response = {
+                bank_code: '013',
+                virtual_account: '40430110053565',
+                payment_deadline: '2021/01/10 23:59:59',
+            }
+            res.send( response )
+        }else if(RecordData.pay === 'staging'){
+            const limt = 3
+            const response = {
+                staging_price: RecordData.total_price  / limt,
+                staging_limt: limt
+            }
+            res.send( response )
+        }else{
+            res.status('500').send( '無資料' )
+        }
+    }
+    getRecordCountByAccount(req, res){
+        const UserModel = new Model.User
+        const user = UserModel.where('account',req.params.account).get()
+        const userId = (user.length) ? user[0].id : 0
+        const RecordModel = new Model.Record
+        const response = RecordModel.where('user_id',userId).get().length
+        res.send( String(response) )
+    }
 }

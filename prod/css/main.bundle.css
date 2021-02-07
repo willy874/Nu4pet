@@ -14361,7 +14361,7 @@ svg {
 }
 
 .popup-view {
-  background-color: #f3f3f3;
+  background-color: #fff;
   border-radius: 0.5rem;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -15951,6 +15951,15 @@ aside.sub-nav-mobile .nav-sub-link:hover {
 
 .shop-detail section .modal {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.shop-detail section .modal .btn {
+  background-color: #5a5b5b;
+  min-width: 50px;
+}
+
+.shop-detail section .modal .btn:hover {
+  background-color: #49c5b1;
 }
 
 .prt-base .base-data {

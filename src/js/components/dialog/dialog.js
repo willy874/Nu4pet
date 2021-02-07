@@ -63,17 +63,17 @@ class Dialog {
         document.body.style.overflow = 'auto'
         if (typeof id === 'number') {
             const remove = this.arrPopup[id][strEvent]
-            remove(this.arrPopup[id].attrs)
+            if(remove) remove(this.arrPopup[id].attrs)
             return this.arrPopup.splice(id, 1)
         } else if (typeof id === 'string' && id.length === 36) {
             const index = this.arrPopup.map(item => item.id).indexOf(id)
             const remove = this.arrPopup[index][strEvent]
-            remove(this.arrPopup[index].attrs)
+            if(remove) remove(this.arrPopup[index].attrs)
             return this.arrPopup.splice(index, 1)
         } else if (id === 'all') {
             const arrSplicePopup = this.arrPopup.map(element => {
                 const remove = element[strEvent]
-                remove(element.attrs)
+                if(remove) remove(element.attrs)
                 return element
             })
             this.arrPopup.splice(0)
@@ -81,12 +81,12 @@ class Dialog {
         }else if(id instanceof Popup){
             const index = this.arrPopup.indexOf(id)
             const remove = this.arrPopup[index][strEvent]
-            remove(this.arrPopup[index].attrs)
+            if(remove) remove(this.arrPopup[index].attrs)
             return this.arrPopup.splice(index, 1)
         }else {
             const index = this.arrPopup.length - 1
             const remove = this.arrPopup[index][strEvent]
-            remove(this.arrPopup[index].attrs)
+            if(remove) remove(this.arrPopup[index].attrs)
             return this.arrPopup.splice(index, 1)
         }
     }
