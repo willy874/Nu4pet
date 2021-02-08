@@ -61,8 +61,5 @@ Route.apiData.forEach(r=>{
     if (r.url==='/city'&&r.method==='get') console.log('OtherController'.green)
 
     console.log('method:',r.method.brightGreen,',','url:',`http://localhost:${port}/api${r.url}`.blue)
-
-    if (r.url==='/pet/user/:account?') console.log('test:',r.url.green,',',`http://localhost:3000/api/pet/user/admin`.blue);
     if (r.url==='/login') console.log('test:',r.url.green,',',`http://localhost:${port}/api/login?account=admin&password=password`.blue);
-    if (r.url==='/pet/status/:type?') console.log('test:',r.url.green,',',`http://localhost:${port}/api/pet/status/dog`.blue);
 })

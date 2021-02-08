@@ -46,7 +46,9 @@ module.exports = class PetStatusController extends Controller {
         const { code } = req.params
         const code_discount = 'nu4pet'
         const response = (code===code_discount) ? (Math.floor(Math.random() * Math.floor(100))) : 0
-        res.send( String(response) )
+        res.send({
+            code_discount: response
+        })
     }
     getCity(req, res){
         const response = JSON.parse(fs.readFileSync(`./app/db/city.json`).toString())

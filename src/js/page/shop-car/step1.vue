@@ -483,8 +483,8 @@ export default {
         },
         inputSaleCode(e){
             const input = e.target.value
-            getSaleCodeDiscount(input).then(res=>{
-                this.model.code_discount = Number(res.data)
+            getSaleCodeDiscount(input,this.model).then(res=>{
+                this.model.code_discount = Number(res.data.code_discount)
             })
         },
         checkPointDiscoun(e){

@@ -5,19 +5,19 @@ module.exports = class ProdController extends Controller {
     constructor(app){
         super(app)
     }
-    getProdAllData(req, res){
+    getProdListData(req, res){
         const ProdModel = new Model.Prod
-        const response = ProdModel.get()
-        response.forEach(p=>{
+        const response = ProdModel.pagination(req.query)
+        response.data.forEach(p=>{
             const ProdImageModel = new Model.ProdImage
             p.image = ProdImageModel.where('prod_id',p.id).get()
         })
         res.send( response )
     }
-    getProdListData(req, res){
+    getProdAllData(req, res){
         const ProdModel = new Model.Prod
-        const response = ProdModel.pagination(req.query)
-        response.data.forEach(p=>{
+        const response = ProdModel.get()
+        response.forEach(p=>{
             const ProdImageModel = new Model.ProdImage
             p.image = ProdImageModel.where('prod_id',p.id).get()
         })

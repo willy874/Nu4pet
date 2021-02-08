@@ -2,7 +2,7 @@ import { request } from './config.js'
 
 export const getRecommend = (id) => request.get(`recommend/user/${id}`)
 export const getDiscountRules = (id)=>request.get(`discount/user/${id}`)
-export const getSaleCodeDiscount = (code)=>request.get(`discount/salecode/${code}`)
+export const getSaleCodeDiscount = (code,data)=>request.post(`discount/salecode/${code}`,data)
 export const getCity = ()=>request.get(`city`)
 export const getPayMethod = ()=>request.get(`pay/method`)
 export const checkMobileVehicle = (code)=>request.get(`vehicle/mobile/${code}`)
