@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 const route = require('./route')
-const ListModel = require('../../src/js/models/data/list-model')
-const ProdModel = require('../../src/js/models/data/prod')
-const PetModel = require('../../src/js/models/data/pet')
-const UserModel = require('../../src/js/models/data/user')
-const ShopCarModel = require('../../src/js/models/data/shop_car')
-const RecordModel = require('../../src/js/models/data/record')
-const GiveawayModel = require('../../src/js/models/data/giveaway')
+// const ListModel = require('../../src/js/models/data/list-model')
+// const ProdModel = require('../../src/js/models/data/prod')
+// const PetModel = require('../../src/js/models/data/pet')
+// const UserModel = require('../../src/js/models/data/user')
+// const ShopCarModel = require('../../src/js/models/data/shop_car')
+// const RecordModel = require('../../src/js/models/data/record')
+// const GiveawayModel = require('../../src/js/models/data/giveaway')
 
 module.exports = (args)=>{
     const Route = new route(args)
@@ -122,9 +122,15 @@ module.exports = (args)=>{
     /**
      * @params {account}
      * account: 依據 User 的 account 來搜尋
-     * @response RecordModel
+     * @response {count: Number}
      */
     Route.api('get','/record/count/:account?', 'RecordController@getRecordCountByAccount')
+    /**
+     * @params {id}
+     * id: 依據 pet 的 id 來搜尋
+     * @response RecordModel
+     */
+    Route.api('get','/record/pet/:id?', 'RecordController@getRecordDataByPetId')
     /**
      * @params {id}
      * id: 依據 Record 的 id 來搜尋

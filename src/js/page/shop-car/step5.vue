@@ -290,7 +290,7 @@ export default {
                 this.user = new UserModel(user)
                 this.model = new RecordModel(record)
                 getRecordCountByAccount(this.user.account).then(res=>{
-                    this.recordCount = Number(res.data)
+                    this.recordCount = Number(res.data.count)
                 })
             })
             getPayMethod().then(res=>{
