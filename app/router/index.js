@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 const route = require('./route')
-const ListModel = require('../../src/js/models/data/list-model')
-const ProdModel = require('../../src/js/models/data/prod')
-const PetModel = require('../../src/js/models/data/pet')
-const UserModel = require('../../src/js/models/data/user')
-const ShopCarModel = require('../../src/js/models/data/shop_car')
-const RecordModel = require('../../src/js/models/data/record')
-const GiveawayModel = require('../../src/js/models/data/giveaway')
+//const ListModel = require('../../src/js/models/data/list-model')
+//const ProdModel = require('../../src/js/models/data/prod')
+//const PetModel = require('../../src/js/models/data/pet')
+//const UserModel = require('../../src/js/models/data/user')
+//const ShopCarModel = require('../../src/js/models/data/shop_car')
+//const RecordModel = require('../../src/js/models/data/record')
+//const GiveawayModel = require('../../src/js/models/data/giveaway')
 
 module.exports = (args)=>{
     const Route = new route(args)
