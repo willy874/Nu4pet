@@ -157,6 +157,25 @@ module.exports = class RecordController extends Controller {
         const userId = (user.length) ? user[0].id : 0
         const RecordModel = new Model.Record
         const response = RecordModel.where('user_id',userId).get().length
-        res.send( String(response) )
+        res.send({
+            count: response
+        })
+    }
+    getRecordDataByPetId(req, res){
+        const { id } = req.params
+        const RecordRelationModel = new Model.RecordRelation
+        const RecordRelationData = RecordRelationModel.where('pet_id',id).get()
+        const response = []
+        RecordRelationData.forEach((data, index) => {
+            // const RecordModel = new Model.Record
+            // const RecordData = RecordModel.where('id',data.record_id).get().find(p=>p)
+            const ProdModel = new Model.Prod
+            const ProdData = ProdModel.where('id',data.prod_id).get().find(p=>p)
+            const ProdImageModel = new Model.ProdImage
+            const ProdImageData = ProdImageModel.where('prod_id',ProdData.id).get()
+            ProdData.image = ProdImageData
+            response[index] = Object.assign(ProdData,data)
+        })
+        res.send(response)
     }
 }
