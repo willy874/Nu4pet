@@ -30,7 +30,7 @@ module.exports = (evn,option)=>{
             new VueLoaderPlugin(),
             new ESLintPlugin(),
             new MiniCssExtractPlugin({
-                filename: './css/[name].bundle.css'
+                filename: option.mode === 'production' ? './2021/[name].bundle.css' :  './css/[name].bundle.css'
             }),
             new WebpackModules(),
             // new CleanWebpackPlugin(),

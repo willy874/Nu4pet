@@ -10,7 +10,7 @@ module.exports = (option)=>{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
                         esModule: false,
-                        publicPath: '../'
+                        publicPath: option.mode === 'production' ? '..' :  '..'
                     },
                 },
                 {
@@ -52,7 +52,7 @@ module.exports = (option)=>{
                 options: {
                     limit: 1000, //bytes
                     name: '[name].[ext]',
-                    outputPath: 'assets/image',
+                    outputPath: option.mode === 'production' ? 'Images/2021' :  'assets/image'
                 }
             }
         }, {
@@ -62,7 +62,7 @@ module.exports = (option)=>{
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'css',
+                        outputPath: option.mode === 'production' ? '2021' :  'css'
                     },
                 },
             ],
