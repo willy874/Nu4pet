@@ -13,6 +13,8 @@ module.exports = (evn,option)=>{
         mode: option.mode,
         entry: {
             main: './src/main.js',
+            pet: './src/js/page/pet.js',
+            'shop-car': './src/js/page/shop-car.js',
             svgTool: './src/svg-tool.js'
         },
         devtool: 'source-map',
