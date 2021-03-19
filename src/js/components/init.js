@@ -1,5 +1,3 @@
-import './icon/mount'
-import './icon/lib/evaluation'
 import Vue from 'vue'
 import DialogInstall from './dialog/install'
 import IconInstall from './icon/install'
