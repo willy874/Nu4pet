@@ -5,6 +5,7 @@ const benner = 'slick-home-benner'
 const evaluation = 'slick-home-evaluation'
 const shopHome1 = 'slick-shop-home-1'
 const shopHome2 = 'slick-shop-home-2'
+const shopcartStep1 = 'slick-shopcart-step-1'
 
 $(`#${benner}`).slick({
     infinite: true,
@@ -84,4 +85,27 @@ $(`#${shopHome2}`).slick({
         arrows: false,
       }
     }]
+})
+$(`#${shopcartStep1}`).slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  dots: true,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        arrows: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
 })

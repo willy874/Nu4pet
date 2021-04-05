@@ -43,6 +43,11 @@
     height: 54px;
     pointer-events: none;
 }
+.size-75 > svg{
+    width: 75px;
+    height: 75px;
+    pointer-events: none;
+}
 .size-109 > svg{
     width: 109px;
     height: 109px;
@@ -73,4 +78,10 @@ svg{
     border: 0;
     background-color: transparent;
     padding: 0;
+}
+
+.icon-step-1,.icon-step-2,.icon-step-3,.icon-step-4,.icon-step-5{
+    svg{
+        margin: 0 auto;
+    }
 }

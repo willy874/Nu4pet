@@ -1,0 +1,17 @@
+#shopcart-step-2{
+    .grid-address-list{
+      grid-template-columns: auto 1fr;
+      .grid-address{
+        grid-column: 1 / -1;
+      }
+      @media (min-width: 768px) {
+        grid-template-columns: auto 1fr 1fr 1fr;
+      }
+      @media (min-width: 1200px) {
+        grid-template-columns: auto 140px 140px 140px 1fr;
+        .grid-address{
+          grid-column: auto;
+        }
+      }
+    }
+}

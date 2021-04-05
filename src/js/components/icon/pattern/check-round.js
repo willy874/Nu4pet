@@ -1,5 +1,5 @@
 export default {
-  mount: '.icon-chech-round',
+  mount: '.icon-check-round',
   attrs: {
   viewBox: '0 0 46.38 46.38' ,
   fill: 'currentColor'

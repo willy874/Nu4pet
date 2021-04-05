@@ -88,6 +88,31 @@
 // $h4-font-size: 1.4375rem;
 // $h5-font-size: 1.25rem;
 // $h6-font-size: 1.125rem;
+@for $i from 1 through 8 {
+    .fs-#{10 + ($i*2)} {
+        font-size: 10px + ( $i * 2px );
+    }
+}
+@for $i from 1 through 6 {
+    .fs-#{26 + ($i*4)} {
+        font-size: 26px + ( $i * 4px );
+    }
+}
+@each $media, $size in $grid-media-size {
+    @include media-min($size){
+        @for $i from 1 through 8 {
+            .fs-#{$media}-#{10 + ($i*2)} {
+                font-size: 10px + ( $i * 2px );
+            }
+        }
+        @for $i from 1 through 6 {
+            .fs-#{$media}-#{26 + ($i*4)} {
+                font-size: 26px + ( $i * 4px );
+            }
+        }
+    }
+}
+
 .rwd-h1{
     font-size: 3.125rem;
     @include media-max(992px){
@@ -243,4 +268,15 @@ select.custom-select{
 .horizontal-line-2{
     background-color: #5A5B5B;
     height: 2px;
+}
+
+.grid-span {
+    grid-column: 1/-1;
+}
+.grid-span-2 {
+    grid-column: span 2;
+}
+.precautions{
+    fill: #ffffff;
+    font: bold 72px sans-serif;
 }

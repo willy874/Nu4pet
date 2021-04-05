@@ -68,3 +68,30 @@ if (dom) {
         $priceDel.html($countBar.val() * priceDel)
     })
 }
+
+
+const shopcarts = document.querySelectorAll('#shopcart-modal')
+shopcarts.forEach(el => {
+    const closeEventBind = ($els)=>{
+        $els.forEach($el=>{
+            $el.on('click',()=>{
+                $('body').removeClass('modal-open')
+                $('.modal').removeClass('show').fadeOut(200)
+            })
+        })
+    }
+    const $el = $(el)
+    const $modal = $('.modal')
+    const $modalDialog = $('.modal-dialog')
+
+    $el.on('click',()=>{
+        $('body').addClass('modal-open')
+        $modal.addClass('show').fadeIn(200).on
+    })
+    
+    $modalDialog.on('click',(e)=>e.stopPropagation())
+    closeEventBind([
+        $('.modal-close'),
+        $modal
+    ])
+})

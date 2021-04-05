@@ -1,0 +1,349 @@
+extends ./layout/index.pug
+
+block content
+  section#shopcart-step-5.container.py-5
+    .my-3
+      h2.pb-5 購物袋
+      .row.align-items-md-end.align-items-center.justify-content-center
+        .col-auto.step.py-2.text-primary
+          .size-41.icon-step-1.pb-1
+          span 購物袋
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-2.pb-1
+          span 資料填寫
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-3.pb-1
+          span 結帳
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-4.pb-1
+          span 綁定毛孩
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-5.pb-1
+          span 完成訂單
+    .container-fluid.py-3
+      .row.flex-center
+        .col-auto
+          .py-3.size-75.icon-check-round.text-primary
+        .col-auto
+          .font-weight-bold.fs-24.fs-md-30.text-dark 您的訂單已成立！
+          div
+            span 您可以到
+            a(href='javascript:;') 訂單查詢
+            span 查看
+            a(href='javascript:;') 訂單進度
+            span ，
+          div 若有疑慮及意見，歡迎與我們客服人員聯繫，感謝您的訂購！
+      .border-bottom.p-3 親愛的 黃ＸＸ 您好，感謝您的訂購。
+      .border-bottom.p-3
+        .pb-2 收件人詳情
+        .pl-4
+          div 黃ＸＸ
+          div 0912345678
+          div 333 桃園市龜山區頂湖二街80-1號4樓
+      .border-bottom.p-3
+        .pb-2 訂單詳情
+        .pl-4
+          .d-flex
+            span 訂單編號：
+            span 三聯式發票
+          .d-flex
+            span 付款方式：
+            span ATM繳費
+          .d-flex
+            span 下單時間：
+            span 2021-02-01 10:17
+      .border-bottom.p-3
+        .pb-2 繳費詳情
+        .pl-4
+          div 您選擇的付款方式為ATM付費，繳費資訊如下；
+          .d-flex
+            span 銀行代碼：
+            span 013
+          .d-flex
+            span 帳戶資訊：
+            span 0000-0000-0000-0000
+      .border-bottom.p-3
+        .pb-2 發票詳情
+        .pl-4
+          .d-flex
+            span 發票類型：
+            span 三聯式發票
+          .d-flex
+            span 公司名稱：
+            span
+          .d-flex
+            span 統一編號：
+            span
+    .py-3
+      .container-fluid.font-weight-bold.fs-24.fs-md-30.text-dark.py-3 產品明細
+      .border
+        .d-flex.border-bottom
+          .col.py-3
+            span 商品( 共
+            span.mx-1 2
+            span 件 )
+          .col-2.d-none.d-md-block.py-3.text-center 單價
+          .col-2.d-none.d-md-block.py-3.text-center 數量
+          .col-2.d-none.d-md-block.py-3.text-center 小計
+        .container-fluid
+          .row.align-items-center
+            .col-auto.d-flex.flex-center.py-3(style="width: 132px")
+              img.w-100(src="./assets/image/prod-01.min.jpg") 
+            .col-sm.py-3
+              div 客製寵糧訂單編號：
+              .mb-3 EGT05167
+              .h6 美味雞魚配方【M】月方案
+            .col-12.d-md-none
+            .col-auto.col-md-2.d-flex.justify-content-start.justify-content-md-center.align-items-center.py-3
+              div
+                .mx-3.my-1
+                  span NT$
+                  span.ml-1 1320
+                del.mx-3.my-1.text-gray
+                  span NT$
+                  span.ml-1 990
+            .col.col-md-2.d-flex.flex-center.py-3.justify-content-end.justify-content-md-center
+              span X
+              span.ml-1 1
+            .col-auto.col-md-2.d-flex.flex-center.py-3
+              span NT$
+              span.ml-1 990
+          .mx-3.border-bottom
+        .container-fluid
+          .row.align-items-center
+            .col-auto.d-flex.flex-center.py-3(style="width: 132px")
+              img.w-100(src="./assets/image/prod-02.min.jpg") 
+            .col-sm.py-3
+              div 客製寵糧訂單編號：
+              .mb-3 EGT05167
+              .h6 美味雞魚配方【M】月方案
+            .col-12.d-md-none
+            .col-auto.col-md-2.d-flex.justify-content-start.justify-content-md-center.align-items-center.py-3
+              div
+                .mx-3.my-1
+                  span NT$
+                  span.ml-1 1320
+                del.mx-3.my-1.text-gray
+                  span NT$
+                  span.ml-1 990
+            .col.col-md-2.d-flex.flex-center.py-3.justify-content-end.justify-content-md-center
+              span X
+              span.ml-1 1
+            .col-auto.col-md-2.d-flex.flex-center.py-3
+              span NT$
+              span.ml-1 990
+          .mx-3.border-bottom.container-fluid
+          .row.align-items-center
+            .col-auto.d-flex.flex-center.py-3(style="width: 132px")
+              img.w-100(src="./assets/image/prod-03.min.jpg") 
+            .col-sm.py-3
+              div 客製寵糧訂單編號：
+              .mb-3 EGT05167
+              .h6 美味雞魚配方【M】月方案
+            .col-12.d-md-none
+            .col-auto.col-md-2.d-flex.justify-content-start.justify-content-md-center.align-items-center.py-3
+              div
+                .mx-3.my-1
+                  span NT$
+                  span.ml-1 1320
+                del.mx-3.my-1.text-gray
+                  span NT$
+                  span.ml-1 990
+            .col.col-md-2.d-flex.flex-center.py-3.justify-content-end.justify-content-md-center
+              span X
+              span.ml-1 1
+            .col-auto.col-md-2.d-flex.flex-center.py-3
+              span NT$
+              span.ml-1 990
+          .d-flex.text-primary.align-items-center.py-3
+            .col-auto.d-none.d-sm-block(style="width: 132px")
+            .size-20.icon-check-round
+            span.mx-2 此筆訂單已經確認綁定給妹妹！
+          .row
+            .col-lg.d-flex.flex-center.py-3
+              .rounded-circle.bg-white.p-1(style="border: #45C2B1 solid 4px;")
+                img.img-cover.rounded-circle(src="./assets/image/pet-photo.min.jpg" width="100" height="100")
+              .ml-3.fs-16.fs-md-20
+                .text-dark 妹妹
+                .text-dark 
+                  span 體重：
+                  span 2.9kg
+            .col-lg-6.py-3
+              div
+                .py-1 指定出貨日期：
+                .px-3.py-1
+                  button.w-100.btn.btn-light.text-gray.rounded-pill.border-0.text-left.px-3#shopcart-modal(type="button") 選擇日期
+              div
+                .py-1 指定單月特調口味：
+                .px-3.py-1
+                  button.w-100.btn.btn-light.text-gray.rounded-pill.border-0.text-left.px-3#shopcart-modal(type="button") 選擇口味
+              div
+                .py-1 指定雙月特調口味：
+                .px-3.py-1
+                  button.w-100.btn.btn-light.text-gray.rounded-pill.border-0.text-left.px-3#shopcart-modal(type="button") 選擇口味
+          .border-bottom
+        .container-fluid
+          .row.align-items-center
+            .col-auto.d-flex.flex-center.py-3(style="width: 132px")
+              img.w-100(src="./assets/image/prod-02.min.jpg") 
+            .col-sm.py-3
+              div 客製寵糧訂單編號：
+              .mb-3 EGT05167
+              .h6 美味雞魚配方【M】月方案
+            .col-12.d-md-none
+            .col-auto.col-md-2.d-flex.justify-content-start.justify-content-md-center.align-items-center.py-3
+              div
+                .mx-3.my-1
+                  span NT$
+                  span.ml-1 1320
+                del.mx-3.my-1.text-gray
+                  span NT$
+                  span.ml-1 990
+            .col.col-md-2.d-flex.flex-center.py-3.justify-content-end.justify-content-md-center
+              span X
+              span.ml-1 1
+            .col-auto.col-md-2.d-flex.flex-center.py-3
+              span NT$
+              span.ml-1 990
+          .mx-3.border-bottom.container-fluid
+          .row.align-items-center
+            .col-auto.d-flex.flex-center.py-3(style="width: 132px")
+              img.w-100(src="./assets/image/prod-03.min.jpg") 
+            .col-sm.py-3
+              div 客製寵糧訂單編號：
+              .mb-3 EGT05167
+              .h6 美味雞魚配方【M】月方案
+            .col-12.d-md-none
+            .col-auto.col-md-2.d-flex.justify-content-start.justify-content-md-center.align-items-center.py-3
+              div
+                .mx-3.my-1
+                  span NT$
+                  span.ml-1 1320
+                del.mx-3.my-1.text-gray
+                  span NT$
+                  span.ml-1 990
+            .col.col-md-2.d-flex.flex-center.py-3.justify-content-end.justify-content-md-center
+              span X
+              span.ml-1 1
+            .col-auto.col-md-2.d-flex.flex-center.py-3
+              span NT$
+              span.ml-1 990
+          .d-flex.text-primary.align-items-center.py-3
+            .col-auto.d-none.d-sm-block(style="width: 132px")
+            .size-20.icon-check-round
+            span.mx-2 此筆訂單已經確認綁定給妹妹！
+          .row
+            .col-lg.d-flex.flex-center.py-3
+              .rounded-circle.bg-white.p-1(style="border: #45C2B1 solid 4px;")
+                img.img-cover.rounded-circle(src="./assets/image/pet-photo.min.jpg" width="100" height="100")
+              .ml-3.fs-16.fs-md-20
+                .text-dark 妹妹
+                .text-dark 
+                  span 體重：
+                  span 2.9kg
+            .col-lg-6.py-3
+              div
+                .py-1 試吃包出貨日期：
+                .px-3.py-1
+                  button.w-100.btn.btn-light.text-gray.rounded-pill.border-0.text-left.px-3#shopcart-modal(type="button") YYYY/MM/DD
+    .border.my-3
+      h4.d-flex.justify-content-center.mb-0.p-3
+        .mr-2 總計
+        .mr-1 NT$
+        span 50000
+    .py-3
+      .row.no-gutters
+        .col-md-3.col-xl-2.d-none.d-md-block.bg-primary
+          svg.w-100(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 250 250')
+            g.precautions
+              text(x='125' y='115' text-anchor='middle') 注意
+              text(x='125' y='185' text-anchor='middle') 事項
+        .col-12.col-md-9.col-xl-10.bg-light.py-3.px-4.d-flex.flex-center
+          .text-dark
+            h2.text-center.font-weight-bold.d-md-none.mb-4 注意事項
+            h4.text-primary 提醒您陪心商城之商品將會隨『正式客製寵糧』一同出貨
+            .py-lg-2
+            div ＃若本訂單已進入包裝作業，恕無法取消或修改訂單內容。
+            div
+              span ＃您可以隨時到本網站『
+              a(href='javascript:;') 訂單查詢
+              span 』查看目前訂單進度。
+            div ＃如訂購商品無法順利出貨或缺貨，我們將主動通知您並取消該訂單品項。
+  section#shopcart-step-5
+    .modal(tabindex='-1')
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header.border-0
+            h5.modal-title
+            button.modal-close.btn-icon.icon-close.size-20(type="button" data-dismiss="modal" aria-label="Close")
+          .modal-body.px-4
+            .container
+              .row
+                .col-12.d-flex.flex-column.align-items-center
+                  .pb-2
+                    .rounded-circle.bg-white.p-1(style="border: #45C2B1 solid 4px;")
+                      img.img-cover.rounded-circle(src="./assets/image/pet-photo.min.jpg" width="100" height="100")
+                  .rwd-h4.mb-2.font-weight-bold 妹妹
+                  .rwd-h4.mb-2 體重：2.9kg
+                .col-12
+                  .row
+                    .col-auto.d-flex.flex-center.py-3(style="width: 132px")
+                      img.w-100(src="./assets/image/prod-03.min.jpg") 
+                    .col-sm.py-3
+                      div 客製寵糧訂單編號：
+                      .mb-3 EGT05167
+                      .h6 美味雞魚配方【M】月方案
+                .col-12.d-flex.flex-center.py-3
+                  div
+                    .px-3.py-2
+                      div 指定出貨日期：
+                      input.form-control.rounded-pill.bg-light(type="date")
+                    .py-2
+                      div 指定單月特調口味：
+                      .row
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_odd_a" name="taste_odd")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_odd_a") 經典｜原味經典
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_odd_b" name="taste_odd")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_odd_b") 雞肉｜雞油香氣
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_odd_c" name="taste_odd")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_odd_c") 羊肉｜羊油香氣
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_odd_d" name="taste_odd")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_odd_d") 起司｜濃厚起司粉
+                    .py-2
+                      div 指定雙月特調口味：
+                      .row
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_even_a" name="taste_even")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_even_a") 經典｜原味經典
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_even_b" name="taste_even")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_even_b") 雞肉｜雞油香氣
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_even_c" name="taste_even")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_even_c") 羊肉｜羊油香氣
+                        .col-auto.py-1
+                          .form-check
+                            input.form-check-input(type="radio" id="taste_even_d" name="taste_even")
+                            label.form-check-label.py-1.px-2.rounded-pill(for="taste_even_d") 起司｜濃厚起司粉
+                .col-12.d-flex.flex-center
+                  .text-center
+                    button.btn.btn-primary.text-white.rounded-pill.my-2(type="button" ) 確認
+                    .my-2
+                      | 確認後就不能修改了喔，
+                      br
+                      | 如果需要修改請聯絡客服人員!

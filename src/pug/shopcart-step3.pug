@@ -1,0 +1,125 @@
+extends ./layout/index.pug
+
+block content
+  section#shopcart-step-3.container.py-5
+    .my-3
+      h2.pb-5 購物袋
+      .row.align-items-md-end.align-items-center.justify-content-center
+        .col-auto.step.py-2.text-primary
+          .size-41.icon-step-1.pb-1
+          span 購物袋
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-2.pb-1
+          span 資料填寫
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-3.pb-1
+          span 結帳
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-4.pb-1
+          span 綁定毛孩
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-5.pb-1
+          span 完成訂單
+    .border.my-3
+      .text-center.h6.p-2.p-md-3 信用卡付款
+      .border-top.px-2.px-sm-3.px-lg-5
+        .d-flex.py-2.align-items-center
+          .col-5.text-center 訂單編號
+          .col-7 EC21010705077
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 商品明細
+          .col-7 陪心寵糧 (S號) 海陸糙米配方-季方案
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 訂單金額
+          .col-7
+            span NT$
+            span 2700
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 每次扣款
+          .col-7
+            span NT$
+            span 900
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 扣款區間
+          .col-7
+            div 每月自動扣款１次
+            div 扣款上限為３次
+        .d-flex.justify-content-center.align-items-center.flex-wrap.py-2.border-top
+          .col-auto.py-2
+            .custom-control.custom-radio
+              input.custom-control-input(type="radio" id="19b9f5c6a" name="19b9f5c6")
+              label.custom-control-label(for="19b9f5c6a") 使用已綁定信用卡
+          .col-auto.py-2
+            .custom-control.custom-radio
+              input.custom-control-input(type="radio" id="19b9f5c6b" name="19b9f5c6")
+              label.custom-control-label(for="19b9f5c6b") 輸入信用卡
+        .d-flex.flex-wrap.border-top.align-items-center
+          .col-lg-5.text-center.py-2 信用卡卡號
+          .col-lg-7.py-2.d-flex.align-items-center
+            input.form-control.rounded-lg.bg-light.border-0(type="text")
+            .flex-shrink-0.bg-gray-light.mx-1(style="width: 8px;height: 1px;")
+            input.form-control.rounded-lg.bg-light.border-0(type="text")
+            .flex-shrink-0.bg-gray-light.mx-1(style="width: 8px;height: 1px;")
+            input.form-control.rounded-lg.bg-light.border-0(type="text")
+            .flex-shrink-0.bg-gray-light.mx-1(style="width: 8px;height: 1px;")
+            input.form-control.rounded-lg.bg-light.border-0(type="text")
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 有效期限
+          .col-auto
+            input.form-control.rounded-lg.bg-light.border-0(type="text")
+          .col
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 信用卡安全碼
+          .col-auto
+            input.form-control.rounded-lg.bg-light.border-0(type="text")
+          .col
+        .d-flex.py-2.border-top.justify-content-end.pt-3.pb-5
+          .form-check
+            input.form-check-input(type="checkbox")
+            label.form-check-label 我同意綁定本次付款資訊，方便下次快速結帳。
+    .bg-light.d-flex.flex-center(style="height: 320px;")
+      .p-3.d-flex.flex-center
+        div
+          .mx-auto.mb-3.text-center(style='max-width: 580px;') ※ 提供VISA、MasterCard、JCB信用卡交易，全程使全程使用安全加密，信用卡資料將不會儲存於網站，您可以安心使用信用卡付款。
+          .mx-auto.mb-3.text-danger.text-center(style='max-width: 600px;') ※ 若您透過APP開發頁面發現無法支付狀況，請改用其他瀏覽器開啟頁面，透過
+            a(target='_blank' href='m.me/nu4pet') m.me/nu4pet
+            span 聯繫客服或撥打：
+            a(target='_blank' href='tel:+886800-029-920') 0800-029-920
+            span 由客服為您服務。
+          .d-flex.align-items-center
+            img.mx-1.my-2(src="./assets/image/visa.png" height="30px")
+            img.mx-1.my-2(src="./assets/image/mastercard.png" height="40px")
+            img.mx-1.my-2(src="./assets/image/jcb.png" height="35px")
+            span.mx-1 刷卡服務由
+            img.mx-1.my-2(src="./assets/image/tappay.png" height="30px")
+            img.mx-1.my-2(src="./assets/image/bank-013-logo.png" height="40px")
+            span 提供
+    .border.my-3
+      .text-center.h6.p-2.p-md-3 ATM 繳款資料
+      .border-top.px-2.px-sm-3.px-lg-5
+        .d-flex.py-2.align-items-center
+          .col-5.text-center 訂單編號
+          .col-7 EC21010705077
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 訂單金額
+          .col-7
+            span NT$
+            span 2700
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 銀行代碼
+          .col-7 013
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 繳費帳號
+          .col-7 40430110053565
+        .d-flex.py-2.border-top.align-items-center
+          .col-5.text-center 繳費期限
+          .col-7 2021/01/10 23:59:59
+    .bg-light.d-flex.flex-center(style="height: 320px;")
+      .p-3.d-flex.align-items-end(style="max-width: 400px;")
+        div
+          img.w-100(src="./assets/image/bank-013-logo.png")
+        .px-2.flex-shrink-0 提供

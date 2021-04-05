@@ -1,0 +1,264 @@
+extends ./layout/index.pug
+
+block content
+  section#shopcart-step-1.container.py-5
+    .my-3
+      h2.pb-5 購物袋
+      .row.align-items-md-end.align-items-center.justify-content-center
+        .col-auto.step.py-2.text-primary
+          .size-41.icon-step-1.pb-1
+          span 購物袋
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-2.pb-1
+          span 資料填寫
+        .col-12.d-md-none
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-3.pb-1
+          span 結帳
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-4.pb-1
+          span 綁定毛孩
+        .col.horizontal-line-2.d-none.d-md-block.mb-3
+        .col-auto.step.py-2.text-gray
+          .size-41.icon-step-5.pb-1
+          span 完成訂單
+    .border.my-3
+      .d-grid.grid-prod
+        .p-3.grid-heading
+          span 商品( 共
+          span.mx-1 2
+          span 件 )
+        .d-none.d-md-block.p-3.text-center 單價
+        .d-none.d-md-block.p-3.text-center 數量
+        .d-none.d-md-block.p-3.text-center 小計
+        .d-none.d-md-block
+        .grid-span.border-top
+        .grid-span.d-grid.grid-prod-item
+          .grid-image.p-3
+            img.w-100(src="./assets/image/prod-01.min.jpg") 
+          .grid-title.p-2.p-md-3
+            div 多貓家庭搭伙合菜<br>『美味雞魚配方』
+          .grid-price.d-flex.flex-md-column.flex-center
+            .text-primary.text-nowrap.px-3 NT$1488
+            del.px-3.text-nowrap 原價：1900
+          .grid-quantity.d-flex.flex-center.p-3
+            .d-flex.border.w-100
+              button.size-20.flex-shrink-0.icon-btn-minus.btn-icon.text-dark.p-1
+              input.w-100.flex-grow-1.text-center.border-0(type="text" value="1")
+              button.size-20.flex-shrink-0.icon-btn-plus.btn-icon.text-dark.p-1
+          .grid-totle.d-flex.flex-center.p-3 1488
+          .grid-delete
+            button.btn.rounded-circle.bg-light.text-dark
+              .icon-close.text-dark
+        .grid-span.border-top
+        .grid-span.d-grid.grid-prod-item
+          .grid-image.p-3
+            .p-100.position-relative
+              .position-fill
+                img.w-100(src="./assets/image/prod-02.min.jpg")
+          .grid-title.p-2.p-md-3
+            div 多貓家庭搭伙合菜<br>『美味雞魚配方』
+          .grid-price.d-flex.flex-md-column.flex-center
+            .text-primary.text-nowrap.px-3 NT$1488
+            del.px-3.text-nowrap 原價：1900
+          .grid-quantity.d-flex.flex-center.p-3
+            .d-flex.border.w-100
+              button.size-20.flex-shrink-0.icon-btn-minus.btn-icon.text-dark.p-1
+              input.w-100.flex-grow-1.text-center.border-0(type="text" value="1")
+              button.size-20.flex-shrink-0.icon-btn-plus.btn-icon.text-dark.p-1
+          .grid-totle.d-flex.flex-center.p-3 1488
+          .grid-delete
+            button.btn.rounded-circle.bg-light.text-dark
+              .icon-close.text-dark
+        .grid-span.border-top
+        .grid-span.d-grid.grid-prod-item
+          .grid-image.p-3
+            .p-100.position-relative
+              .position-fill
+                img.w-100(src="./assets/image/prod-03.min.jpg")
+          .grid-title.p-2.p-md-3
+            div 多貓家庭搭伙合菜<br>『美味雞魚配方』
+          .grid-price.d-flex.flex-md-column.flex-center
+            .text-primary.text-nowrap.px-3 NT$1488
+            del.px-3.text-nowrap 原價：1900
+          .grid-quantity.d-flex.flex-center.p-3
+            .d-flex.border.w-100
+              button.size-20.flex-shrink-0.icon-btn-minus.btn-icon.text-dark.p-1
+              input.w-100.flex-grow-1.text-center.border-0(type="text" value="1")
+              button.size-20.flex-shrink-0.icon-btn-plus.btn-icon.text-dark.p-1
+          .grid-totle.d-flex.flex-center.p-3 1488
+          .grid-delete
+            button.btn.rounded-circle.bg-light.text-dark
+              .icon-close.text-dark
+    .border.my-3
+      .text-center.h6.p-2.p-md-3 贈品項目
+      .border-top.d-flex
+        .img-block.flex-shrink-0.p-2.p-md-3
+          .p-100.position-relative
+              .position-fill
+                img.w-100(src="./assets/image/prod-01.min.jpg")
+        .flex-grow-1.p-2.p-md-3
+          .h5.text-primary.fs-16.fs-md-20 滿額贈
+          div 消費滿888即贈「黑木耳罐罐」（可累計 / 上限6罐）
+    .border.my-3
+      .text-center.h6.p-2.p-md-3 購物袋加購
+      .border-top.p-3
+        .pb-3
+          #slick-shopcart-step-1
+            each val in [1,2,3,4,5,6,7,8,9]
+              .px-3
+                .row.no-gutters
+                  .col-xs-6.px-2
+                    div
+                      img.w-100(src="./assets/image/prod-01.min.jpg")
+                  .col-xs-6.d-flex.justify-content-between.flex-column.text-center.px-2
+                    .overflow-line-16 多貓家庭搭伙合菜<br>『美味雞魚配方』
+                    .text-primary
+                      span 優惠價
+                      span 1488
+                    button.btn.btn-primary.text-white.rounded-pill(type="button") 加入購物車
+    .row.pb-3
+      .col-lg-6
+        .border.my-3.h-100
+          .text-center.h6.p-2.p-md-3 我要捐款
+          .border-top.p-3
+            .h5 我要一日捐
+            .text-primary.mb-3 "捐款金額"<br>不納入商品消費總金額免運及開立發票範圍內
+            .custom-control.custom-radio.my-3
+              input.custom-control-input(type="radio" id="89ee6db4a" name="89ee6db4d")
+              label.custom-control-label(for="89ee6db4a") 下次捐
+            .custom-control.custom-radio.my-3
+              input.custom-control-input(type="radio" id="89ee6db4b" name="89ee6db4d")
+              label.custom-control-label(for="89ee6db4b") NT$30
+            .custom-control.custom-radio.my-3
+              input.custom-control-input(type="radio" id="89ee6db4c" name="89ee6db4d")
+              label.custom-control-label(for="89ee6db4c") NT$50
+            .border-top
+            .d-flex.justify-content-end
+              .py-2 
+                span.mr-1 捐款金額
+                span.mr-1 NT$
+                span 0
+      .col-lg-6
+        .border.my-3.h-100
+          .text-center.h6.p-2.p-md-3 訂單金額總計資訊
+          .border-top.p-3
+            .d-flex.justify-content-center.py-2
+              .col-8
+                input.form-control.text-center.rounded-pill.bg-light.border-0
+                .h4.mb-0.position-absolute(style="left: 100%;top: 0;line-height:35px;") P
+            .d-flex.justify-content-center.align-items-center.py-2
+              button.btn.btn-primary.text-white.rounded-pill 一鍵折抵最大額
+            .text-center.py-2
+              span 目前剩餘
+              span.text-primary.mx-1 12345
+              span 枚P幣，本筆消費最多可折抵
+              span.text-primary.mx-1 1000
+              span 元
+            .d-flex.justify-content-center.py-2
+              .col-8
+                input.form-control.text-center.rounded-pill.bg-light.border-0(type="text" placeholder="＋輸入優惠促銷代碼")
+            .py-2
+              .d-flex.justify-content-between.align-items-center.py-1
+                div 商品金額小計
+                div
+                  span.mr-1  NT$
+                  span 6000
+              .d-flex.justify-content-between.align-items-center.py-1
+                div 商城折扣
+                div
+                  span.mr-1  NT$
+                  span 0
+              .d-flex.justify-content-between.align-items-center.py-1
+                div 優惠代碼折扣
+                div
+                  span.mr-1  NT$
+                  span 0
+              .d-flex.justify-content-between.align-items-center.py-1
+                div P幣折抵
+                div
+                  span.mr-1  NT$
+                  span 0
+              .d-flex.justify-content-between.align-items-center.py-1
+                div 運費
+                div
+                  span.mr-1  NT$
+                  span 50
+            .border-top
+              .d-flex.justify-content-end.px-3
+                .py-2
+                  .py-1
+                    span.mr-3 商品總計
+                    span.mr-1 NT$
+                    span
+                  .text-primary.py-1 此金額為發票金額
+                  .py-1
+                    span 取貨後獲得點數+
+                    span.ml-1 3235
+                    span P幣
+    .border.my-3
+      h4.d-flex.justify-content-center.mb-0.p-3
+        .mr-2 總計
+        .mr-1 NT$
+        span 5915
+    .border.my-3
+      .text-center.h6.p-2.p-md-3 選擇付款方式
+      .border-top
+        .mx-3
+          .row.align-items-center
+            .py-2.col-lg-6
+              .custom-control.custom-radio.my-3
+                input.custom-control-input(type="radio" id="89ee6db4e" name="89ee6db4h")
+                label.custom-control-label(for="89ee6db4e") 信用卡一次付清
+        .border-top.mx-3
+          .row.align-items-center
+            .py-2.col-lg-6
+              .custom-control.custom-radio.my-3
+                input.custom-control-input(type="radio" id="89ee6db4f" name="89ee6db4h")
+                label.custom-control-label(for="89ee6db4f") Line Pay一次付清
+        .border-top.mx-3
+          .row.align-items-center
+            .py-2.col-lg-6
+              .custom-control.custom-radio.my-3
+                input.custom-control-input(type="radio" id="89ee6db4g" name="89ee6db4h")
+                label.custom-control-label(for="89ee6db4g") ATM一次付清
+            .col-lg-6.py-2
+              .d-flex(v-if='item.description')
+                div.mr-1 &#x203B;
+                div 訂購完成後，請記住14碼的「付款帳號」，或可至訂單查詢查詢該筆訂單的付款帳號，並於指定日期前至自動櫃員機或線上ATM操作轉帳。
+        .border-top.mx-3
+          .row.align-items-center
+            .py-2.col-lg-6
+              .custom-control.custom-radio.my-3
+                input.custom-control-input(type="radio" id="89ee6db4i" name="89ee6db4h")
+                label.custom-control-label(for="89ee6db4i") 信用卡定期定額
+            .col-lg-6.py-2
+              .d-flex(v-if='item.description')
+                div.mr-1 &#x203B;
+                div 
+                  span 只有單筆寵糧的
+                  span.text-danger 季方案
+                  span 或
+                  span.text-danger 年方案
+                  span 才能使用此付款！
+    .py-3
+      .row.no-gutters
+        .col-md-3.col-xl-2.d-none.d-md-block.bg-primary
+          svg.w-100(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 250 250')
+            g.precautions
+              text(x='125' y='115' text-anchor='middle') 注意
+              text(x='125' y='185' text-anchor='middle') 事項
+        .col-12.col-md-9.col-xl-10.bg-light.py-3.px-4.d-flex.flex-center
+          .text-dark
+            h2.text-center.font-weight-bold.d-md-none.mb-4 &#x6CE8;&#x610F;&#x4E8B;&#x9805;
+            h4.text-primary 提醒您陪心商城之商品將會隨『正式客製寵糧』一同出貨
+            .py-lg-2
+            div &#xFF03;若本訂單已進入包裝作業，恕無法取消或修改訂單內容。
+            div &#xFF03;您可以隨時到本網站『訂單查詢』查看目前訂單進度。
+            div &#xFF03;如訂購商品無法順利出貨或缺貨，我們將主動通知您並取消該訂單品項。
+    .d-flex.justify-content-center.py-3
+      a.btn.btn-primary.text-white.rounded-pill.mx-3(href="./shop") 繼續購物
+      a.btn.btn-primary.text-white.rounded-pill.mx-3(href="./step2") 下一步
