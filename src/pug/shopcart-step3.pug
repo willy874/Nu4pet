@@ -69,20 +69,20 @@ block content
             input.form-control.rounded-lg.bg-light.border-0(type="text")
         .d-flex.py-2.border-top.align-items-center
           .col-5.text-center 有效期限
-          .col-auto
+          .col-auto(style="width: 150px")
             input.form-control.rounded-lg.bg-light.border-0(type="text")
           .col
         .d-flex.py-2.border-top.align-items-center
           .col-5.text-center 信用卡安全碼
-          .col-auto
+          .col-auto(style="width: 150px")
             input.form-control.rounded-lg.bg-light.border-0(type="text")
           .col
         .d-flex.py-2.border-top.justify-content-end.pt-3.pb-5
           .form-check
             input.form-check-input(type="checkbox")
             label.form-check-label 我同意綁定本次付款資訊，方便下次快速結帳。
-    .bg-light.d-flex.flex-center(style="height: 320px;")
-      .p-3.d-flex.flex-center
+    .bg-light.d-flex.flex-center(style="min-height: 320px;")
+      .p-3
         div
           .mx-auto.mb-3.text-center(style='max-width: 580px;') ※ 提供VISA、MasterCard、JCB信用卡交易，全程使全程使用安全加密，信用卡資料將不會儲存於網站，您可以安心使用信用卡付款。
           .mx-auto.mb-3.text-danger.text-center(style='max-width: 600px;') ※ 若您透過APP開發頁面發現無法支付狀況，請改用其他瀏覽器開啟頁面，透過
@@ -90,7 +90,7 @@ block content
             span 聯繫客服或撥打：
             a(target='_blank' href='tel:+886800-029-920') 0800-029-920
             span 由客服為您服務。
-          .d-flex.align-items-center
+          .d-flex.align-items-center.flex-wrap
             img.mx-1.my-2(src="./assets/image/visa.png" height="30px")
             img.mx-1.my-2(src="./assets/image/mastercard.png" height="40px")
             img.mx-1.my-2(src="./assets/image/jcb.png" height="35px")
