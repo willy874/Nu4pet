@@ -31,7 +31,6 @@ export default class NutritionChar {
             fat: 0,
             metabolism: 0,
         }
-        
         setTimeout(() => {
             window.requestAnimationFrame(this.onupdate.bind(this))
         },this.delay)

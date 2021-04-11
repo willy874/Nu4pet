@@ -1,0 +1,92 @@
+extends ./layout/index.pug
+
+block content
+  main#pet-page.col
+    section.container.py-5
+      h2.pb-5 毛孩專區
+      #pet-detail
+        .row.pb-3
+          .col-4
+            .hover-block.border.border-primary.p-1.p-sm-3
+              .d-flex.flex-column.justify-content-center.align-items-cente
+                .d-flex.justify-content-center
+                  .icon-cat-type.size-41
+                  .icon-dog-type.size-41
+                a.stretched-link.pt-2.text-nowrap.text-center(href='javascript:;') 毛孩資料
+          .col-4
+            .hover-block.border.border-primary.p-1.p-sm-3
+              .d-flex.flex-column.justify-content-center.align-items-center
+                .icon-record.size-41
+                a.stretched-link.pt-2.text-nowrap(href='javascript:;') 營養評估
+          .col-4
+            .hover-block.border.border-primary.p-1.p-sm-3
+              .d-flex.flex-column.justify-content-center.align-items-center
+                .icon-evaluation.size-41
+                a.stretched-link.pt-2.text-nowrap(href='javascript:;') 客製化寵糧紀錄
+        .prt-nutrition.border.border-primary
+          .pt-4.px-4.px-sm-5
+            h2 營養評估
+            .px-md-5
+              canvas#nutrition.w-100(width='1000' height='1000' data-protein='26.57' data-fat='11.71' data-metabolism='327.34' data-delay="500" data-duration="240")
+          .px-3.px-sm-5
+            .px-md-5.py-2.py-md-4
+              h3.font-weight-bold.rwd-h2(style='color: #619EED;') 粗脂肪
+              p.rwd-h4
+                | 狗狗進入壯年期，但蛋白質在肌肉的維持上還是相當重要，建議飲食當中供應26.57%的蛋白質會比較理想唷！
+            .px-md-5.py-2.py-md-4
+              h3.font-weight-bold.rwd-h2(style='color: #ECB850;') 粗蛋白質
+              p.rwd-h4
+                | 狗狗進入壯年期，但蛋白質在肌肉的維持上還是相當重要，建議飲食當中供應26.57%的蛋白質會比較理想唷！
+            .px-md-5.py-2.py-md-4
+              h3.font-weight-bold.rwd-h2(style='color: #6BC0B1;') 代謝能
+              p.rwd-h4
+                | 狗狗進入壯年期，但蛋白質在肌肉的維持上還是相當重要，建議飲食當中供應26.57%的蛋白質會比較理想唷！
+          .container-fluid.border-top.border-primary
+            .row.justify-content-center.py-sm-4
+              .col-sm
+              .col-sm-auto.py-3.d-flex.justify-content-center
+                .icon-logo2(style="width: 83px;height:77px;")
+              p.col-sm-6.py-3.text-primary.rwd-h4.mb-0
+                | 以上為預設配方讓您更了解營養比例及基礎營養建議，毛孩最適合的『營養配置』請依毛孩營養師團隊評估調配結果為主！
+              .col-sm
+          .container-fluid.border-top.border-primary.d-flex.flex-center.py-4
+            h3.font-weight-bold.text-dark.mb-0.rwd-h3 建議訂購
+            .bg-primary.rounded-pill.text-white.font-weight-bold.rwd-h1.px-3.px-lg-5.mx-3.mb-0 L
+            h5.text-dark.mb-0.rwd-h5 尺寸
+          .container-fluid.border-top.border-primary.d-flex.flex-center.py-4.mb-0
+            .row
+              each val in [1,2,3]
+                figure.prod-card.col-lg-4.py-3.mb-0
+                  .border.border-dark
+                    .mb-3.card-img
+                      img.w-100.img-cover(src='./assets/image/prod-01.min.jpg' alt='')
+                      .card-hover.py-2.bg-primary.text-center
+                        a.text-white.stretched-link(href='javascript:;') 加入購物袋
+                    figcaption.font-weight-bold.text-dark.mb-2.overflow-line-20.px-3
+                      | 多貓家庭
+                      br
+                      | 搭伙合菜『美味雞魚配方』
+                    .border-bottom
+                    .d-flex.justify-content-between.pt-2.pb-3.px-3
+                      .pt-1
+                        div
+                          span.font-weight-bold.h6.text-dark NT$
+                          span.font-weight-bold.h3.text-primary 1488
+                        div
+                          span.text-dark 原價：
+                          del.text-dark 1900
+                      div
+                        a.d-inline-block(href='javascript:;')
+                          .icon-heart-round.size-41.d-inline-block.mx-1
+                        a.d-inline-block(href='javascript:;')
+                          .icon-share.size-41.d-inline-block.mx-1
+          .container-fluid.border-top.border-primary.d-flex.flex-center.py-4.mb-0
+            div
+              p.text-primary.h5.mb-1 以上為建議訂購配方，如需訂購點選圖片即可選購所需尺寸及方案唷！
+              p.text-primary.h5.d-flex.align-items-center.mb-0
+                .text-primary
+                  span 或者可以點選
+                  .icon-heart-round.size-20.d-inline-block.mx-1.text-primary
+                  span 收藏商品OR點選
+                  .icon-share.size-20.d-inline-block.mx-1.text-primary
+                  span 分享給朋友唷！

@@ -73,3 +73,98 @@
     height: 100%;
     width: 100%;
 }
+#pet-detail{
+    @media (max-width:576px) {
+        .row{
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+        .row > [class*=col] {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .hover-block > div{
+            transform: scale(0.75);
+        }
+    }
+    .grid-record {
+        grid-template-columns: 132px 2fr 1fr 1fr 1fr;
+        font-size: 1.125rem;
+        .grig-image {
+            grid-column: 1 / 2;
+            grid-row: 1 / 4
+        }
+        .grig-order {
+            grid-column: 2 / 6;
+            grid-row: 1 / 2
+        }
+        .grig-title {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        .grig-price {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+        .grig-quantity {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+        .grig-totle {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+        }
+        .grig-buy-date {
+            grid-column: 2 / 4;
+            grid-row: 3 / 4;
+        }
+        .grig-btn {
+            grid-column: 4 / 6;
+            grid-row: 3 / 4;
+            .btn {
+                font-size: 1.25rem;
+                padding: 0.5rem 3rem;
+            }
+        }
+        @media (max-width:768px){
+            grid-template-columns: 100px 1fr;
+            font-size: 0.875rem;
+            .grig-image {
+                grid-column: 1 / 2;
+                grid-row: 1 / 3
+            }
+            .grig-order {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2
+            }
+            .grig-title {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3
+            }
+            .grig-buy-date {
+                grid-column: 1 / 3;
+                grid-row: 4 / 5
+            }
+            .grig-price {
+                grid-column: 1 / 3;
+                grid-row: 5 / 6
+            }
+            .grig-quantity {
+                grid-column: 1 / 2;
+                grid-row: 6 / 7
+            }
+            .grig-totle {
+                grid-column: 2 / 3;
+                grid-row: 6 / 7
+            }
+            .grig-btn {
+                grid-column: 1 / 3;
+                grid-row: 7 / 8;
+                .btn {
+                    font-size: 0.875rem;
+                    padding: 0.25rem 1.5rem;
+                }
+            }
+        }
+    }
+}

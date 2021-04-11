@@ -7,6 +7,8 @@ module.exports =  (option)=>{
         {name: 'shop-home'},
         {name: 'shop-detail'},
         {name: 'pet'},
+        {name: 'pet-nutrition'},
+        {name: 'pet-record'},
         {name: 'member'},
         {name: 'evaluation'},
         {name: 'shop-car'},
