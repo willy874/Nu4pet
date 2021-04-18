@@ -1,0 +1,202 @@
+extends ./layout/index.pug
+
+block content
+  -
+    var petImage = {
+      1: {
+        title: "不喝水水",
+        src: "./assets/image/毛孩狀態評估-不喝水水（狗）.gif"
+      },
+      2: {
+        title: "幼幼小犬",
+        src: "./assets/image/毛孩狀態評估-幼幼小犬（狗）.gif"
+      },
+      3: {
+        title: "皮膚保健",
+        src: "./assets/image/毛孩狀態評估-皮膚保健問題（狗）.gif"
+      },
+      4: {
+        title: "老年保健",
+        src: "./assets/image/毛孩狀態評估-老年保健問題（狗）.gif"
+      },
+      5: {
+        title: "拉水便便",
+        src: "./assets/image/毛孩狀態評估-拉水便便（狗）.gif"
+      },
+      6: {
+        title: "視力糊糊",
+        src: "./assets/image/毛孩狀態評估-視力糊糊（狗）.gif"
+      },
+      7: {
+        title: "腸胃不佳",
+        src: "./assets/image/毛孩狀態評估-腸胃吸收不佳（狗）.gif"
+      },
+      8: {
+        title: "過重胖胖",
+        src: "./assets/image/毛孩狀態評估-過重胖胖（狗）.gif"
+      },
+      9: {
+        title: "嘔吐胃痛",
+        src: "./assets/image/毛孩狀態評估-嘔吐胃痛（狗）.gif"
+      },
+      10: {
+        title: "嘴巴臭臭",
+        src: "./assets/image/毛孩狀態評估-嘴巴臭臭（狗）.gif"
+      },
+      11: {
+        title: "頭好壯壯",
+        src: "./assets/image/毛孩狀態評估-頭好壯壯（狗）.gif"
+      },
+      12: {
+        title: "營養不良",
+        src: "./assets/image/毛孩狀態評估-營養不良（狗）.gif"
+      },
+      13: {
+        title: "懷孕媽咪",
+        src: "./assets/image/毛孩狀態評估-懷孕媽咪（狗）.gif"
+      },
+      14: {
+        title: "關節卡卡",
+        src: "./assets/image/毛孩狀態評估-關節卡卡（狗）.gif"
+      },
+      15: {
+        title: "糞臭問題",
+        src: "./assets/image/毛孩狀態評估-糞臭問題（狗）.gif"
+      }
+    }
+
+  main#pet-page.col
+    section.container.py-5
+      h2.pb-5 毛孩專區
+      #pet-detail
+        .row.pb-3
+          .col-4
+            .hover-block.border.border-primary.p-1.p-sm-3
+              .d-flex.flex-column.justify-content-center.align-items-cente
+                .d-flex.justify-content-center
+                  .icon-cat-type.size-41
+                  .icon-dog-type.size-41
+                a.stretched-link.pt-2.text-nowrap.text-center(href='javascript:;') 毛孩資料
+          .col-4
+            .hover-block.border.border-primary.p-1.p-sm-3
+              .d-flex.flex-column.justify-content-center.align-items-center
+                .icon-record.size-41
+                a.stretched-link.pt-2.text-nowrap(href='javascript:;') 營養評估
+          .col-4
+            .hover-block.border.border-primary.p-1.p-sm-3
+              .d-flex.flex-column.justify-content-center.align-items-center
+                .icon-evaluation.size-41
+                a.stretched-link.pt-2.text-nowrap(href='javascript:;') 客製化寵糧紀錄
+        .pet-base.border.border-primary
+          .container-fluid
+            h3.d-flex.py-3
+              .col-12.col-md-3.col-xl-5.fs-24.fs-lg-34.text-center.font-weight-bold.text-dark 基本資料
+              .col
+            .row
+              .col-12.col-md-3.col-xl-5.pb-4
+                .rounded-circle.overflow-hidden.mx-auto(style="max-width: 200px;")
+                  img.w-100(src="./assets/image/pet-photo.min.jpg")
+              .col-12.col-md-9.col-xl-7
+                .d-grid.grid-base.fs-14.fs-sm-18.fs-lg-24
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 毛 
+                    span 孩
+                    span 名
+                    span 稱
+                  .p-2
+                    input.form-control(type="text" placeholder="請輸入名稱")
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 寵
+                    span 物
+                    span 類
+                    span 別
+                  .p-2.d-flex.text-primary
+                    .radio-button-icon.mx-1
+                      input.form-control(type="radio" name="type" id="type-dog" checked)
+                      label.size-41.icon-dog-type(for="type-dog")
+                    .radio-button-icon.mx-1
+                      input.form-control(type="radio" name="type" id="type-cat")
+                      label.size-41.icon-cat-type(for="type-cat")
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 品
+                    span 種
+                  .p-2
+                    input.form-control(type="text" placeholder="請輸入品種")
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 性
+                    span 別
+                  .p-2.d-flex
+                    .radio-button-icon
+                      input.form-control(type="radio" name="sex" id="sex-m" checked)
+                      label.size-60by35.icon-boy(for="sex-m")
+                    .radio-button-icon
+                      input.form-control(type="radio" name="sex" id="sex-f")
+                      label.size-60by35.icon-girl(for="sex-f")
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 體
+                    span 重
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3.flex-wrap.flex-lg-nowrap
+                    input.form-control(type="text" placeholder="體重")
+                    span.text-nowrap 公斤(kg)
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 年
+                    span 齡
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3.align-items-center
+                    input.form-control(type="text" placeholder="年齡")
+                    span 歲
+                    span
+                  .d-flex.justify-content-between.py-2.px-2.px-sm-3
+                    span 是
+                    span 否
+                    span 結
+                    span 紮
+                  .p-2.d-flex
+                    .mx-1.radio-button
+                      input.form-control(type="radio" name="ligation" id="ligation-y" checked)
+                      label(for="ligation-y") 是
+                    .mx-1.radio-button
+                      input.form-control(type="radio" name="ligation" id="ligation-n")
+                      label(for="ligation-n") 否
+          .border-top.border-primary.d-flex
+            .col.px-0
+              h4.py-4.text-center.fs-14.fs-sm-18.fs-lg-20 毛孩活動量
+              img.w-100(src="./assets/image/毛孩活動量-多餘3小時（狗）.gif")
+              .d-flex.justify-content-center.px-3.pb-3
+                select.custom-select.rounded-pill.bg-light
+                  option(value="1") 多餘3小時
+                  option(value="2") 1到3小時
+                  option(value="3") 少於1小時
+                  option(value="4") 室內活動
+            .col.px-0.border-left.border-primary
+              h4.py-4.text-center.fs-14.fs-sm-18.fs-lg-20 毛孩體態評估
+              img.w-100(src="./assets/image/毛孩體型-大型狗.gif")
+              .d-flex.justify-content-center.px-3.pb-3
+                select.custom-select.rounded-pill.bg-light
+                  option(value="1") 太胖了
+                  option(value="2") 正常
+                  option(value="3") 太瘦了
+            .col.px-0.border-left.border-primary
+              h4.py-4.text-center.fs-14.fs-sm-18.fs-lg-20 毛孩零食習慣
+              img.w-100(src="./assets/image/毛孩零食習慣-有喂零食（狗）.gif")
+              .d-flex.justify-content-center.px-3.pb-3
+                select.custom-select.rounded-pill.bg-light
+                  option(value="1") 有餵零食
+                  option(value="2") 沒餵零食
+          .border-top.border-primary
+            h4.fs-18.fs-lg-24.py-4.text-center 毛孩狀態評估
+            .row.no-gutters
+              each item in petImage
+                .col-6.col-sm-4.col-md-3.col-xl-2
+                  .checkbox-button-icon
+                    input.form-control(type="checkbox" name="state" id=item.title)
+                    label(for=item.title)
+                      img.w-100(src=item.src alt=item.title)
+                  h4.fs-14.fs-sm-18.fs-lg-20.text-center= item.title
+          .border-top.border-primary.text-center
+            h4.fs-18.fs-lg-24.py-3 毛孩貼心備註
+            .fs-16.fs-lg-20.p-3 喜歡吃罐頭 零食........................
+        .d-flex.py-3.flex-wrap.justify-content-around
+          .col-auto.py-2z
+            a.btn.btn-primary.rounded-pill.text-white.px-5.py-2.fs-14.fs-sm-18.fs-lg-20(href='javascript:;') 回上一頁
+          .col-auto.py-2
+            a.btn.btn-primary.rounded-pill.text-white.px-5.py-2.fs-14.fs-sm-18.fs-lg-20(href='javascript:;') 修改資料

@@ -1,0 +1,86 @@
+extends ./layout/index.pug
+
+block content
+  -
+    var petData = {
+      1: {
+        name: "Ginger",
+        age: "0",
+        body_weight: "2",
+        image_url: "./assets/image/pet-photo.min.jpg",
+        sex: true,
+        type: false,
+        variety: "拉不拉多"
+      },
+      2: {
+        name: "Ginger",
+        age: "100",
+        body_weight: "2",
+        image_url: "./assets/image/pet-photo.min.jpg",
+        sex: false,
+        type: false,
+        variety: "拉不拉多"
+      },
+      3: {
+        name: "Ginger",
+        age: "0",
+        body_weight: "2",
+        image_url: "./assets/image/pet-photo.min.jpg",
+        sex: true,
+        type: true,
+        variety: "拉不拉多"
+      },
+      4: {
+        name: "Ginger",
+        age: "0",
+        body_weight: "100",
+        image_url: "./assets/image/pet-photo.min.jpg",
+        sex: false,
+        type: true,
+        variety: "拉不拉多"
+      }
+    }
+
+  main#pet-page.col
+    section.container.py-5
+      h2.pb-5 毛孩專區
+      #pet-list.row
+        each item in petData
+          .col-12.col-md-6.pb-3.pt-3
+            .d-flex
+                .col-4
+                  .mb-n50.rounded-circle.overflow-hidden
+                    img.w-100(src=item.image_url)
+                .col
+            .border.border-primary.rounded-lg
+              .d-flex
+                .col-4
+                  .pt-50
+                .col.pt-2.pt-sm-3.px-1.px-sm-2.px-lg-3
+                  h3.fs-16.fs-sm-18.fs-xl-24=item.name
+                  h4.fs-12.fs-xl-16
+                    span.d-inline-block.mr-1 品種:
+                    span.d-inline-block=item.variety
+                .col-auto.pt-2.pt-sm-3
+                  a.btn.btn-primary.rounded-pill.text-white.fs-12.fs-sm-14.fs-xl-18(href="javascript:;") 更多資料
+              .m-2.m-sm-3.border.border-primary.d-flex.rounded-lg
+                .col-3.px-0
+                  .p-2.p-lg-3.h-100.d-flex.flex-center
+                    if item.type
+                      .w-100.icon-dog-type
+                    else
+                      .w-100.icon-cat-type
+                .col-3.px-0.border-left.border-primary
+                  .p-2.p-lg-3.h-100.d-flex.flex-center
+                    if item.sex
+                      .w-100.icon-girl
+                    else
+                      .w-100.icon-boy
+                .col-3.px-0.border-left.border-primary.d-flex.flex-center
+                  .p-2.p-lg-3.d-flex.align-items-center.justify-content-between.fs-16.fs-sm-18.fs-xl-24
+                    span.text-nowrap=item.age
+                    span.text-nowrap 歲
+                .col-3.px-0.border-left.border-primary.d-flex.flex-center
+                  .p-2.p-lg-3.d-flex.align-items-center.justify-content-between.fs-16.fs-sm-18.fs-xl-24
+                    span.text-nowrap=item.body_weight
+                    span.text-nowrap 公斤

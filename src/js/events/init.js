@@ -15,7 +15,11 @@ if (canvas) {
             durationCount: Number(canvas.getAttribute('data-duration')),
             easings: 'easeOutElastic'
         },
-        
+        maxTarget: {
+            protein: Number(canvas.getAttribute('data-max-protein')),
+            fat: Number(canvas.getAttribute('data-max-fat')),
+            metabolism: Number(canvas.getAttribute('data-max-metabolism'))
+        },
     })
     ctx.oncreate()
 }

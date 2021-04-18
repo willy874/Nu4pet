@@ -22,6 +22,11 @@ export default class NutritionChar {
             durationCount: 180,
             easings: 'easeInSine'
          }
+        this.maxTarget = this.maxTarget || {
+            protein: entity.maxTarget.protein || 32,
+            fat: entity.maxTarget.fat || 17,
+            metabolism: entity.maxTarget.metabolism || 1000
+        }
         this.delay =  entity.delay || 0
         this.count = 0
         this.bw = entity.boxWidth || 1000
@@ -75,7 +80,8 @@ export default class NutritionChar {
             ctx: this.ctx
         })
         this.Char = new Char({
-            ctx: this.ctx
+            ctx: this.ctx,
+            max: this.maxTarget
         })
         this.draw()
     }

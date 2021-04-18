@@ -93,6 +93,7 @@ const pathData = [
         }
     },
     {
+        name: 'proteinMax',
         fill: '#fff',
         text: {
             x: '450',
@@ -111,6 +112,7 @@ const pathData = [
         }
     },
     {
+        name: 'fatMax',
         fill: '#fff',
         text: {
             x: '332',
@@ -129,6 +131,7 @@ const pathData = [
         }
     },
     {
+        name: 'metabolismMax',
         fill: '#fff',
         text: {
             x: '130.57',
@@ -202,15 +205,19 @@ export default class Char extends Canvas {
             fatRotate: 0,
             metabolismRotate: 0,
         }
+        this.max = ops.max
+        this.pathData.find(p=>p.name=='proteinMax').text.str = this.max.protein + '%'
+        this.pathData.find(p=>p.name==='fatMax').text.str = this.max.fat + '%'
+        this.pathData.find(p=>p.name==='metabolismMax').text.str = this.max.metabolism
         this.setData(this.data)
     }
     setData(data){
         this.pathData.find(p=>p.name=='protein').text.str = data.protein + '%'
         this.pathData.find(p=>p.name==='fat').text.str = data.fat + '%'
         this.pathData.find(p=>p.name==='metabolism').text.str = data.metabolism
-        this.pathData.find(p=>p.name==='proteinRotate').transform.rotate.deg = this.rotateMath(data.proteinRotate,32,true)
-        this.pathData.find(p=>p.name==='fatRotate').transform.rotate.deg = this.rotateMath(data.fatRotate,17,false)
-        this.pathData.find(p=>p.name==='metabolismRotate').transform.rotate.deg = this.rotateMath(data.metabolismRotate,1000,true)
+        this.pathData.find(p=>p.name==='proteinRotate').transform.rotate.deg = this.rotateMath(data.proteinRotate,this.max.protein,true)
+        this.pathData.find(p=>p.name==='fatRotate').transform.rotate.deg = this.rotateMath(data.fatRotate,this.max.fat,false)
+        this.pathData.find(p=>p.name==='metabolismRotate').transform.rotate.deg = this.rotateMath(data.metabolismRotate,this.max.metabolism,true)
     }
     rotateMath(data,max,negative) { // 0~215
         const negativeValue = negative ? -1 : 1
