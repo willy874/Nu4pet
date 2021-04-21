@@ -26,7 +26,9 @@ block content
         .prt-nutrition.border.border-primary
           .pt-4.px-4.px-sm-5
             h2 營養評估
-            .px-md-5
+            .px-md-5.position-relative
+              .position-absolute(style="top: 0;left: 10%;width: 35%;")
+                img.w-100(src="./assets/image/pet-nutrition.png")
               canvas#nutrition.w-100(width='1000' height='1000' data-protein='26.57' data-fat='11.71' data-metabolism='327.34' data-max-protein='35' data-max-fat='17' data-max-metabolism='600' data-delay="500" data-duration="240")
           .px-3.px-sm-5
             .px-md-5.py-2.py-md-4

@@ -1,4 +1,4 @@
-import Dog from './dog'
+// import Dog from './dog'
 import Char from './char'
 import * as easings from './easings'
 
@@ -41,11 +41,11 @@ export default class NutritionChar {
         },this.delay)
     }
     draw(){
-        this.ctx.save()
-        this.ctx.translate(110,30)
-        this.ctx.scale(1.2,1.2)
-        this.Dog.draw()
-        this.ctx.restore()
+        // this.ctx.save()
+        // this.ctx.translate(110,30)
+        // this.ctx.scale(1.2,1.2)
+        // this.Dog.draw()
+        // this.ctx.restore()
 
         this.ctx.save()
         this.ctx.scale(1.4,1.4)
@@ -76,9 +76,9 @@ export default class NutritionChar {
         })
     }
     oncreate() {
-        this.Dog = new Dog({
-            ctx: this.ctx
-        })
+        // this.Dog = new Dog({
+        //     ctx: this.ctx
+        // })
         this.Char = new Char({
             ctx: this.ctx,
             max: this.maxTarget
